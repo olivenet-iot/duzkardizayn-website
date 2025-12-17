@@ -94,14 +94,14 @@ export default function References() {
           {[...references, ...references].map((ref, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-40 h-16 bg-white rounded-lg flex items-center justify-center px-4 hover:shadow-lg transition-shadow"
+              className="flex-shrink-0 w-52 h-24 bg-white rounded-lg flex items-center justify-center px-6 hover:shadow-lg transition-shadow"
             >
               <Image
                 src={ref.logo}
                 alt={ref.name}
-                width={120}
-                height={48}
-                className="object-contain h-10 w-auto"
+                width={180}
+                height={80}
+                className="object-contain h-20 w-auto"
               />
             </div>
           ))}

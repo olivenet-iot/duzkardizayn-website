@@ -35,10 +35,11 @@ export default function Footer() {
           {/* Logo & Description */}
           <div>
             <Link href="/" className="flex items-center mb-4">
-              <span className="text-gold-primary font-heading font-bold text-3xl">D</span>
-              <span className="text-white font-heading font-bold text-xl tracking-wider">
-                ÜZKAR DİZAYN
-              </span>
+              <img
+                src="/logo-white.png"
+                alt="Düzkar Dizayn"
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               1999&apos;dan bu yana Kuzey Kıbrıs&apos;ta profesyonel izolasyon ve cephe çözümleri
