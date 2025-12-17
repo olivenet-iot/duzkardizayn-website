@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold-primary: #D4A017;
+  --gold-light: #F5C518;
+  --gold-dark: #B8860B;
+  --navy-dark: #1a1f2e;
+  --navy-medium: #2d3447;
+  --white: #ffffff;
+  --gray-light: #f8f9fa;
+  --gray-text: #6b7280;
+  --text-dark: #1f2937;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-dark);
+  background: var(--white);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat), sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center uppercase tracking-wide;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply block w-20 h-1 bg-gold-primary mx-auto mt-4;
+  }
+
+  .btn-primary {
+    @apply bg-gold-primary text-navy-dark font-semibold px-8 py-3 rounded-md
+           hover:bg-gold-light transition-all duration-300
+           transform hover:scale-105 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-gold-primary text-gold-primary font-semibold px-6 py-2 rounded-md
+           hover:bg-gold-primary hover:text-navy-dark transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden
+           transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .nav-link {
+    @apply text-white/90 hover:text-gold-primary transition-colors duration-300
+           font-medium tracking-wide text-sm;
+  }
+
+  .stat-number {
+    @apply text-5xl md:text-6xl font-bold;
+    font-family: var(--font-oswald), sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(26, 31, 46, 0.9) 0%,
+      rgba(26, 31, 46, 0.7) 50%,
+      rgba(26, 31, 46, 0.4) 100%
+    );
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+  }
+
+  .service-gradient-1 {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3447 50%, #3d4557 100%);
+  }
+
+  .service-gradient-2 {
+    background: linear-gradient(135deg, #2d3447 0%, #1a1f2e 50%, #3d4557 100%);
+  }
+
+  .service-gradient-3 {
+    background: linear-gradient(135deg, #3d4557 0%, #2d3447 50%, #1a1f2e 100%);
+  }
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
