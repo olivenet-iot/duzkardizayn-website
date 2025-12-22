@@ -23,6 +23,7 @@ const navLinks = [
   { href: "/", sectionId: "anasayfa", label: "ANASAYFA", isDropdown: false },
   { href: "/#hizmetler", sectionId: "hizmetler", label: "HİZMETLER", isDropdown: true },
   { href: "/projeler", sectionId: "projeler", label: "PROJELER", isDropdown: false },
+  { href: "/blog", sectionId: "blog", label: "BLOG", isDropdown: false },
   { href: "/#hakkimizda", sectionId: "hakkimizda", label: "HAKKIMIZDA", isDropdown: false },
   { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false },
 ];
@@ -57,14 +58,23 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    // If on homepage, scroll to section
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
+    // Sayfa linkleri için (blog, projeler gibi) direkt navigate et
+    const isPageLink = !link.href.startsWith('/#') && link.href !== '/';
+
+    if (isPageLink) {
+      // Sayfa linklerinde preventDefault yapma, normal navigate olsun
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    // Ana sayfa section linkleri için scroll davranışı
     if (isHomePage) {
       e.preventDefault();
-      if (sectionId === "anasayfa") {
+      if (link.sectionId === "anasayfa") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        const element = document.getElementById(sectionId);
+        const element = document.getElementById(link.sectionId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
@@ -156,23 +166,23 @@ export default function Header() {
                   </div>
                 </div>
               ) : (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.sectionId)}
+                  onClick={(e) => handleNavClick(e, link)}
                   className="nav-link"
                 >
                   {link.label}
-                </a>
+                </Link>
               )
             )}
-            <a
+            <Link
               href="/#iletisim"
-              onClick={(e) => handleNavClick(e, "iletisim")}
+              onClick={(e) => handleNavClick(e, { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false })}
               className="btn-primary text-sm"
             >
               Ücretsiz Keşif
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -262,23 +272,23 @@ export default function Header() {
                   </div>
                 </div>
               ) : (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.sectionId)}
+                  onClick={(e) => handleNavClick(e, link)}
                   className="nav-link text-center py-2"
                 >
                   {link.label}
-                </a>
+                </Link>
               )
             )}
-            <a
+            <Link
               href="/#iletisim"
-              onClick={(e) => handleNavClick(e, "iletisim")}
+              onClick={(e) => handleNavClick(e, { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false })}
               className="btn-primary text-sm text-center mx-auto"
             >
               Ücretsiz Keşif
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
