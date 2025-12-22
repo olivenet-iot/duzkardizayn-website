@@ -47,6 +47,33 @@ export const blogPosts: BlogPost[] = [
       { id: 'sonuc', title: 'Sonuç ve Öneriler', level: 2 },
     ],
   },
+  {
+    slug: 'radya-temel-izolasyonu-kibrista-neden-onemli',
+    title: 'Radya Temel İzolasyonu: Kıbrıs\'ta Neden Vazgeçilmez?',
+    excerpt: 'Kuzey Kıbrıs\'ta radya temel izolasyonunun önemi, uygulama yöntemleri ve dikkat edilmesi gerekenler. Yapı uzmanından kapsamlı teknik rehber.',
+    coverImage: '/images/blog/radya-temel-izolasyonu-cover.jpg',
+    author: 'Düzkar Dizayn',
+    publishedAt: '2025-12-21',
+    category: 'İzolasyon',
+    tags: ['radya temel', 'temel izolasyonu', 'su yalıtımı', 'kıbrıs', 'bodrum izolasyonu', 'membran', 'yeraltı suyu'],
+    readingTime: 10,
+    metaTitle: 'Radya Temel İzolasyonu Kıbrıs | Neden Önemli? - Düzkar Dizayn',
+    metaDescription: 'Kıbrıs\'ta radya temel izolasyonu neden zorunlu? Yeraltı suyu, nem koruması, uygulama teknikleri. 25 yıl deneyimli uzman rehberi.',
+    tableOfContents: [
+      { id: 'giris', title: 'Giriş', level: 2 },
+      { id: 'radya-temel-nedir', title: 'Radya Temel Nedir?', level: 2 },
+      { id: 'neden-zorunlu', title: 'Kıbrıs\'ta Neden Zorunlu Hale Geldi?', level: 2 },
+      { id: 'tehdit-faktorleri', title: 'Radya Temeli Tehdit Eden Faktörler', level: 2 },
+      { id: 'kibris-toprak-iklim', title: 'Kıbrıs Toprak ve İklim Koşulları', level: 2 },
+      { id: 'uygulama-teknikleri', title: 'Uygulama Teknikleri', level: 2 },
+      { id: 'malzemeler', title: 'Kullanılan Malzemeler', level: 2 },
+      { id: 'izolasyonsuz-sonuclar', title: 'İzolasyonsuz Temelin Sonuçları', level: 2 },
+      { id: 'yeni-insaat', title: 'Yeni İnşaatta Dikkat Edilmesi Gerekenler', level: 2 },
+      { id: 'mevcut-binalar', title: 'Mevcut Binalarda Temel İzolasyonu', level: 2 },
+      { id: 'profesyonel-uygulama', title: 'Profesyonel Uygulama Neden Önemli?', level: 2 },
+      { id: 'sonuc', title: 'Sonuç', level: 2 },
+    ],
+  },
 ];
 
 // Helper Fonksiyonlar

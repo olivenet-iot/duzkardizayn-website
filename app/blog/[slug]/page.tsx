@@ -405,6 +405,480 @@ function BlogPostContent({ slug }: { slug: string }) {
     );
   }
 
+  // Radya Temel İzolasyonu yazısı
+  if (slug === 'radya-temel-izolasyonu-kibrista-neden-onemli') {
+    return (
+      <BlogContent>
+        {/* Giriş */}
+        <section id="giris">
+          <h2>Giriş</h2>
+          <p>
+            <strong>Kuzey Kıbrıs&apos;ta radya temel izolasyonu</strong>, son yıllarda inşaat sektörünün en çok
+            konuşulan konularından biri haline geldi. Ada genelinde yaşanan inşaat patlaması, beraberinde
+            kalite bilincini de getirdi. Artık ev sahipleri ve yatırımcılar, yapılarının temelinden çatısına
+            kadar her detayı sorguluyor.
+          </p>
+          <p>
+            Bu kapsamlı rehberde, radya temel izolasyonunun ne olduğunu, Kıbrıs&apos;ta neden bu kadar kritik
+            önem taşıdığını, uygulama tekniklerini ve dikkat edilmesi gereken noktaları detaylıca ele alacağız.
+            25 yılı aşkın saha deneyimimizle, size pratik ve uygulanabilir bilgiler sunacağız.
+          </p>
+        </section>
+
+        {/* Radya Temel Nedir */}
+        <section id="radya-temel-nedir">
+          <h2>Radya Temel Nedir?</h2>
+          <p>
+            <strong>Radya temel</strong> (İngilizce: raft foundation veya mat foundation), yapının tüm tabanını
+            kaplayan tek parça betonarme plak şeklinde tasarlanan temel sistemidir. Geleneksel münferit (tekil)
+            veya sürekli (şerit) temelden farklı olarak, bina yükünü geniş bir alana yayar.
+          </p>
+          <p>
+            Bu temel tipi, özellikle zayıf zeminlerde, yüksek yeraltı suyu seviyesine sahip bölgelerde ve
+            bodrum kat yapılacak projelerde tercih edilir. Girne, Gazimağusa ve Güzelyurt gibi kıyı
+            bölgelerinde yaygın olarak kullanılmaktadır.
+          </p>
+
+          <InfoBox type="info" title="Radya Temel vs Münferit Temel">
+            <p>
+              <strong>Radya temel:</strong> Yapının tüm tabanını kaplayan tek parça betonarme plaktır.
+              Yük dağılımı eşit, çökme riski düşüktür.
+            </p>
+            <p>
+              <strong>Münferit temel:</strong> Her kolon altında ayrı temel bloğu bulunur. Sağlam zeminlerde
+              ekonomiktir ancak farklı çökmelere karşı hassastır.
+            </p>
+            <p>
+              Kıbrıs&apos;ın değişken zemin yapısında, özellikle bodrum katlı yapılarda radya temel daha güvenlidir.
+            </p>
+          </InfoBox>
+
+          <h3>Radya Temelin Yapısal Avantajları</h3>
+          <ul>
+            <li>Yükü geniş alana yayarak zemin basıncını azaltır</li>
+            <li>Farklı çökmeleri (differential settlement) minimize eder</li>
+            <li>Bodrum kat için su yalıtımına uygun düz yüzey sağlar</li>
+            <li>Deprem yüklerini daha iyi dağıtır</li>
+            <li>Zayıf zeminlerde güvenli taşıma kapasitesi sunar</li>
+          </ul>
+        </section>
+
+        {/* Neden Zorunlu */}
+        <section id="neden-zorunlu">
+          <h2>Kıbrıs&apos;ta Radya Temel İzolasyonu Neden Zorunlu Hale Geldi?</h2>
+          <p>
+            Son 10-15 yıl içinde Kuzey Kıbrıs&apos;ta inşaat anlayışı köklü bir değişim geçirdi. Eskiden
+            &quot;nasıl olsa yapılır&quot; mantığıyla atlatılan temel izolasyonu, bugün bilinçli tüketiciler
+            ve profesyonel müteahhitler için vazgeçilmez bir uygulama haline geldi.
+          </p>
+
+          <h3>Değişimin Nedenleri</h3>
+          <p>
+            Geçmişte izolasyonsuz yapılan binalarda yaşanan ciddi sorunlar, sektörde farkındalık yarattı.
+            Bodrum katlarında biriken sular, küf oluşumu, zemin kaplamalarında kabarma ve hatta yapısal
+            hasarlar, maliyetli onarımlara neden oldu.
+          </p>
+          <p>
+            Uluslararası standartlara uyum çabaları ve yabancı yatırımcıların beklentileri de bu değişimi
+            hızlandırdı. Bugün Girne&apos;de satılan lüks dairelerin neredeyse tamamında temel izolasyonu
+            standart uygulama haline geldi.
+          </p>
+
+          <h3>Yasal Düzenleme Beklentisi</h3>
+          <p>
+            Henüz zorunlu bir mevzuat bulunmasa da, sektör profesyonelleri yakın gelecekte temel izolasyonunun
+            yasal zorunluluk haline geleceğini öngörüyor. Bilinçli müteahhitler, bu beklentiyi karşılamak için
+            şimdiden standartlarını yükseltti.
+          </p>
+        </section>
+
+        {/* Tehdit Faktörleri */}
+        <section id="tehdit-faktorleri">
+          <h2>Radya Temeli Tehdit Eden Faktörler</h2>
+          <p>
+            Temel izolasyonu yapılmayan yapılarda, çeşitli faktörler ciddi hasarlara yol açar. Bu faktörleri
+            anlamak, izolasyonun neden bu kadar kritik olduğunu kavramak için önemlidir.
+          </p>
+
+          <h3>Hidrostatik Basınç (Yeraltı Suyu Basıncı)</h3>
+          <p>
+            Yeraltı su seviyesi yüksek olan bölgelerde, su betona sürekli basınç uygular. Bu basınç,
+            betonun gözeneklerinden suyun yapı içine sızmasına neden olur. Özellikle kış aylarında
+            yükselen yeraltı suyu, izolasyonsuz temellerde ciddi sızıntılara yol açar.
+          </p>
+
+          <h3>Kılcal Nem Yükselişi</h3>
+          <p>
+            Topraktan gelen nem, kılcal damarlar gibi betonun içinden yükselir. Bu olay &quot;capillary rise&quot;
+            olarak bilinir ve izolasyonsuz temellerde kaçınılmazdır. Yükselen nem, döşemelerde ıslaklık,
+            duvarlarda tuz çiçeklenmesi ve boya dökülmelerine neden olur.
+          </p>
+
+          <h3>Tuzlu Su Etkisi</h3>
+          <p>
+            Girne, Gazimağusa ve İskele gibi kıyı bölgelerinde yeraltı suyundaki tuz oranı yüksektir.
+            Tuzlu su, beton içindeki demir donatıları hızla paslandırır. Bu durum, betonun çatlamasına
+            ve yapısal dayanımın azalmasına yol açar.
+          </p>
+
+          <InfoBox type="warning" title="Girne Kıyı Bölgeleri Özel Risk">
+            <p>
+              Alsancak, Lapta, Karaoğlanoğlu ve Çatalköy gibi denize yakın bölgelerde yeraltı su seviyesi
+              çok yüksektir (1-3 metre). Bu alanlarda deniz suyu etkisi de eklendiğinde, standart izolasyon
+              yeterli olmayabilir.
+            </p>
+            <p>
+              <strong>Öneri:</strong> Bu bölgelerde polimer modifiyeli, çift kat membran uygulaması ve
+              ek drenaj sistemleri kullanılmalıdır.
+            </p>
+          </InfoBox>
+
+          <h3>Sıcaklık Değişimleri</h3>
+          <p>
+            Kıbrıs&apos;ın sert yaz sıcakları ve ılıman kışları, betonda genleşme-büzülme hareketlerine neden olur.
+            Bu hareketler, izolasyon membranlarında gerilme yaratır. Kalitesiz malzeme veya hatalı uygulama,
+            bu hareketlere dayanamaz ve yırtılır.
+          </p>
+        </section>
+
+        {/* Kıbrıs Toprak ve İklim */}
+        <section id="kibris-toprak-iklim">
+          <h2>Kıbrıs Toprak ve İklim Koşulları</h2>
+          <p>
+            Kuzey Kıbrıs&apos;ın jeolojik yapısı ve iklim özellikleri, temel izolasyonu kararlarını doğrudan etkiler.
+            Farklı bölgelerde farklı risk seviyeleri bulunur.
+          </p>
+
+          <h3>Bölgesel Zemin Özellikleri</h3>
+          <p>
+            Ada genelinde zemin yapısı oldukça değişkendir. Kıyı bölgelerinde kumlu ve kayalık zemin,
+            iç kesimlerde killi ve kireçli toprak yapısı hakimdir. Bu farklılıklar, izolasyon stratejisini
+            belirler.
+          </p>
+
+          <ComparisonTable
+            caption="Bölgelere Göre Zemin ve Su Durumu"
+            headers={['Bölge', 'Zemin Tipi', 'Yeraltı Su Seviyesi', 'Risk Düzeyi']}
+            rows={[
+              { cells: ['Girne Kıyı', 'Kumlu-Kayalık', 'Yüksek (1-3m)', 'Çok Yüksek'], highlight: true },
+              { cells: ['Girne İç Kesim', 'Kireçli-Kayalık', 'Orta (3-6m)', 'Yüksek'] },
+              { cells: ['Lefkoşa', 'Killi-Kireçli', 'Düşük (6-10m)', 'Orta'] },
+              { cells: ['Gazimağusa Kıyı', 'Kumlu', 'Yüksek (1-4m)', 'Çok Yüksek'], highlight: true },
+              { cells: ['Güzelyurt', 'Alüvyon', 'Değişken', 'Yüksek'] },
+              { cells: ['İskele', 'Kumlu-Killi', 'Yüksek (2-5m)', 'Yüksek'] },
+            ]}
+          />
+
+          <h3>Mevsimsel Faktörler</h3>
+          <p>
+            Kış aylarında (Kasım-Mart) yağışlarla birlikte yeraltı su seviyesi yükselir. Bu dönemde
+            izolasyonsuz temeller en fazla risk altındadır. Yaz aylarında ise buharlaşma nedeniyle
+            seviye düşse de, kılcal nem yükselişi devam eder.
+          </p>
+        </section>
+
+        {/* Uygulama Teknikleri */}
+        <section id="uygulama-teknikleri">
+          <h2>Radya Temel İzolasyonu Uygulama Teknikleri</h2>
+          <p>
+            Başarılı bir temel izolasyonu, doğru teknik ve dikkatli işçilik gerektirir. Her aşama,
+            bir sonrakinin temelini oluşturur. Profesyonel ekipler, bu süreçte standartlara tam uyum sağlar.
+          </p>
+
+          <StepByStep
+            title="Radya Temel İzolasyonu Uygulama Aşamaları"
+            steps={[
+              {
+                title: 'Zemin Hazırlığı',
+                description: 'Grobeton dökümü yapılır ve yüzey düzeltilir. Sivri noktalar, çıkıntılar ve boşluklar giderilir. Yüzey temizlenir ve tozdan arındırılır.',
+              },
+              {
+                title: 'Astar Uygulaması',
+                description: 'Bitüm esaslı soğuk astar (primer) tüm yüzeye fırça veya rulo ile uygulanır. Astar, membranın betona yapışmasını sağlar. Kuruma süresi: 4-6 saat.',
+              },
+              {
+                title: 'Membran Serimi',
+                description: 'Bitümlü membran ruloları açılır. Şaloma (gaz brülörü) ile alt yüzey eritilerek betona yapıştırılır. Sıcak uygulama, tam yapışma sağlar.',
+              },
+              {
+                title: 'Bindirme Kaynatma',
+                description: 'Membran ruloları arasında minimum 10 cm bindirme bırakılır. Bindirme noktaları şaloma ile kaynatılarak su geçirmez bağlantı sağlanır.',
+              },
+              {
+                title: 'Detay Noktaları',
+                description: 'Kolon dipleri, tesisat geçişleri ve köşeler özel bantlarla güçlendirilir. Bu noktalar, sızıntı riskinin en yüksek olduğu yerlerdir.',
+              },
+              {
+                title: 'Kaynak Kontrolü',
+                description: 'Tüm birleşim noktaları ve kenarlar kontrol edilir. Şüpheli bölgeler test edilir, gerekirse tamir yapılır.',
+              },
+              {
+                title: 'Koruyucu Tabaka',
+                description: 'Membran üzerine keçe veya koruyucu levha serilir. Bu tabaka, demir bağlama sırasında membranın zarar görmesini önler.',
+              },
+            ]}
+          />
+
+          <h3>Kritik Detay Noktaları</h3>
+          <p>
+            Temel izolasyonunda en sık sorun yaşanan noktalar, detay bölgeleridir. Kolon çevreleri,
+            boru geçişleri ve temel-perde duvar birleşimleri özel dikkat gerektirir. Bu noktalarda
+            ek bantlar ve takviye membranlar kullanılır.
+          </p>
+        </section>
+
+        {/* Malzemeler */}
+        <section id="malzemeler">
+          <h2>Kullanılan Malzemeler</h2>
+          <p>
+            Temel izolasyonunda kullanılan malzemenin kalitesi, uygulamanın ömrünü doğrudan etkiler.
+            Kıbrıs koşullarına uygun, dayanıklı ve esnek malzemeler tercih edilmelidir.
+          </p>
+
+          <ComparisonTable
+            caption="Membran Türleri Karşılaştırması"
+            headers={['Özellik', '3mm Membran', '4mm Membran', 'Polimer Modifiyeli']}
+            rows={[
+              { cells: ['Kalınlık', '3mm', '4mm', '4-5mm'] },
+              { cells: ['Esneklik', 'Orta', 'İyi', 'Çok İyi'], highlight: true },
+              { cells: ['Sıcaklık Dayanımı', '-5°C / +80°C', '-10°C / +90°C', '-20°C / +100°C'] },
+              { cells: ['Uygulama Alanı', 'Standart', 'Yüksek su basıncı', 'Zorlu koşullar'], highlight: true },
+              { cells: ['Tahmini Ömür', '15-20 yıl', '20-25 yıl', '25-30 yıl'] },
+              { cells: ['Önerilen Bölge', 'İç kesimler', 'Genel kullanım', 'Kıyı bölgeleri'] },
+            ]}
+          />
+
+          <h3>Bitüm Esaslı Membranlar</h3>
+          <p>
+            En yaygın kullanılan temel izolasyon malzemesidir. Okside bitüm veya polimer modifiyeli
+            bitüm kaplı, polyester veya cam tülü taşıyıcılı olarak üretilir. Şaloma ile sıcak uygulama
+            yapılır.
+          </p>
+
+          <h3>Polimer Modifiyeli Membranlar (SBS/APP)</h3>
+          <p>
+            SBS (Stiren Bütadien Stiren) veya APP (Ataktik Polipropilen) katkılı membranlar, standart
+            bitümlü membranlara göre daha esnektir. Sıcaklık değişimlerine ve yapısal hareketlere daha
+            iyi dayanır. Kıyı bölgelerinde tercih edilir.
+          </p>
+
+          <InfoBox type="tip" title="Doğru Membran Seçimi">
+            <p>
+              Her proje için tek bir &quot;en iyi&quot; membran yoktur. Seçim, zemin koşullarına, yeraltı su
+              seviyesine ve bütçeye göre yapılmalıdır.
+            </p>
+            <p>
+              <strong>Öneri:</strong> Girne kıyı bölgelerinde minimum 4mm, polimer modifiyeli membran
+              kullanın. İç kesimlerde 3mm standart membran yeterli olabilir.
+            </p>
+          </InfoBox>
+
+          <h3>Astar ve Yardımcı Malzemeler</h3>
+          <ul>
+            <li><strong>Bitüm Astar:</strong> Membranın betona yapışmasını sağlar</li>
+            <li><strong>Köşe Bantları:</strong> İç ve dış köşelerde takviye sağlar</li>
+            <li><strong>Boru Manşetleri:</strong> Tesisat geçişlerinde su geçirmezlik sağlar</li>
+            <li><strong>Koruyucu Keçe:</strong> Membranı mekanik hasardan korur</li>
+          </ul>
+        </section>
+
+        {/* İzolasyonsuz Sonuçlar */}
+        <section id="izolasyonsuz-sonuclar">
+          <h2>İzolasyonsuz Temelin Sonuçları</h2>
+          <p>
+            Temel izolasyonu yapılmamış yapılarda, kısa ve uzun vadede çeşitli sorunlar ortaya çıkar.
+            Bu sorunlar, hem yaşam kalitesini düşürür hem de ciddi ekonomik kayıplara yol açar.
+          </p>
+
+          <h3>Kısa Vadeli Etkiler</h3>
+          <ul>
+            <li>Bodrum zemininde ıslaklık ve su birikintisi</li>
+            <li>Duvar diplerinde nem halkaları</li>
+            <li>Küf ve mantar kokusu</li>
+            <li>Zemin kaplamalarında kabarma</li>
+          </ul>
+
+          <h3>Uzun Vadeli Yapısal Hasarlar</h3>
+          <p>
+            Sürekli nem etkisinde kalan betonarme elemanlarda, demir donatılar paslanmaya başlar.
+            Paslanan demir genleşir ve betonu çatlatır. Bu süreç, yapının taşıma kapasitesini zayıflatır.
+          </p>
+
+          <h3>Sağlık Riskleri</h3>
+          <p>
+            Nemli ortamlar, küf ve mantar sporlarının üremesi için idealdir. Bu sporlar, solunum yolu
+            hastalıklarına, alerjilere ve astım ataklarına neden olabilir. Özellikle çocuklar ve
+            yaşlılar için ciddi sağlık riskleri oluşturur.
+          </p>
+
+          <CheckList
+            title="Temelde İzolasyon Sorunu Belirtileri"
+            variant="warning"
+            items={[
+              'Bodrum duvarlarda beyaz tuz lekeleri (efflorescence)',
+              'Zemin kaplamada kabarma veya kalkma',
+              'Küf ve mantar kokusu (özellikle kapalı alanlarda)',
+              'Duvar diplerinde sürekli nem halkası',
+              'Boyada kabartı, dökülme ve renk değişimi',
+              'Metal elemanlarda (kapı kasaları, raflar) paslanma',
+              'Ahşap mobilya ve döşemelerde çürüme',
+              'Kış aylarında artan nem ve yoğuşma',
+            ]}
+          />
+        </section>
+
+        {/* Yeni İnşaat */}
+        <section id="yeni-insaat">
+          <h2>Yeni İnşaatta Dikkat Edilmesi Gerekenler</h2>
+          <p>
+            Yeni bir inşaat projesinde temel izolasyonu, projenin başından itibaren planlanmalıdır.
+            Doğru planlama ve takip, uzun vadede sorunsuz bir yapı garantisi sağlar.
+          </p>
+
+          <h3>Proje Aşamasında</h3>
+          <p>
+            Zemin etüdü raporlarını inceleyin. Yeraltı su seviyesi, zemin cinsi ve taşıma kapasitesi
+            bilgileri, izolasyon stratejisini belirler. Mimar ve mühendislerle izolasyon detaylarını
+            tartışın.
+          </p>
+
+          <h3>Müteahhit Seçimi</h3>
+          <p>
+            Temel izolasyonu deneyimi olan, referanslı müteahhitlerle çalışın.
+            <Link href="/projeler">Tamamladığımız projelerde</Link> olduğu gibi, izolasyon
+            uygulamalarını belgeleme alışkanlığı olan firmalar tercih edilmelidir.
+          </p>
+
+          <CheckList
+            title="İnşaat Takip Listesi"
+            items={[
+              'Temel kazısı sonrası drenaj durumu kontrol edildi mi?',
+              'Grobeton yüzey düzgün ve temiz mi?',
+              'Astar uygulaması tam kurudu mu?',
+              'Membran bindirmeleri minimum 10cm mi?',
+              'Kaynak noktaları düzgün yapıldı mı?',
+              'Detay noktaları (kolonlar, borular) takviye edildi mi?',
+              'Koruyucu tabaka uygulandı mı?',
+              'Demir bağlama öncesi hasar kontrolü yapıldı mı?',
+              'Uygulama fotoğrafları çekildi mi?',
+            ]}
+          />
+        </section>
+
+        {/* Mevcut Binalar */}
+        <section id="mevcut-binalar">
+          <h2>Mevcut Binalarda Temel İzolasyonu</h2>
+          <p>
+            İnşaat aşamasında izolasyon yapılmamış binalarda, sonradan müdahale mümkün mü?
+            Bu soru, birçok ev sahibinin aklını meşgul ediyor. Cevap karmaşık ama umut var.
+          </p>
+
+          <h3>Sonradan Müdahale Yöntemleri</h3>
+          <p>
+            Mevcut binalarda temel izolasyonu, dışarıdan klasik membran uygulaması gibi yapılamaz.
+            Ancak alternatif çözümler mevcuttur:
+          </p>
+          <ul>
+            <li><strong>Enjeksiyon Yöntemi:</strong> Duvar ve döşeme içine su itici kimyasallar enjekte edilir</li>
+            <li><strong>İç Mekan Drenajı:</strong> Bodrum çevresine drenaj kanalları ve pompa sistemi kurulur</li>
+            <li><strong>Negatif Yönlü İzolasyon:</strong> Suyla temas eden iç yüzeye özel sıvalar uygulanır</li>
+          </ul>
+
+          <InfoBox type="tip" title="Sonradan Müdahale Seçenekleri">
+            <p>
+              Mevcut binalarda yapılan uygulamalar, tam bir çözüm olmaktan çok semptom tedavisidir.
+              Enjeksiyon ve iç izolasyon yöntemleri, sorunu kontrol altına alabilir ancak
+              orijinal izolasyonun yerini tutmaz.
+            </p>
+            <p>
+              <strong>En etkili çözüm:</strong> Yeni inşaatta, temel aşamasında profesyonel izolasyon
+              uygulaması yaptırmaktır. Bu nedenle <Link href="/blog/kuzey-kibrista-izolasyonun-onemi">
+              izolasyonun önemi</Link> konusundaki rehberimizi de incelemenizi öneririz.
+            </p>
+          </InfoBox>
+
+          <h3>Beklentileri Yönetmek</h3>
+          <p>
+            Sonradan yapılan müdahalelerin sınırları vardır. Tam bir kuruluk sağlanamayabilir,
+            ancak sorun önemli ölçüde azaltılabilir. Profesyonel değerlendirme, gerçekçi
+            beklentiler oluşturmanıza yardımcı olur.
+          </p>
+        </section>
+
+        {/* Profesyonel Uygulama */}
+        <section id="profesyonel-uygulama">
+          <h2>Profesyonel Uygulama Neden Önemli?</h2>
+          <p>
+            Temel izolasyonu, &quot;kendin yap&quot; projesi değildir. Bu kritik uygulama, deneyimli ustalar
+            ve profesyonel ekipman gerektirir. Hatalı uygulama, hiç yapmamaktan daha kötü sonuçlar
+            doğurabilir.
+          </p>
+
+          <h3>DIY Riskleri</h3>
+          <ul>
+            <li>Yetersiz yüzey hazırlığı nedeniyle yapışma sorunları</li>
+            <li>Hatalı bindirme ve kaynak, sızıntı noktaları oluşturur</li>
+            <li>Detay noktalarının atlanması</li>
+            <li>Şaloma kullanımında güvenlik riskleri</li>
+            <li>Garanti ve sigorta kapsamı dışında kalma</li>
+          </ul>
+
+          <h3>Profesyonel Ekibin Avantajları</h3>
+          <p>
+            Deneyimli bir <Link href="/hizmetler/izolasyon-ve-su-yalitimi">izolasyon firması</Link>,
+            sadece uygulama yapmaz; projeyi değerlendirir, doğru malzemeyi seçer ve garantili
+            iş teslim eder.
+          </p>
+          <ul>
+            <li>Zemin ve su koşullarına uygun malzeme seçimi</li>
+            <li>Standartlara uygun uygulama teknikleri</li>
+            <li>Kalite kontrol ve test prosedürleri</li>
+            <li>Yazılı garanti ve belgeleme</li>
+            <li>Uygulama sonrası destek</li>
+          </ul>
+        </section>
+
+        {/* Sonuç */}
+        <section id="sonuc">
+          <h2>Sonuç</h2>
+          <p>
+            <strong>Kuzey Kıbrıs&apos;ta radya temel izolasyonu</strong>, artık lüks değil zorunluluktur.
+            Adanın jeolojik yapısı, yüksek yeraltı su seviyeleri ve iklim koşulları, bu uygulamayı
+            vazgeçilmez kılmaktadır.
+          </p>
+          <p>
+            Bu rehberde ele aldığımız ana noktaları özetleyelim:
+          </p>
+          <ul>
+            <li>Radya temel, özellikle bodrum katlı yapılarda tercih edilen güvenli bir temel sistemidir</li>
+            <li>Kıbrıs&apos;ın kıyı bölgelerinde yeraltı suyu ve tuz etkisi, temel izolasyonunu zorunlu kılar</li>
+            <li>Doğru malzeme seçimi ve profesyonel uygulama, 25-30 yıl sorunsuz koruma sağlar</li>
+            <li>İzolasyonsuz temeller, yapısal hasarlara ve sağlık sorunlarına yol açar</li>
+            <li>Yeni inşaatta baştan planlama, mevcut binalarda ise profesyonel değerlendirme şarttır</li>
+          </ul>
+          <p>
+            Düzkar Dizayn olarak, 25 yılı aşkın deneyimimizle Girne, Lefkoşa, Gazimağusa ve tüm
+            Kuzey Kıbrıs genelinde profesyonel temel izolasyonu hizmetleri sunuyoruz. Yeni projeniz
+            veya mevcut binanız için ücretsiz keşif ve danışmanlık almak isterseniz, bizimle
+            iletişime geçebilirsiniz.
+          </p>
+
+          <CheckList
+            title="Profesyonel Temel İzolasyonunda Aradığınız Özellikler"
+            items={[
+              'Sektörde uzun yıllara dayanan deneyim',
+              'Tamamlanmış proje referansları',
+              'Kaliteli ve garantili malzeme kullanımı',
+              'Yazılı sözleşme ve garanti belgesi',
+              'Uygulama fotoğrafları ve belgeleme',
+              'Uygulama sonrası teknik destek',
+            ]}
+          />
+        </section>
+      </BlogContent>
+    );
+  }
+
   // Diğer blog yazıları için default content
   return (
     <BlogContent>
