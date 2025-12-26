@@ -41,11 +41,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${project.title} | Düzkar Dizayn Projeler`,
     description: project.shortDescription,
+    alternates: {
+      canonical: `https://duzkardizayn.com/projeler/${slug}`,
+    },
     openGraph: {
       title: `${project.title} | Düzkar Dizayn`,
       description: project.shortDescription,
       type: "website",
       locale: "tr_TR",
+      images: project.coverImage ? [{ url: project.coverImage }] : [],
     },
   };
 }
