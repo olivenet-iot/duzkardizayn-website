@@ -1438,6 +1438,461 @@ function BlogPostContent({ slug }: { slug: string }) {
     );
   }
 
+  // Mantolama rehberi
+  if (slug === 'kktcde-mantolama-nedir-ve-neden-onemli') {
+    return (
+      <BlogContent>
+        {/* Giriş */}
+        <section id="giris">
+          <h2>Giriş</h2>
+          <p>
+            <strong>Mantolama</strong>, son yıllarda Kuzey Kıbrıs&apos;ta giderek daha fazla konuşulan bir inşaat
+            ve yenileme terimi haline geldi. Enerji faturalarının artması, iklim değişikliğinin hissedilir
+            etkiler bırakması ve bina sahiplerinin uzun vadeli yatırım bilincinin gelişmesiyle birlikte,
+            mantolama sistemleri KKTC&apos;de ciddi bir ilgi görmeye başladı. Ancak &quot;mantolama nedir,
+            gerçekten işe yarıyor mu, benim binama uygun mu?&quot; sorularına net yanıt bulmak hâlâ zor.
+          </p>
+          <p>
+            Bu rehberde mantolama sistemini teknik düzeyde ele alıyoruz: ne olduğunu, katmanlarını,
+            KKTC iklimine neden özellikle uygun olduğunu, EPS ve taş yünü sistemleri arasındaki farkları,
+            doğru uygulama adımlarını ve en sık yapılan hataları kapsamlı biçimde inceliyoruz.
+            25 yılı aşkın saha deneyimimizle derlenmiş bu rehber, hem bina sahiplerine hem de
+            uygulamayı düşünenlere pratik bir yol haritası sunmayı amaçlıyor.
+          </p>
+          <p>
+            KKTC&apos;de mantolama henüz zorunluluk değil ama enerji verimliliği ve yapı ömrü açısından
+            değerlendirildiğinde, mantolama yaptırmamak giderek daha pahalı bir tercih haline geliyor.
+            Ada genelinde — özellikle Girne kıyı şeridinde, Lefkoşa&apos;nın güneye bakan cephelerinde ve
+            yüksek katlı apartmanlarda — mantolama uygulamaları artık standart hale geliyor.
+          </p>
+        </section>
+
+        {/* Mantolama Nedir */}
+        <section id="mantolama-nedir">
+          <h2>Mantolama Nedir?</h2>
+          <p>
+            Teknik adıyla <strong>ETICS</strong> (External Thermal Insulation Composite System — Dışarıdan
+            Isı Yalıtım Kompozit Sistemi), Türkçede &quot;mantolama&quot; olarak yerleşmiş olan bu sistem,
+            binanın dış duvarlarına ısı yalıtımlı bir kabuk giydirme işlemidir. Amaç; yazın dışarıdan
+            gelen ısının duvarı geçmesini engellemek, kışın ise içerideki ısının dışarıya kaçmasını
+            önlemektir.
+          </p>
+          <p>
+            Mantolama, basit bir boya ya da sıva uygulaması değildir. Birden fazla katmanın belirli
+            bir sıra ve teknikle uygulandığı, her katmanın bir öncekine bağımlı olduğu bütüncül bir
+            sistemdir. Bir katmandaki hata tüm sistemin performansını düşürür. Bu nedenle uygulama
+            kalitesi, malzeme kalitesi kadar — hatta daha fazla — önem taşır.
+          </p>
+
+          <h3>Sistemin Katmanları</h3>
+          <p>
+            Standart bir mantolama sisteminde dışarıdan içeriye doğru şu katmanlar bulunur:
+          </p>
+
+          <StepByStep
+            title="Mantolama Sistem Katmanları (İçten Dışa)"
+            steps={[
+              {
+                title: 'Yapıştırıcı Harç',
+                description: 'Yalıtım levhasının mevcut duvara yapıştırılmasını sağlar. Çimento bazlı özel yapıştırıcılar kullanılır. Yüzeyin temiz, düz ve kuru olması şarttır. Yapıştırıcı hem çevre hem de nokta yöntemiyle uygulanabilir; yüzeyin en az %40\'ı ile temas sağlanmalıdır.',
+              },
+              {
+                title: 'Yalıtım Levhası',
+                description: 'EPS (genişletilmiş polistiren) veya taş yünü levhalardan oluşur. Bu katman sistemin ısı yalıtım performansını belirler. Levhalar birbirine derzli (kademeli) yerleştirilir; aynı hizada derz bırakılması ısı köprüsü oluşturur.',
+              },
+              {
+                title: 'Mekanik Dübeller',
+                description: 'Yapıştırıcıya ek olarak, levhalar plastik diskli çelik dübeller ile duvara mekanik olarak bağlanır. Dübel sayısı ve konumu, binanın yüksekliği ile rüzgar yüküne göre hesaplanır. Bu katman, sistemin rüzgar ve çekme kuvvetlerine karşı direncini sağlar.',
+              },
+              {
+                title: 'Donatı Katmanı (File + Macun)',
+                description: 'Cam elyaf donatı filesi, özel polimer bazlı macun içine gömülür. Bu katman sisteme mekanik dayanıklılık kazandırır; çatlaklara, darbelere ve sıcaklık genleşmesine karşı koruma sağlar. File bindirme payları en az 10 cm olmalı, köşe ve kenarlarda çift kat uygulanmalıdır.',
+              },
+              {
+                title: 'Son Kat Kaplama (Dekoratif Sıva)',
+                description: 'Astar üzerine uygulanan ince renkli dekoratif sıva veya boya, sistemin hem estetik hem de hava ve yağmur koruması sağlayan dış yüzeyidir. Kıbrıs ikliminde UV dayanımı yüksek, su itici ürünler tercih edilmelidir.',
+              },
+            ]}
+          />
+
+          <p>
+            Bu beş katman bir arada düşünülmeli ve her biri doğru malzeme ile doğru teknikte uygulanmalıdır.
+            Katmanlardan herhangi birinin atlanması veya yanlış uygulanması, sistemin ömrünü ciddi
+            ölçüde kısaltır.
+          </p>
+
+          <InfoBox type="info" title="Mantolama ile Dış Cephe Boyası Farkı">
+            <p>
+              Sıradan dış cephe boyası sadece görsel koruma sağlar. Mantolama ise fiziksel bir yalıtım
+              katmanı ekler. Dış cephe boyası ısı geçişini durduramaz; mantolama durdurur. İkisi birbirini
+              tamamlayabilir ancak biri diğerinin yerini alamaz.
+            </p>
+          </InfoBox>
+        </section>
+
+        {/* KKTC İkliminde Mantolama */}
+        <section id="kktcde-mantolama">
+          <h2>KKTC İkliminde Mantolama</h2>
+          <p>
+            Kuzey Kıbrıs, mantolama sistemlerinin en verimli sonuç verdiği iklim tiplerinden birine sahiptir.
+            Yazın aşırı ısı yükü, kışın nem ve nem kaynaklı yoğuşma problemi, sahil bölgelerinde deniz
+            tuzu etkisi ve enerji maliyetleri — tüm bu faktörler mantolama uygulamasını KKTC özelinde
+            özellikle anlamlı kılar.
+          </p>
+
+          <h3>Yaz Sıcağı ve Isı Yükü (40°C+)</h3>
+          <p>
+            Haziran&apos;dan Eylül&apos;e kadar sıcaklıklar sıklıkla 38-42°C arasında seyreder. Güneye
+            bakan cephelerde yüzey sıcaklığı 60-70°C&apos;ye ulaşır. Bu yüzey ısısının duvarı geçerek
+            iç mekana iletilmesi, klima yükünü dramatik biçimde artırır. Mantolama bu ısı transferini
+            keserek yazın iç mekan sıcaklığını 4-8°C daha düşük tutar. Orta büyüklükte bir evde bu,
+            yaz boyunca klima faturasında %30-45 tasarruf anlamına gelir.
+          </p>
+
+          <h3>Kış Nemi ve Yoğuşma Problemi</h3>
+          <p>
+            Kuzey Kıbrıs kışları Orta Avrupa&apos;ya göre ılıman görünse de, nem oranı %70-80&apos;e
+            ulaşır. Isıtılmamış veya az ısıtılan binalarda duvar yüzeyleri soğur; iç mekandaki nem
+            taşıyan hava bu soğuk yüzeye temas ettiğinde yoğuşur. Zamanla duvar nemi, küf ve sıva
+            dökülmesi ortaya çıkar. Mantolama, duvar yüzeyinin sıcaklığını artırarak yoğuşma riskini
+            ortadan kaldırır. Bu özellikle zemin kat dairelerde ve kuzey cephelerde belirleyici bir
+            fark yaratır.
+          </p>
+
+          <h3>Deniz Tuzu ve Korozyon Etkisi</h3>
+          <p>
+            Girne kıyı şeridinde ve Gazimağusa çevresinde denizden gelen tuzlu hava, betonu ve
+            metal donatıları hızla aşındırır. Mantolama sistemi, dış duvara koruyucu bir kabuk
+            oluşturarak tuz ve nemin beton ile donatıya ulaşmasını engeller. Bu sayede yapının
+            betonarme ömrü uzar, pas ve çürüme riski azalır. Sahil bölgelerinde mantolama sadece
+            enerji tasarrufu değil, yapısal koruma açısından da kritik bir yatırımdır.
+          </p>
+
+          <h3>Enerji Tasarrufu ve Geri Dönüş Süresi</h3>
+          <p>
+            KKTC&apos;de elektrik fiyatları son yıllarda belirgin biçimde yükseldi. Standart kalınlıkta
+            (5 cm EPS) bir mantolama uygulaması, ortalama Kıbrıs evinde yıllık enerji giderini
+            %30-40 azaltır. 150 m² bir daire için yatırım maliyeti ve enerji tasarrufu
+            hesaplandığında, geri ödeme süresi genellikle 5-8 yıl arasında gerçekleşir. Üstelik
+            mantolama, binanın değerini artırır ve dış cepheye yeni estetik kazandırır.
+          </p>
+
+          <ComparisonTable
+            caption="Mantolama Öncesi ve Sonrası Karşılaştırma (KKTC Koşulları)"
+            headers={['Parametre', 'Mantolamasız', 'Mantolama Sonrası']}
+            rows={[
+              { cells: ['Yaz iç mekan sıcaklığı', '28-32°C (klima çalışırken)', '24-26°C (daha az klima)'] },
+              { cells: ['Kış yoğuşma riski', 'Yüksek (özellikle kuzey cephe)', 'Çok düşük veya sıfır'] },
+              { cells: ['Yıllık enerji maliyeti', 'Baz değer', '%30-45 daha düşük'], highlight: true },
+              { cells: ['Tuz ve nem penetrasyonu', 'Beton doğrudan maruz', 'Koruyucu kabuk var'] },
+              { cells: ['Boya yenileme sıklığı', 'Her 5-7 yılda bir', 'Her 10-15 yılda bir'] },
+              { cells: ['Bina piyasa değeri', 'Baz değer', '%5-15 artış potansiyeli'] },
+            ]}
+          />
+        </section>
+
+        {/* Sistem Seçimi */}
+        <section id="sistem-secimi">
+          <h2>Sistem Seçimi: EPS mi Taş Yünü mü?</h2>
+          <p>
+            Mantolama uygulamalarında kullanılan iki ana yalıtım malzemesi vardır: <strong>EPS</strong>
+            {' '}(Expanded Polystyrene — Genişletilmiş Polistiren, yaygın adıyla strafor) ve
+            <strong> taş yünü</strong> (mineral yünü). Her ikisi de ETICS sisteminde kullanılabilir
+            ancak fiziksel özellikleri, maliyetleri ve ideal uygulama koşulları birbirinden farklıdır.
+          </p>
+
+          <h3>EPS (Strafor) Sisteminin Özellikleri</h3>
+          <p>
+            EPS, dünyada en yaygın kullanılan mantolama malzemesidir. Hafif yapısı, işlenmesi kolay
+            olması ve düşük maliyeti nedeniyle tercih edilir.
+          </p>
+          <CheckList
+            title="EPS Sisteminin Avantajları"
+            items={[
+              'Hafif: İskele ve uygulama maliyetlerini düşürür',
+              'Ekonomik: Taş yününe göre %20-35 daha uygun fiyatlı',
+              'Suyu emmez: Nem geçirgenliği çok düşüktür',
+              'Kolay işlenir: Kesme ve şekillendirme kolaylığı sağlar',
+              'İyi termal direnç (λ ≈ 0.032-0.038 W/mK)',
+              'Uzun ömürlü: Doğru uygulamada 30+ yıl dayanım',
+            ]}
+          />
+          <CheckList
+            title="EPS Sisteminin Dezavantajları"
+            variant="warning"
+            items={[
+              'Yanabilir: A2 sınıfı yangın bariyerleri gerektirir (5 kat ve üzeri binalar)',
+              'Ses yalıtımı zayıf: Akustik sorunlar için ek önlem gerekebilir',
+              'Nem geçirgenliği düşük: Bazı yapı tipolojilerinde avantaj değil dezavantaj olabilir',
+              'UV\'ya duyarlı: Uzun süre güneş altında kalırsa bozulur (kaplama olmadan)',
+            ]}
+          />
+
+          <h3>Taş Yünü Sisteminin Özellikleri</h3>
+          <p>
+            Taş yünü, volkanik bazalt taşının yüksek sıcaklıkta işlenmesiyle elde edilen mineral
+            elyaf yalıtım malzemesidir. EPS&apos;ye göre daha pahalı ama belirli durumlarda
+            vazgeçilmez özellikler sunar.
+          </p>
+          <CheckList
+            title="Taş Yününün Avantajları"
+            items={[
+              'Yangın sınıfı A1: Tamamen yanmaz, yangın yayılımını engeller',
+              'Ses yalıtımı mükemmel: Akustik konfor için ideal',
+              'Buhar geçirgen (nefes alabilir): Yapının nefes almasına izin verir',
+              'Yüksek sıcaklık dayanımı: 700°C\'ye kadar dayanır',
+              'Çevre dostu: Doğal kaynaklardan üretilir, geri dönüştürülebilir',
+            ]}
+          />
+          <CheckList
+            title="Taş Yününün Dezavantajları"
+            variant="warning"
+            items={[
+              'Daha pahalı: EPS\'ye göre %25-40 daha yüksek malzeme maliyeti',
+              'Ağır: Uygulama daha dikkat gerektirir, iskele yükü artar',
+              'Nem yönetimi kritik: Islak uygulamadan kaçınılmalıdır',
+              'Daha az yaygın: KKTC\'de tedariki EPS\'ye göre kısıtlı olabilir',
+            ]}
+          />
+
+          <h3>KKTC İçin Hangisi Daha Uygun?</h3>
+          <p>
+            KKTC koşullarında genel tavsiye şu şekilde özetlenebilir:
+          </p>
+          <ComparisonTable
+            caption="EPS vs Taş Yünü — KKTC Koşullarında Seçim Rehberi"
+            headers={['Bina/Koşul', 'Önerilen Sistem', 'Gerekçe']}
+            rows={[
+              { cells: ['1-4 katlı villa, daire', 'EPS (5-8 cm)', 'Ekonomik, yeterli termal performans'] },
+              { cells: ['5+ katlı apartman', 'EPS + yangın bariyeri veya tam taş yünü', 'Yangın yönetmelikleri'], highlight: true },
+              { cells: ['Sahil bölgesi (Girne vb.)', 'EPS (buhar bariyersiz)', 'Nem geçirmez özellik avantajlı'] },
+              { cells: ['Akustik sorun olan yapı', 'Taş yünü', 'Ses yalıtımı üstünlüğü'] },
+              { cells: ['Otel, ticari bina', 'Taş yünü (yangın sınıfı)', 'Yangın güvenliği zorunluluğu'], highlight: true },
+              { cells: ['Bütçe kısıtlı proje', 'EPS (3-5 cm)', 'Maliyet/performans dengesi'] },
+            ]}
+          />
+          <p>
+            Seçim yapmadan önce binanızın kat sayısını, bulunduğu lokasyonu (sahil/iç kesim),
+            mevcut ses yalıtım durumunu ve bütçenizi değerlendirin. Profesyonel keşif, doğru
+            sistem ve kalınlık kararı için şarttır.
+          </p>
+        </section>
+
+        {/* Uygulama Adımları */}
+        <section id="uygulama-adimlari">
+          <h2>Uygulama Adımları</h2>
+          <p>
+            Mantolama uygulaması altı temel aşamadan oluşur. Her aşamanın doğru yapılması,
+            bir sonraki aşamanın başarısını belirler. Adımları ve dikkat edilmesi gereken
+            noktaları aşağıda açıklıyoruz.
+          </p>
+
+          <h3>1. Yüzey Hazırlığı</h3>
+          <p>
+            Mantolama uygulamasında en sık atlatılan ve en önemli adım yüzey hazırlığıdır.
+            Mevcut duvarda dökülen boya, gevşek sıva, küf veya yağ kalıntısı varsa mutlaka
+            temizlenmelidir. Duvardaki çatlaklar onarılmalı, çelik hasarlı bölümler işlenmelidir.
+            Dış cephede boş kısmı olan sıvalar kaldırılıp yeniden yapılmalıdır.
+          </p>
+          <p>
+            <strong>Dikkat:</strong> Yaş veya nemli yüzeye uygulama yapılmamalıdır. Yüzeyin en az
+            2-3 hafta önceden kurumuş olması gerekir. Kıbrıs&apos;ta sonbahar yağmurları öncesinde
+            bu kuruma süresini mutlaka hesaba katın.
+          </p>
+
+          <h3>2. Su Basman Çıtası (Başlangıç Profili)</h3>
+          <p>
+            Sistemin en alt noktasına, zemin seviyesinin yaklaşık 30-40 cm yukarısına alüminyum
+            su basman çıtası (başlangıç profili) monte edilir. Bu profil hem sistemin düzgün
+            başlangıç çizgisini belirler hem de alt kenardan su ve haşeratın sisteme girmesini
+            engeller. Çıtanın su terazisiyle tam yatay konumda sabitlenmesi şarttır.
+          </p>
+          <p>
+            <strong>Dikkat:</strong> Bu adım atlandığında alt kenar açıkta kalır, sistemin altından
+            nem girerek yalıtım levhalarını deforme eder ve mantar oluşumuna neden olur.
+          </p>
+
+          <h3>3. Levha Yapıştırma ve Dübelleme</h3>
+          <p>
+            Yapıştırıcı harç, levhanın arka yüzüne çevre bandı ve en az 3 merkez nokta yöntemiyle
+            uygulanır (toplam temas alanı ≥ %40). Levhalar alt sıradan başlanarak tuğla örgüsü
+            düzeninde (kademeli derzli) yerleştirilir. Köşelerde levhalar birbirini geçecek şekilde
+            monte edilir. Yapıştırma işleminden 24-48 saat sonra plastik diskli çelik dübeller
+            (en az 6 adet/m²) ile mekanik bağlantı tamamlanır.
+          </p>
+          <p>
+            <strong>Dikkat:</strong> Dübel sayısı binanın yüksekliği ve rüzgar bölgesine göre
+            artırılmalıdır. KKTC&apos;de özellikle Girne kıyı şeridinde rüzgar yükü dikkate
+            alınmalıdır. Köşe, kenar ve bölme bölgelerinde dübel sayısı iç alanlara göre
+            en az %50 artırılır.
+          </p>
+
+          <h3>4. Köşe ve Kenar Profiller</h3>
+          <p>
+            Pencere ve kapı çevreleri, köşeler ile alınlık kenarları özel PVC veya alüminyum
+            köşe profilleri ile kapatılır. Bu profiller hem donatı filesin köşelerde çalışmasını
+            kolaylaştırır hem de sistemi darbelere ve su girişine karşı korur. Profiller
+            yapıştırıcı içine gömülmeli ve levha yüzeyiyle aynı hizada olmalıdır.
+          </p>
+
+          <h3>5. Donatı Filesi ve Macun (Donatı Katmanı)</h3>
+          <p>
+            Polimer katkılı özel macun levha yüzeyine yaklaşık 3-4 mm kalınlığında uygulanır.
+            Cam elyaf donatı filesi (160 g/m² veya üzeri) macun içine gömülür. Dosya bindirme payları
+            en az 10 cm olmalı; köşe bölgelerinde çapraz takviye ile çift kat file uygulaması
+            yapılmalıdır. Macunun kurumasına izin verildikten sonra zımparalama ile düzleştirme
+            yapılır.
+          </p>
+          <p>
+            <strong>Dikkat:</strong> Bu adım atlandığında veya yetersiz file uygulandığında,
+            sistem ısıl genleşme sonucunda çatlar. Özellikle pencere köşelerinde 45° açılı
+            takviye filesin atlanması, bu noktalarda &quot;köşe çatlağı&quot; olarak bilinen
+            ve sık görülen hataya yol açar.
+          </p>
+
+          <h3>6. Astar ve Dekoratif Son Kat Sıva</h3>
+          <p>
+            Donatı katmanı tam kuruyunca astar uygulanır. Astar, son kat dekoratif sivanın
+            yüzeye düzgün yapışmasını ve renginin homojen çıkmasını sağlar. Son kat olarak
+            mineral bazlı, akrilik veya silikon sıvalar tercih edilebilir. KKTC&apos;nin
+            yoğun güneşi göz önüne alındığında silikon sıvalar daha uzun ömürlü ve daha
+            az kirlenme eğilimlidir. Renk seçiminde açık tonlar ısı emilimini azaltır.
+          </p>
+          <p>
+            <strong>Dikkat:</strong> Son kat sıva sıcak ve güneşli günlerde uygulanmamalıdır
+            — malzeme çok hızlı kuruyarak çatlak oluşturur. Kıbrıs&apos;ta yaz aylarında
+            sabah erken saatlerde veya akşam üstü saatlerde, gölgeli cephelerde çalışmak
+            doğru yaklaşımdır.
+          </p>
+
+          <InfoBox type="tip" title="KKTC İçin Uygulama Takvimi">
+            <p>
+              Kıbrıs ikliminde mantolama uygulaması için en ideal dönemler: <strong>İlkbahar
+              (Mart - Mayıs)</strong> ve <strong>sonbahar (Eylül - Kasım)</strong> aylarıdır.
+              Bu dönemlerde sıcaklık 15-28°C arasında, nem dengeli, yağış riski düşüktür.
+              Temmuz-Ağustos&apos;ta aşırı sıcak ve Aralık-Şubat&apos;ta yağış ve nem, uygulama
+              kalitesini olumsuz etkiler.
+            </p>
+          </InfoBox>
+        </section>
+
+        {/* Sık Yapılan Hatalar */}
+        <section id="hatalar">
+          <h2>Sık Yapılan Hatalar</h2>
+          <p>
+            Mantolama uygulamalarında karşılaştığımız sık tekrar eden hataların büyük çoğunluğu,
+            maliyet düşürme kaygısı veya teknik bilgi eksikliğinden kaynaklanır. Uygulamayı
+            yaptırmadan önce aşağıdaki hataların farkında olmak, doğru firmayı seçmenize
+            ve kaliteli iş yaptırmanıza yardımcı olur.
+          </p>
+
+          <h3>1. Islak veya Nemli Yüzeye Uygulama</h3>
+          <p>
+            Kıbrıs&apos;ın kış yağmurları ve yüksek nem ortamında, yüzeyin ıslak olduğu dönemde
+            uygulama yapılması hem yapıştırıcının hem de macunun bağ kuvvetini ciddi ölçüde
+            düşürür. Sistem görünürde düzgün görünse de birkaç yıl içinde kabarma, dökülme
+            ve ayrışma başlar. Doğru yol, uygulamadan önce duvara nem ölçeri ile kontrol
+            yapılmasıdır.
+          </p>
+
+          <h3>2. Yetersiz Dübel Sayısı</h3>
+          <p>
+            Maliyet düşürmek amacıyla m² başına dübel sayısının azaltılması, rüzgar yükünde
+            sistemin bütününün ya da bölümlerinin düşmesine yol açabilir. Özellikle çatı
+            yakını, köşe ve kenar bölgelerinde yetersiz dübelleme çok tehlikelidir. Standart
+            iç alan için minimum 6 adet/m², kenar ve köşe bölgelerinde 9 adet/m² önerilir.
+          </p>
+
+          <h3>3. Donatı Filesi Bindirme Yetersizliği</h3>
+          <p>
+            Levhalar arası derzler üzerine gelen file bindirmelerinin yetersiz bırakılması,
+            derz boyunca çatlak oluşmasına neden olur. Sık görülen bir başka hata ise
+            pencere köşelerinde köşegen takviye filesin uygulanmamasıdır. Bu noktalarda
+            oluşan çatlaklar içeriden görmek güç olduğundan fark edilmeden büyür.
+          </p>
+
+          <h3>4. Hava Koşullarına Dikkat Edilmemesi</h3>
+          <p>
+            Kıbrıs&apos;ta yazın yoğun güneş altında, özellikle güney cephelerde, macun ve
+            sıva uygulamalarının yapılması çok yaygın ama yanlış bir uygulamadır. Malzeme
+            çok hızlı kuruyarak &quot;güneş çatlağı&quot; adı verilen ince ağ şeklinde
+            çatlaklara yol açar. Bu çatlaklar sonradan boyayla kapatılsa da nem giriş
+            yolunu kapatmaz.
+          </p>
+
+          <h3>5. Levhaların Düzgün Kademeli Yerleştirilmemesi</h3>
+          <p>
+            Yatay veya dikey derzlerin aynı hizada bırakılması, ısı köprüsü oluşturur.
+            Özellikle köşe bölgelerinde levhaların üst üste geçiş yapmaması, sistemi
+            zayıf noktalar bırakır. Tuğla örgüsü mantığıyla kademeli yerleştirme
+            zorunludur.
+          </p>
+
+          <h3>6. Su Basman Çıtasının Atlanması</h3>
+          <p>
+            Bazı uygulamalarda hız kazanmak amacıyla alt başlangıç profili monte edilmeden
+            doğrudan levha yapıştırılır. Bu durumda sistemin alt kenarı açık kalır; zemin
+            rutubeti, su serpintisi ve böcekler sisteme kolayca girer. KKTC&apos;nin deniz
+            seviyesi yakınındaki binalarında bu özellikle kritik bir hatadır.
+          </p>
+
+          <CheckList
+            title="Mantolama Teklifi Alırken Sorulacak Sorular"
+            items={[
+              'Levha kalınlığı kaç cm? (Minimum 5 cm önerilir)',
+              'Hangi marka ve sınıf dübel kullanılacak?',
+              'Dübel sayısı m² başına kaç adet?',
+              'File gramajı nedir? (160 g/m² ve üzeri)',
+              'Hava koşullarına göre çalışma takvimi var mı?',
+              'Son kat için hangi tür sıva? Silikon mu, akrilik mi?',
+              'İşçilik ve malzeme için ayrı ayrı garanti var mı?',
+            ]}
+          />
+        </section>
+
+        {/* Sonuç */}
+        <section id="sonuc">
+          <h2>Sonuç</h2>
+          <p>
+            Mantolama, KKTC ikliminde sadece konfor değil; enerji tasarrufu, yapısal koruma
+            ve bina değeri açısından da somut getirisi olan bir yatırımdır. Özellikle Girne,
+            Lefkoşa ve Gazimağusa&apos;da yaz aylarında elektrik faturalarıyla boğuşan ev
+            sahipleri ve mülk yöneticileri için mantolama, kısa vadede maliyetli görünse de
+            orta ve uzun vadede kendini fazlasıyla öder.
+          </p>
+          <p>
+            Bu rehberde özetlediklerimiz:
+          </p>
+          <ul>
+            <li>Mantolama, çok katmanlı bir sistem olup uygulama kalitesi malzeme kadar önemlidir</li>
+            <li>KKTC&apos;nin sıcak iklimi, deniz tuzu etkisi ve kış nemi mantolama uygulamasını özellikle değerli kılar</li>
+            <li>EPS çoğu konut projesi için ekonomik ve yeterli performanslı seçenektir; taş yünü yangın güvenliği ve akustik konfor gerektiren yapılar için idealdir</li>
+            <li>Altı adımlı uygulama sürecinde her katman kritiktir; hiçbir adım atlanamaz</li>
+            <li>Sık yapılan hatalar — ıslak yüzey, az dübel, yetersiz file — sistemin ömrünü dramatik biçimde kısaltır</li>
+          </ul>
+          <p>
+            <strong>Düzkar Dizayn</strong> olarak KKTC genelinde mantolama uygulamalarını
+            25 yılı aşkın deneyimimizle gerçekleştiriyoruz. Girne, Lefkoşa ve Gazimağusa&apos;da
+            tamamladığımız projeler, doğru uygulanan mantolama sisteminin ne kadar fark
+            yarattığını somut olarak ortaya koyuyor.
+          </p>
+          <p>
+            Binanıza uygun sistem, doğru kalınlık ve maliyet analizi için{' '}
+            <Link href="/#iletisim">
+              ücretsiz keşif talebinde bulunun
+            </Link>
+            . Uzmanlarımız yerinde inceleme yaparak size en uygun mantolama çözümünü önersin.
+            Ayrıca{' '}
+            <Link href="/hizmetler/ic-ve-dis-cephe-uygulamalari">
+              cephe uygulamaları sayfamızı
+            </Link>
+            {' '}ziyaret ederek hizmetlerimiz hakkında daha fazla bilgi edinebilirsiniz.
+          </p>
+        </section>
+      </BlogContent>
+    );
+  }
+
   // Diğer blog yazıları için default content
   return (
     <BlogContent>

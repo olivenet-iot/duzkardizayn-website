@@ -97,6 +97,28 @@ export const blogPosts: BlogPost[] = [
       { id: 'sonuc', title: 'Sonuç', level: 2 },
     ],
   },
+  {
+    slug: 'kktcde-mantolama-nedir-ve-neden-onemli',
+    title: 'Mantolama Nedir? KKTC Evleri İçin Kapsamlı Rehber',
+    excerpt: 'Mantolama sisteminin ne olduğu, KKTC ikliminde neden gerekli olduğu ve doğru uygulama adımları hakkında kapsamlı rehber.',
+    coverImage: '/images/blog/mantolama-cover.jpg',
+    author: 'Düzkar Dizayn',
+    publishedAt: '2026-02-10',
+    category: 'Rehber',
+    tags: ['mantolama', 'ısı yalıtımı', 'dış cephe', 'kıbrıs', 'enerji tasarrufu', 'EPS', 'taş yünü', 'girne', 'kktc'],
+    readingTime: 14,
+    metaTitle: 'Mantolama Nedir? KKTC Evleri İçin Rehber | Düzkar Dizayn',
+    metaDescription: 'Kuzey Kıbrıs\'ta mantolama neden gerekli? EPS ve taş yünü sistemleri, uygulama adımları, sık yapılan hatalar ve dikkat edilmesi gerekenler.',
+    tableOfContents: [
+      { id: 'giris', title: 'Giriş', level: 2 },
+      { id: 'mantolama-nedir', title: 'Mantolama Nedir?', level: 2 },
+      { id: 'kktcde-mantolama', title: 'KKTC İkliminde Mantolama', level: 2 },
+      { id: 'sistem-secimi', title: 'Sistem Seçimi: EPS mi Taş Yünü mü?', level: 2 },
+      { id: 'uygulama-adimlari', title: 'Uygulama Adımları', level: 2 },
+      { id: 'hatalar', title: 'Sık Yapılan Hatalar', level: 2 },
+      { id: 'sonuc', title: 'Sonuç', level: 2 },
+    ],
+  },
 ];
 
 // Helper Fonksiyonlar
