@@ -14,7 +14,7 @@ export interface BlogPost {
   author: string;
   publishedAt: string;
   updatedAt?: string;
-  category: 'İzolasyon' | 'Cephe' | 'Tadilat' | 'Haberler';
+  category: 'İzolasyon' | 'Cephe' | 'Tadilat' | 'Haberler' | 'Rehber';
   tags: string[];
   readingTime: number;
   metaTitle: string;
@@ -78,12 +78,12 @@ export const blogPosts: BlogPost[] = [
     slug: 'kktcde-nem-sorunu-sebebi-ve-cozumu',
     title: 'KKTC\'de Nem Sorunu: Evinizdeki Nemin Gerçek Sebebi ve Kalıcı Çözümleri',
     excerpt: 'Kuzey Kıbrıs\'ta ev ve işyerlerinde sıkça karşılaşılan nem sorunlarının gerçek kaynakları, sağlığa etkileri ve profesyonel çözüm yöntemleri. Duvar nemi, tavan sızıntısı, bodrum rutubeti için kalıcı çözüm rehberi.',
-    coverImage: '/images/blog/izolasyon-rehberi-cover.jpg',
+    coverImage: '/images/blog/nem-sorunu-cover.jpg',
     author: 'Düzkar Dizayn',
     publishedAt: '2026-01-15',
-    category: 'İzolasyon',
+    category: 'Rehber',
     tags: ['nem sorunu', 'duvar nemi', 'rutubet', 'kıbrıs', 'küf', 'su sızıntısı', 'izolasyon', 'nem giderme', 'girne'],
-    readingTime: 9,
+    readingTime: 15,
     metaTitle: 'KKTC\'de Nem Sorunu: Sebepleri ve Kalıcı Çözümleri | Düzkar Dizayn',
     metaDescription: 'Kuzey Kıbrıs\'ta evinizdeki nemin gerçek sebebi nedir? Duvar nemi, tavan sızıntısı, bodrum rutubeti. Uzman rehberiyle kalıcı çözümler ve profesyonel izolasyon.',
     tableOfContents: [
@@ -139,4 +139,4 @@ export function formatDate(dateString: string): string {
   });
 }
 
-export const blogCategories = ['Tümü', 'İzolasyon', 'Cephe', 'Tadilat', 'Haberler'] as const;
+export const blogCategories = ['Tümü', 'İzolasyon', 'Cephe', 'Tadilat', 'Rehber', 'Haberler'] as const;
