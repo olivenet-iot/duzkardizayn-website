@@ -879,6 +879,275 @@ function BlogPostContent({ slug }: { slug: string }) {
     );
   }
 
+  if (slug === 'kktcde-nem-sorunu-sebebi-ve-cozumu') {
+    return (
+      <BlogContent>
+        {/* Giriş */}
+        <section id="giris">
+          <h2>Giriş</h2>
+          <p>
+            <strong>KKTC&apos;de nem sorunu</strong>, ev sahiplerinin en sık şikâyet ettiği yapı sorunlarının başında geliyor.
+            Duvarda beliren sarı lekeler, pencerelerin buğulanması, bodrum katta hissedilen rutubet kokusu veya
+            tavanda oluşan küf izleri — bunların hepsi aynı temele işaret ediyor: <strong>yapının neme karşı
+            yeterince korunmamış olması.</strong>
+          </p>
+          <p>
+            Ancak pek çok kişi asıl sorunu yanlış teşhis ediyor. &quot;Havalandırmayı artırayım&quot;,
+            &quot;nem giderici cihaz alayım&quot; ya da &quot;üstüne boya vurdurayım&quot; gibi geçici
+            çözümlere başvuruyor. Oysa Kuzey Kıbrıs&apos;ın iklim ve toprak koşulları göz önüne alındığında,
+            nem sorununu kalıcı olarak çözmenin tek yolu <strong>kaynağını doğru tespit edip profesyonel
+            izolasyon uygulamak</strong>tır.
+          </p>
+          <p>
+            Bu rehberde, KKTC&apos;deki binaların neden bu kadar sık nem problemiyle karşılaştığını,
+            nem türlerini nasıl ayırt edeceğinizi ve her biri için hangi çözümlerin kalıcı sonuç
+            verdiğini ele alıyoruz.
+          </p>
+        </section>
+
+        {/* Nem Kaynakları */}
+        <section id="nem-kaynaklari">
+          <h2>KKTC&apos;de Nem Sorunlarının Kaynakları</h2>
+          <p>
+            Kuzey Kıbrıs&apos;ta nem sorunları diğer Akdeniz ülkelerine kıyasla daha yoğun yaşanır.
+            Bunun birkaç temel nedeni var:
+          </p>
+
+          <h3>1. Deniz İklimi ve Tuzlu Nem</h3>
+          <p>
+            Girne başta olmak üzere kıyı şeridindeki yapılar, denizden gelen tuzlu ve nemli hava akımına
+            sürekli maruz kalır. Tuzlu nem, betona ve sıvaya normal nemden çok daha hızlı işler; boya
+            dökülmelerine, sıva patlamalarına ve demir korozyonuna yol açar. Bu etki, denize 500 metre
+            mesafede bile belirgin biçimde hissedilir.
+          </p>
+
+          <h3>2. Kil Oranı Yüksek Toprak Yapısı</h3>
+          <p>
+            KKTC&apos;nin büyük bölümünde kil içeriği yüksek toprak yapısı hâkimdir. Kil, suyu emer ve
+            uzun süre bünyesinde tutar. Yağışlı kış aylarında bu topraklar doygun hale gelir ve
+            temel ile bodrum duvarlarına sürekli nem baskısı uygular. İzolasyonsuz bir temelde bu
+            nem er ya da geç içeriye sızar.
+          </p>
+
+          <h3>3. Sıcaklık Farkları</h3>
+          <p>
+            Kıbrıs&apos;ta yaz aylarında 40°C&apos;ye ulaşan sıcaklıklar, kışın 8-10°C&apos;ye kadar düşer.
+            Bu büyük sıcaklık farkı, bina malzemelerinin genleşip büzülmesine neden olur.
+            Zamanla mikro çatlaklar oluşur ve bu çatlaklar nem girişine açık kapıya dönüşür.
+          </p>
+
+          <h3>4. Çatısız veya Düz Çatılı Yapılar</h3>
+          <p>
+            KKTC&apos;deki binaların büyük çoğunluğu düz çatı veya teras sistemine sahiptir. Eğimli
+            çatılara kıyasla su birikme riski çok daha yüksektir. Doğru izolasyon yapılmamış bir düz
+            çatıda, yağmur suyu yavaş yavaş beton içine işler ve yıllarca fark edilmeden ilerlediği
+            olur.
+          </p>
+
+          <h3>5. Eski Yapılarda Yetersiz ya da Hiç Olmayan İzolasyon</h3>
+          <p>
+            1990&apos;lar ve öncesinde inşa edilen binaların büyük çoğunluğunda su yalıtımı ya hiç
+            yapılmamış ya da günümüz standartlarının çok altında kalmıştır. Bu yapılarda nem,
+            artık kronik bir sorun haline gelmiştir.
+          </p>
+        </section>
+
+        {/* Nem Çeşitleri */}
+        <section id="nem-cesitleri">
+          <h2>Nem Çeşitleri ve Belirtileri</h2>
+          <p>
+            Tüm nem sorunları aynı değildir. Doğru çözümü uygulamak için önce hangi tür nemle
+            karşı karşıya olduğunuzu anlamak gerekir.
+          </p>
+
+          <h3>Yükselen Nem (Kapiler Nem)</h3>
+          <p>
+            Topraktaki su, kılcal kanallar aracılığıyla duvarın içine emilir ve yukarı doğru çıkar.
+            Genellikle zemin kattan başlar; duvarda 50-150 cm yüksekliğe kadar çıkan ıslak iz,
+            tuz birikintisi (eflorasan) ve boya dökülmesi görülür. En belirgin özelliği:
+            yağmursuz dönemlerde bile sıvının devam etmesi.
+          </p>
+
+          <h3>Sızdırma Nemi</h3>
+          <p>
+            Yağmur suyu veya dış ortam nemi, çatlak, derz veya yetersiz izolasyon noktasından
+            yapı içine girer. Çatı, teras, balkon veya dış duvarlardan kaynaklanır. Yağmurla
+            birlikte artar, kurur; ancak izolasyon giderilmediği için tekrarlar.
+          </p>
+
+          <h3>Kondansasyon (Yoğuşma) Nemi</h3>
+          <p>
+            İç mekândaki ılık hava, soğuk yüzeyle temas ettiğinde yoğuşur. Pencere kenarları,
+            köşeler ve soğuk köprü oluşan noktalarda görülür. Özellikle kış aylarında sabahları
+            fark edilir. Isı yalıtımı eksikliği temel nedendir.
+          </p>
+
+          <h3>Bodrum ve Temel Nemi</h3>
+          <p>
+            Yeraltı suyu veya topraktan gelen nem, temel ve bodrum duvarlarına basınç uygular.
+            Zemin katta toprak kokusu, duvarda beyaz tuz lekesi ve zemin ıslaklığı belirtileri
+            görülür. Kıbrıs&apos;ta kış aylarında yeraltı suyu seviyesi yükseldiğinden, bu tür nem
+            en çok Kasım-Mart döneminde belirginleşir.
+          </p>
+        </section>
+
+        {/* Sağlık Etkileri */}
+        <section id="saglik-etkileri">
+          <h2>Nemin Sağlığa ve Yapıya Etkileri</h2>
+
+          <h3>Sağlık Riskleri</h3>
+          <p>
+            Nem ve küf sorunu sadece estetik bir problem değil, ciddi bir sağlık riskidir.
+            Nemli ortamlarda gelişen küf sporları hava yoluyla yayılır ve özellikle çocuklar,
+            yaşlılar ve astım hastaları için tehlike oluşturur.
+          </p>
+          <ul>
+            <li>Kronik öksürük ve solunum yolu enfeksiyonları</li>
+            <li>Alerjik reaksiyonlar ve astım tetikleyicisi</li>
+            <li>Göz, burun ve boğaz tahrişi</li>
+            <li>Uzun süreli maruziyette immün sistem zayıflaması</li>
+          </ul>
+
+          <h3>Yapısal Hasarlar</h3>
+          <p>
+            Nem, zamanla yapının kendisine ciddi zarar verir ve onarım maliyetleri katlanarak
+            artar:
+          </p>
+          <ul>
+            <li>Beton içindeki demirin paslanması ve yapısal dayanımın azalması</li>
+            <li>Sıva ve boyaların dökülmesi, kabarması</li>
+            <li>Ahşap unsurların çürümesi</li>
+            <li>Isı yalıtım malzemelerinin performans kaybı</li>
+            <li>Zemin kaplamalarının bozulması</li>
+            <li>Mülk değerinin düşmesi</li>
+          </ul>
+        </section>
+
+        {/* Teşhis */}
+        <section id="teshis">
+          <h2>Nem Kaynağını Nasıl Teşhis Edersiniz?</h2>
+          <p>
+            Doğru çözüme ulaşmak için önce nem kaynağını doğru belirlemek gerekir. Birkaç
+            pratik test yöntemi:
+          </p>
+
+          <h3>Alüminyum Folyo Testi</h3>
+          <p>
+            Nem gördüğünüz duvara yaklaşık 30x30 cm boyutunda alüminyum folyo bantlayın,
+            kenarlarını iyice kapatın. 24-48 saat bekleyin.
+          </p>
+          <ul>
+            <li><strong>Folyo duvar tarafında ıslaksa:</strong> Nem duvarın içinden geliyor (yükselen nem veya sızdırma)</li>
+            <li><strong>Folyo oda tarafında ıslaksa:</strong> Nem havadan geliyor (kondansasyon)</li>
+            <li><strong>Her iki taraf da ıslaksa:</strong> Kombinasyon sorunu var, uzman değerlendirmesi şart</li>
+          </ul>
+
+          <h3>Nem Ölçer (Higrometre)</h3>
+          <p>
+            İç mekânda bağıl nem %60&apos;ın üzerindeyse kondansasyon riski yüksek demektir.
+            Ideal iç mekan nemi %40-55 arasında olmalıdır.
+          </p>
+
+          <h3>Mevsimsel Gözlem</h3>
+          <p>
+            Nem sorunu yağmurlu dönemlerde artıp kuruk dönemlerde azalıyorsa sızdırma nemi;
+            her mevsim devam ediyorsa yükselen nem veya temel sorunu olabilir.
+          </p>
+        </section>
+
+        {/* Çözüm Yöntemleri */}
+        <section id="cozum-yontemleri">
+          <h2>Kalıcı Çözüm Yöntemleri</h2>
+
+          <h3>Çatı ve Teras İzolasyonu</h3>
+          <p>
+            Üstten gelen nem için en etkili çözüm, çatı ve teras yüzeyine profesyonel su yalıtımı
+            uygulamaktır. KKTC koşullarında UV&apos;ye dayanıklı, elastik membran sistemleri
+            tercih edilmelidir.{' '}
+            <Link href="/hizmetler/izolasyon-ve-su-yalitimi">
+              Teras ve çatı izolasyonu hizmetlerimiz
+            </Link>{' '}
+            hakkında detaylı bilgi alabilirsiniz.
+          </p>
+
+          <h3>Balkon ve Islak Hacim İzolasyonu</h3>
+          <p>
+            Balkondaki su birikmesi ve alt kata sızma, çok katlı binalarda sık yaşanan bir
+            sorundur. Seramik altına uygulanan elastik izolasyon sistemi kalıcı çözüm sağlar.
+            Islak hacim (banyo, mutfak) izolasyonu da aynı prensiple yapılır.
+          </p>
+
+          <h3>Temel ve Perde Duvar İzolasyonu</h3>
+          <p>
+            Bodrum katında veya zemin katta yükselen nem varsa, temel izolasyonu şarttır.
+            Dışarıdan ulaşılabilen noktalarda bitüm esaslı membran uygulaması, içeriden ise
+            negatif yönlü izolasyon sıvası kullanılır.
+          </p>
+
+          <h3>Dış Cephe Koruması</h3>
+          <p>
+            Dış cephe boyası seçimi de önemlidir. Su itici, nefes alabilen ve UV&apos;ye dayanıklı
+            silikonlu cephe boyaları, nem geçişini önemli ölçüde azaltır.{' '}
+            <Link href="/hizmetler/ic-ve-dis-cephe-uygulamalari">
+              Dış cephe uygulama hizmetlerimizi
+            </Link>{' '}
+            inceleyebilirsiniz.
+          </p>
+
+          <h3>Isı Köprüsü Giderme (Mantolama)</h3>
+          <p>
+            Kondansasyon kaynaklı nem için ısı yalıtımı şarttır. Dış cepheye uygulanan mantolama
+            sistemi, duvar yüzey sıcaklığını artırarak yoğuşmayı önler.
+          </p>
+        </section>
+
+        {/* Ne Zaman Uzman */}
+        <section id="ne-zaman-uzman">
+          <h2>Ne Zaman Uzman Çağırmalısınız?</h2>
+          <p>
+            Küçük yoğuşma sorunları havalandırmayla çözülebilir. Ancak aşağıdaki durumlarda
+            mutlaka profesyonel değerlendirme alın:
+          </p>
+          <ul>
+            <li>Nem lekesi veya küf, boyama sonrasında yeniden çıkıyorsa</li>
+            <li>Bodrum veya zemin katta toprak kokusu ve ıslaklık varsa</li>
+            <li>Duvarda kabarma, çatlak veya tuz birikintisi görülüyorsa</li>
+            <li>Yağmur sonrasında tavanda veya duvarda ıslak iz beliriyorsa</li>
+            <li>Birden fazla odada aynı anda nem sorunu varsa</li>
+          </ul>
+          <p>
+            Bu belirtiler, geçici çözümlerin ötesinde yapısal bir müdahale gerektiğini gösterir.
+            Düzkar Dizayn olarak <strong>Girne, Lefkoşa, Gazimağusa ve tüm KKTC</strong> genelinde
+            ücretsiz keşif hizmeti sunuyoruz. Uzmanlarımız yerinde inceleyerek gerçek kaynağı
+            tespit eder ve kalıcı çözüm önerir.
+          </p>
+        </section>
+
+        {/* Sonuç */}
+        <section id="sonuc">
+          <h2>Sonuç</h2>
+          <p>
+            KKTC&apos;deki nem sorunları, adanın iklim ve toprak özellikleri nedeniyle yapısal
+            bir gerçektir. Ancak &quot;her bina böyledir&quot; deyip alışmak zorunda değilsiniz.
+            Doğru teşhis ve kalıcı izolasyon uygulamasıyla nem sorunu tamamen giderilebilir.
+          </p>
+          <p>
+            Unutmayın: Nem sorununu ne kadar erken çözerseniz, onarım maliyeti o kadar düşük
+            olur. Geç kalınan her yıl, betonun ve demirin zarar görmesi anlamına gelir.
+          </p>
+          <p>
+            25 yılı aşkın deneyimimizle binlerce yapıda nem ve su sızıntısı sorununu kalıcı
+            olarak çözdük. Evinizde veya işyerinizde nem problemi yaşıyorsanız,{' '}
+            <Link href="/#iletisim">
+              bizimle iletişime geçin
+            </Link>
+            ; ücretsiz keşif ve teknik değerlendirme yapalım.
+          </p>
+        </section>
+      </BlogContent>
+    );
+  }
+
   // Diğer blog yazıları için default content
   return (
     <BlogContent>

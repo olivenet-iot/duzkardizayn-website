@@ -81,5 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Blog Sayfaları
     ...blogUrls,
+    // Hakkımızda
+    {
+      url: `${baseUrl}/hakkimizda`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
   ];
 }
