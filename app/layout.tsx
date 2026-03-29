@@ -320,13 +320,7 @@ const structuredData = {
       },
     ],
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "127",
-    bestRating: "5",
-    worstRating: "1",
-  },
+
 };
 
 export default function RootLayout({
