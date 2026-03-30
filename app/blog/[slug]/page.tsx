@@ -1893,6 +1893,301 @@ function BlogPostContent({ slug }: { slug: string }) {
     );
   }
 
+  if (slug === 'kktcde-havuz-izolasyonu-kapsamli-rehber') {
+    return (
+      <BlogContent>
+        {/* Giriş */}
+        <section id="giris">
+          <p>
+            Girne&apos;de denize nazır bir villada oturuyorsunuz. Yaz başında havuzu doldurdunuz, çocuklar
+            sevinçle atladı suya. İki hafta geçmeden bodrum katında nem lekesi belirdi, duvarlar ıslandı.
+            Havuzu boşalttınız, baktınız, görünürde bir çatlak yok. Peki su nereye gidiyor?
+          </p>
+          <p>
+            Bu sahne KKTC&apos;de onlarca villa sahibinin yaşadığı tablodur. Havuz sızıntısı sadece su
+            kaybından ibaret değil — bodrum hasar görür, temel etkilenir, tamir maliyeti yeni inşaattan
+            pahalıya gelir. Ve asıl sorun çoğunlukla inşaat sırasında yapılan tek bir hatadan kaynaklanır:
+            yanlış ya da eksik izolasyon sistemi.
+          </p>
+          <p>
+            Bu rehberde KKTC ikliminin havuzlara özgü baskısını, sızıntının gerçek nedenlerini ve kalıcı
+            çözümün nasıl uygulandığını adım adım açıklıyoruz.
+          </p>
+        </section>
+
+        {/* KKTC İkliminin Havuza Etkisi */}
+        <section id="iklim-etkisi">
+          <h2>KKTC İkliminin Havuza Özgü Etkisi</h2>
+          <p>
+            Kıbrıs iklimi standart Akdeniz ikliminden daha sert. Havuzlar bu iklimde dört ayrı cepheden
+            baskı altına girer:
+          </p>
+
+          <h3>1. Aşırı Sıcaklık Döngüsü</h3>
+          <p>
+            Girne&apos;de yaz aylarında hava sıcaklığı 38–42°C&apos;ye ulaşır. Gece ise 22–25°C&apos;ye
+            düşer. Bu 15–20 derecelik günlük fark havuz betonunu sürekli genleştirip büzüştürür. Yılda
+            yüzlerce kez tekrarlanan bu termal stres, izolasyon katmanlarında mikro çatlaklara zemin hazırlar.
+          </p>
+
+          <h3>2. Yoğun UV Radyasyonu</h3>
+          <p>
+            KKTC&apos;de Haziran–Ağustos ayları arasında UV indeksi 10–11&apos;e ulaşır. Avrupa&apos;nın
+            kuzeyinde bu değer 5–6 civarındadır. UV&apos;ye dayanımsız yalıtım malzemeleri açıkta kalan
+            yüzeylerde 2–3 yıl içinde bozulmaya başlar, esnekliğini kaybeder ve çatlar.
+          </p>
+
+          <h3>3. Deniz Tuzu ve Klorür İyonu</h3>
+          <p>
+            Girne kıyı şeridine 0–5 km mesafede konumlanan villaların büyük çoğunluğu deniz tuzlu havanın
+            etkisi altındadır. Klorür iyonları zamanla beton içine nüfuz eder, donatıyı korozyona uğratır
+            ve izolasyonu zayıflatır. Üstelik havuzun kendi klorüne ek olarak dışarıdan da tuz baskısı
+            geldiğinde durum ikiye katlanır.
+          </p>
+
+          <h3>4. Kış Yağmurları ve Yeraltı Suyu Basıncı</h3>
+          <p>
+            Kasım–Şubat arasında yoğunlaşan kış yağmurları yeraltı su seviyesini yükseltir. Dıştan içe
+            baskı yapan bu negatif su basıncı, sadece iç yüzeyi izole edilmiş havuzlarda sızıntıya yol açar.
+          </p>
+
+          <InfoBox type="warning" title="KKTC Havuzlarına Özel Risk">
+            Kıbrıs&apos;ta havuz betonu hem içten (klor + sürekli su basıncı) hem dıştan (yeraltı suyu +
+            deniz tuzu) çift yönlü baskı altındadır. Bu nedenle sadece iç yüzey izolasyonu yetmez —
+            dış yüzey de mutlaka kapatılmalıdır.
+          </InfoBox>
+        </section>
+
+        {/* Neden Sızar */}
+        <section id="neden-sizlar">
+          <h2>Havuz Neden Sızar? 5 Ana Neden</h2>
+
+          <StepByStep
+            steps={[
+              {
+                title: 'Tek Taraflı veya Eksik İzolasyon',
+                description: 'En yaygın hata: iç yüzey izole edildi, dış yüzey atlandı. Ya da dış membran yapıldı ama iç yüzey havuz tipi ürünle değil standart banyo malzemesiyle yapıldı. Klor standart çimento esaslı yalıtımı 3–5 yılda bozar.',
+              },
+              {
+                title: 'Dilatasyon Derzleri İhmal Edildi',
+                description: 'Havuz betonu termal genleşme nedeniyle hareket eder. Dilatasyon derzi yoksa ya da esnek mastikle doldurulmamışsa çatlak kaçınılmazdır. KKTC\'nin sıcaklık farkları bu riski Avrupa\'ya kıyasla 2 katına çıkarır.',
+              },
+              {
+                title: 'Skimmer ve Armatür Detayları Eksik',
+                description: 'Skimmer kutusu ile havuz duvarı birleşimi, aydınlatma armatürleri ve boru geçişleri özel conta ve kristalize malzeme ile kapatılmazsa bu noktalardan sürekli sızıntı olur. Görünürde çatlak yoktur ama su kayıp devam eder.',
+              },
+              {
+                title: 'Klora Dayanımsız Malzeme Seçimi',
+                description: 'Banyo veya teras için üretilmiş yalıtım malzemeleri havuza uygun değildir. Havuz suyu pH 7.2–7.8, klor konsantrasyonu 1–3 ppm — bu kimyasal ortama özel, klor dayanımlı ürünler kullanılmalıdır.',
+              },
+              {
+                title: 'Su Testi Yapılmadan Kaplama Geçildi',
+                description: 'İzolasyon bittikten sonra en az 7 gün su testi yapılmadan seramik kaplama geçilirse sızıntı varsa tespit edilemez. Sonradan seramiğin sökülerek yeniden yapılması hem masraflı hem zaman kaybıdır.',
+              },
+            ]}
+          />
+        </section>
+
+        {/* Doğru Sistem */}
+        <section id="dogru-sistem">
+          <h2>Doğru Sistem: İç + Dış Çift Katmanlı İzolasyon</h2>
+          <p>
+            KKTC koşullarında kalıcı havuz yalıtımı için iki sistem birlikte uygulanmalıdır:
+          </p>
+
+          <h3>İç Yüzey — Kristalize Sistem (QIS CRS PROMAX)</h3>
+          <p>
+            Kristalize yalıtım, normal membran veya sürme yalıtımdan farklı çalışır. Beton yüzeye
+            uygulanan kristalize malzeme nem ile reaksiyona girerek beton gözenekleri içinde büyüyen
+            kristaller oluşturur. Bu kristaller su geçişini mekanik olarak engeller ve beton ile
+            adeta bütünleşir — soyulmaz, ayrılmaz.
+          </p>
+          <p>
+            QIS CRS PROMAX bu sistemin KKTC&apos;de yaygın kullanılan temsilcisidir. 1.5–2 kg/m²
+            sarfiyatla uygulanır, klorür ve sürekli su basıncına dayanıklıdır. Havuz iç yüzeyi
+            için birincil tercih sebebi budur.
+          </p>
+
+          <h3>Dış Yüzey — Çift Kat Bitüm Membran (QIS BITUMAX 2K)</h3>
+          <p>
+            Havuzun dış yüzeyi — toprak ile temas eden kısım — yeraltı suyu ve nem basıncına karşı
+            korunmalıdır. Bunun için soğuk astar (QIS Bitüm Astar) üzerine çift kat SBS polyester
+            takviyeli bitüm membran uygulanır. Membran üzerine XPS levha koyularak geri dolgu
+            sırasında mekanik hasar önlenir.
+          </p>
+
+          <InfoBox type="info" title="Neden İkisi Birden?">
+            İç yüzey kristalize sistem havuz suyunun içten dışa geçişini engeller. Dış membran
+            sistem ise yeraltı suyunun dıştan içe girişini keser. İkisi birlikte tam çift yönlü
+            koruma sağlar. Sadece birini yapmak KKTC koşullarında yetersiz kalır.
+          </InfoBox>
+
+          <h3>Yardımcı Malzemeler</h3>
+          <p>
+            Sistemi tamamlayan diğer ürünler:
+          </p>
+          <ul>
+            <li><strong>QIS PAH BANDI</strong> — tüm iç köşelerde takviye bandı</li>
+            <li><strong>QIS QGLASS</strong> — cam elyaf file, zemin-duvar birleşimlerinde</li>
+            <li><strong>QIS PLUG</strong> — aktif su kaçağı varsa anında durdurma</li>
+            <li><strong>QIS MANŞON</strong> — boru geçişlerinde sızdırmazlık</li>
+          </ul>
+        </section>
+
+        {/* Adım Adım */}
+        <section id="adim-adim">
+          <h2>Adım Adım Uygulama</h2>
+
+          <StepByStep
+            steps={[
+              {
+                title: 'Yüzey Hazırlığı',
+                description: 'Beton minimum 28 gün kürlenmiş olmalıdır. Çatlaklar V kesim ile genişletilir, tamir harcı ile doldurulur. Tüm iç köşelerde kavis (paso) yapılır. Boru geçişleri ve skimmer montajı tamamlanmış olmalıdır. Kalıp yağı ve kir tamamen temizlenir.',
+              },
+              {
+                title: 'Dış Yüzey — Membran Uygulaması',
+                description: 'Kazı alanı hazırken dış yüzeye bitüm astar uygulanır, 4–6 saat beklenir. 1. kat 3mm membran şalümoyla uygulanır, 24 saat beklenir. 2. kat 4mm membran kaydırmalı eklenerek uygulanır. Köşe takviyeleri eklenir. XPS levhalarla membran korunarak geri dolgu yapılır.',
+              },
+              {
+                title: 'İç Yüzey — Detay Noktaları',
+                description: 'Skimmer kutusu çevresine, aydınlatma armatürlerine ve tüm boru geçişlerine QIS Manşon + kristalize malzeme ile özel detay uygulanır. Tüm iç köşelere QIS PAH BANDI yerleştirilir ve yalıtım harcı ile sabitlenir. Zemin-duvar birleşimine QIS QGLASS file konulur.',
+              },
+              {
+                title: 'Kristalize Uygulama (QIS CRS PROMAX)',
+                description: 'Beton yüzey tamamen ıslatılır — mat nemli, doygun olmalıdır (kuru yüzeye uygulanmaz). Kristalize harç hazırlanır. 1. kat yatay hareketlerle fırça ile sürülür. Kurumadan 2. kat dikey hareketlerle çapraz uygulanır. Toplam 2–3 mm kalınlık hedeflenir. Uygulama sonrası 3–5 gün yüzey nemli tutularak kür yapılır.',
+              },
+              {
+                title: 'Su Testi',
+                description: 'Havuz önce %50 dolulukta 3 gün beklenir, seviye kaybı ölçülür. Ardından tam dolulukta 7 gün daha beklenir. Kabul edilen maksimum kayıp: 0.5 cm/gün (buharlaşma hariç). Bu testi geçemeyen bir havuza seramik geçilmez.',
+              },
+              {
+                title: 'Seramik Kaplama',
+                description: 'Su testini geçen havuzda havuz tipi seramik yapıştırıcısı kullanılır — normal harç veya yapıştırıcı değil. Seramikler boşluk bırakmadan yapıştırılır. Derzler standart derz yerine epoksi derz dolgu (Fugapool veya benzeri) ile doldurulur. Su altı köşe detaylarına mastik uygulanır.',
+              },
+            ]}
+          />
+        </section>
+
+        {/* Yeni mi Yenileme mi */}
+        <section id="yeni-mi-yenileme">
+          <h2>Yeni Havuz mu, Yenileme mi, Sızıntı Tamiri mi?</h2>
+          <p>
+            Her senaryonun maliyet ve karmaşıklığı farklıdır:
+          </p>
+
+          <ComparisonTable
+            headers={['Senaryo', 'Avantaj', 'Dikkat Edilecek', 'Maliyet Etkisi']}
+            rows={[
+              { cells: ['Yeni İnşaat', 'Doğru sıra ve sistem kurulur, dıştan içe uygulanır', 'Beton kür süresi beklenmeli, aceleye getirilmemeli', 'En ekonomik — ilerleyen yıllarda sorun çıkmaz'] },
+              { cells: ['Yenileme (mevcut çalışan)', 'Mevcut sistemi güçlendirme imkanı', 'Eski kaplama söküm maliyeti, zemin analizi gerekir', 'Orta — ek işçilik ve malzeme'] },
+              { cells: ['Sızıntı Tamiri', 'Acil müdahale ile su kaybı durdurulur', 'Kaynağı bulmak zordur, seramik söküm gerekebilir', 'En yüksek — tamir + yeniden kaplama'], highlight: true },
+            ]}
+          />
+
+          <InfoBox type="tip" title="En Pahalı Seçenek: Sızıntıyı Beklemek">
+            Havuz sızıntısı başladıktan sonra müdahale maliyeti, baştan doğru yapmanın 3–5 katına
+            ulaşabilir. Yeni inşaat veya yenileme sırasında doğru sistemi kurmak her zaman
+            en akılcı tercihtir.
+          </InfoBox>
+        </section>
+
+        {/* Hatalar */}
+        <section id="hatalar">
+          <h2>KKTC&apos;de Havuz İzolasyonunda Sık Yapılan Hatalar</h2>
+
+          <CheckList
+            title="Kaçınılacak Hatalar"
+            variant="warning"
+            items={[
+              'Standart banyo yalıtımı kullanmak — klor dayanımsız malzemeler 3–5 yılda bozulur',
+              'Sadece iç yüzeyi yapmak, dış membranı atlamak',
+              'Skimmer ve aydınlatma armatürü detayını geçmek',
+              'Kristalize uygulama sonrası kür süresini kısaltmak (minimum 3–5 gün nemli tutulmalı)',
+              'Su testini 2–3 günde bitirmek — minimum 7 gün beklenmeli',
+              'Öğle sıcağında (35°C üzeri) kristalize uygulama yapmak — çok hızlı kurur, kristal oluşumu bozulur',
+              'Dilatasyon derzlerini normal mastik ile doldurmak — havuz tipi esnek mastik şart',
+              'Zemin ile duvar birleşiminde file takviyesi kullanmamak',
+            ]}
+          />
+
+          <CheckList
+            title="Uygulama Öncesi Kontrol Listesi"
+            variant="check"
+            items={[
+              'Beton minimum 28 gün kürlenmiş',
+              'Tüm çatlaklar ve petek boşluklar tamir edilmiş',
+              'Boru geçişleri ve skimmer montajı tamamlanmış',
+              'İç köşelerde kavis (paso) yapılmış',
+              'Klora dayanımlı havuz tipi ürünler seçilmiş',
+              'Hava sıcaklığı 8–30°C arasında (uygulama için ideal)',
+              'Yağmur beklentisi yok',
+            ]}
+          />
+        </section>
+
+        {/* Bakım */}
+        <section id="bakim">
+          <h2>İzolasyonu Uzun Tutmanın Yolu: Düzenli Bakım</h2>
+          <p>
+            Doğru izolasyon yapıldıktan sonra düzenli bakım ile ömrü önemli ölçüde uzatılabilir:
+          </p>
+
+          <ComparisonTable
+            headers={['Bakım İşlemi', 'Periyot', 'Neden Önemli']}
+            rows={[
+              { cells: ['Su kimyası kontrolü (pH, klor)', 'Haftalık', 'pH dengesizliği izolasyonu ve seramiği hızla yıpratır'] },
+              { cells: ['Görsel kontrol — çatlak, renk değişimi', 'Aylık', 'Erken tespit = küçük tamir, büyük maliyet önlenir'] },
+              { cells: ['Derz ve mastik kontrolü', '6 ayda bir', 'Derzler zamanla ayrılır, en sık sızıntı noktasıdır'] },
+              { cells: ['Profesyonel bakım ve kontrol', 'Yıllık', 'Yüzey aşınması, kristalize tabaka kontrolü'] },
+              { cells: ['Kapsamlı teknik değerlendirme', '5 yılda bir', 'Uzun vadeli sistem ömrü garantilenir'] },
+            ]}
+          />
+
+          <InfoBox type="info" title="KKTC İkliminde Özel Öneri">
+            Kış sezonunda (Kasım–Şubat) havuzu tamamen boşaltmayın. Su dolu havuz yeraltı suyu
+            basıncına karşı denge oluşturur. Boş havuz bu dönemde dıştan gelen su baskısıyla
+            kalkabilir ya da çatlayabilir.
+          </InfoBox>
+        </section>
+
+        {/* Sonuç */}
+        <section id="sonuc">
+          <h2>Sonuç</h2>
+          <p>
+            KKTC&apos;de villa havuzu sahibi olmak büyük bir konfor — ama aynı zamanda büyük bir sorumluluk.
+            Yıllık 38–42°C sıcaklık, 10+ UV indeksi, deniz tuzu ve kış yağmurlarının yarattığı çift yönlü
+            su baskısı, havuz betonunu sürekli zorlar.
+          </p>
+          <p>
+            Bu koşullarda kalıcı çözüm nettir: içten QIS CRS PROMAX kristalize sistem, dıştan çift kat
+            bitüm membran, tüm detay noktalarına özel uygulama ve minimum 7 günlük su testi. Kısayol
+            yoktur. Ama doğru yapıldığında 15–20 yıl sorunsuz çalışan bir havuz elde edilir.
+          </p>
+          <p>
+            Girne ve KKTC genelinde 25 yılı aşkın deneyimimizle havuz izolasyonu, yenileme ve sızıntı
+            tespiti konularında ücretsiz keşif yapıyoruz. Sorularınız için arayın ya da WhatsApp&apos;tan
+            yazın.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/#iletisim"
+              className="btn-primary text-center"
+            >
+              Ücretsiz Keşif İsteyin
+            </Link>
+            <Link
+              href="/hizmetler/izolasyon-ve-su-yalitimi"
+              className="btn-secondary text-center"
+            >
+              İzolasyon Hizmetlerimiz
+            </Link>
+          </div>
+        </section>
+      </BlogContent>
+    );
+  }
+
   if (slug === 'balkonda-su-sizintisi-kktc-rehberi') {
     return (
       <BlogContent>
