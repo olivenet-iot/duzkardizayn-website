@@ -1893,6 +1893,308 @@ function BlogPostContent({ slug }: { slug: string }) {
     );
   }
 
+  if (slug === 'balkonda-su-sizintisi-kktc-rehberi') {
+    return (
+      <BlogContent>
+        {/* Giriş */}
+        <section id="giris">
+          <h2>Giriş</h2>
+          <p>
+            Yağmurlu bir kış sabahı alt komşunuz kapınızı çalıyor: &quot;Tavanımızdan su damliyor, balkonunuzdan geliyor.&quot;
+            Ya da kendi balkonunuzda seramiklerin altında şüpheli ıslaklıklar fark ediyorsunuz — kuru havalarda
+            bile gitmeden duran nem lekeleri. Bu iki senaryo, Kuzey Kıbrıs&apos;ta her kış onlarca ev sahibinin
+            yaşadığı gerçek bir problem.
+          </p>
+          <p>
+            <strong>Balkon sızıntısı</strong>, küçük bir konfor sorunu gibi görünse de gecikildiğinde ciddi yapısal
+            hasara, alt kat anlaşmazlıklarına ve yüksek tamir maliyetlerine dönüşür. İyi haber şu: neden oluştuğu
+            anlaşılır, kalıcı çözümü vardır ve KKTC iklim koşullarına özgün koruma yöntemleri mevcuttur.
+          </p>
+          <p>
+            Bu rehberde, 25 yılı aşkın saha deneyimimizden derlenen gerçek tespitlerle balkon sızıntısının
+            köklerini, KKTC iklimine özgün risk faktörlerini ve kalıcı çözüm yolunu adım adım ele alıyoruz.
+          </p>
+        </section>
+
+        {/* KKTC İkliminin Balkona Etkisi */}
+        <section id="iklim-etkisi">
+          <h2>KKTC İkliminin Balkona Etkisi</h2>
+          <p>
+            Balkon sızıntısını anlamak için önce Kuzey Kıbrıs ikliminin balkona ne yaptığını anlamak gerekir.
+            Akdeniz iklimi balkonlar için görünürde ideal görünse de, gerçekte son derece zorlu koşullar oluşturur.
+          </p>
+
+          <h3>Aşırı UV ve Isıl Genleşme</h3>
+          <p>
+            KKTC&apos;de güneş radyasyonu, Orta Avrupa&apos;nın yaklaşık 2-3 katı düzeyindedir. Yazın doğrudan
+            güneş alan bir balkon döşemesi yüzey sıcaklığı 60-70°C&apos;ye ulaşır. Bu aşırı ısınma, betonu,
+            seramiği ve altındaki yalıtım katmanını günde onlarca derece ısıl döngüye sokar. Her genleşme-büzülme
+            döngüsü derz noktalarını, köşe birleşimlerini ve membran yüzeyini yavaşça yıpratır.
+          </p>
+          <p>
+            Sonuç: Türkiye veya Avrupa&apos;da 15-20 yıl dayanabilecek bir membran, KKTC ikliminde 8-12 yılda
+            UV yorgunluğu ve ısıl çatlama nedeniyle görevini yitirebilir.
+          </p>
+
+          <h3>Kış Yağışlarının Ani ve Yoğun Karakteri</h3>
+          <p>
+            KKTC kışları Orta Avrupa kadar uzun olmasa da yağışlar ani ve yoğun gelir. Kasım-Mart döneminde
+            saatler içinde düşen 40-60 mm yağış, yetersiz meyilli bir balkonda hızla su birikintisine dönüşür.
+            Biriken su, gözenekli beton veya açık derzlerden sızarak katlara ulaşır.
+          </p>
+
+          <h3>Deniz Tuzu Etkisi (Özellikle Girne Kıyısı)</h3>
+          <p>
+            Girne sahil şeridinde denizden gelen tuzlu hava, balkon betonunun gözeneklerine işler. Tuz, beton
+            kristal yapısını bozar, gözenekleri genişletir ve su geçirgenliğini artırır. Aynı zamanda demir
+            donatıların paslanmasını hızlandırır. Sahil balkonlarında bu etki, iç kesimdeki yapılara kıyasla
+            sızıntı riskini belirgin biçimde yükseltir.
+          </p>
+
+          <InfoBox type="info" title="KKTC Balkonu ile Avrupa Balkonu Arasındaki Fark">
+            <p>
+              Aynı kalitede malzeme ile yapılmış iki balkon düşünün: biri Almanya&apos;da, biri Girne&apos;de.
+              Almanya&apos;daki balkon 20 yıl sorunsuz dayanabilirken, Girne&apos;deki aynı sistem
+              10-12 yılda bakım gerektirebilir. Sebep: UV dozu, ısıl döngü sayısı ve deniz tuzu.
+              Bu nedenle KKTC&apos;de balkon izolasyonunda daha yüksek UV dayanımlı malzeme ve daha sık
+              bakım şarttır.
+            </p>
+          </InfoBox>
+        </section>
+
+        {/* Sızıntının 5 Ana Nedeni */}
+        <section id="nedenler">
+          <h2>Balkon Sızıntısının 5 Ana Nedeni</h2>
+          <p>
+            Sahada karşılaştığımız balkon sızıntılarının neredeyse tamamı beş temel nedene dayanır.
+            Genellikle bu nedenler tek başına değil, ikisi veya üçü bir arada ortaya çıkar.
+          </p>
+
+          <h3>1. Yanlış veya Yetersiz Meyil</h3>
+          <p>
+            Balkon döşemesinin gidere doğru en az %1.5-2 eğimli olması gerekir. Eğim eksikse su gidere
+            ulaşamaz, döşemede birikir. Birikintili su, birkaç saat içinde mikro çatlaklar ve derzlerden
+            sızarak aşağıya iner. Bu, en yaygın balkon sızıntısı nedenidir; eski yapılarda eğim ya hiç
+            hesaplanmamış ya da zamanla düzleşmiştir.
+          </p>
+
+          <h3>2. Kapı Eşiği Detay Hatası</h3>
+          <p>
+            Balkon kapısının eşiği ile döşeme arasındaki birleşim noktası, en kritik su engeli noktasıdır.
+            Bu birleşimde kullanılan mastik veya derz dolgusu UV etkisiyle sertleşip çatladığında, yağmur
+            suyu eşik altından iç mekana kaçar. KKTC&apos;de yüksek UV nedeniyle bu nokta ortalama
+            5-7 yılda bakım gerektirir.
+          </p>
+
+          <h3>3. Gider Çevresi Sızdırmazlık Sorunu</h3>
+          <p>
+            Balkon giderinin boruyla birleştiği nokta, üzerine membran veya manşon uygulanmadan
+            bırakıldığında su için açık bir kapı oluşturur. Yıllarca biriken kir ve bitki artıkları
+            gideri tıklarsa, biriken su mecburen döşemeden sızar. Bu neden özellikle bakımsız
+            balkanlarda sık görülür.
+          </p>
+
+          <h3>4. Membran/Yalıtım Katmanının Yıpranması</h3>
+          <p>
+            İnşaat sırasında doğru uygulanan bir balkon yalıtım sistemi bile sonsuz ömürlü değildir.
+            KKTC koşullarında çimento esaslı membranlar 10-15, likit poliüretan membranlar 12-18 yılda
+            yenileme gerektirir. UV ışınlarıyla çatlayan, ısıl döngüyle yorulan membran artık suyu
+            tutamaz. Üstelik bu hasar genellikle seramik altında gizlidir ve dışarıdan görülmez.
+          </p>
+
+          <h3>5. Genleşme Derzlerinin Bakımsızlığı</h3>
+          <p>
+            Döşeme ile duvar arasındaki köşe derzleri, balkanda termal hareket için bırakılmış
+            kasıtlı boşluklardır. Bu derzler esnekliğini yitirdiğinde veya tamamen açıldığında,
+            direkt su giriş yolu oluşur. Sert derz dolgusu yerine elastik mastik kullanılması
+            ve 5-7 yılda bir yenilenmesi gerekir.
+          </p>
+
+          <CheckList
+            title="Balkonunuzu Kontrol Edin"
+            variant="warning"
+            items={[
+              'Yağmur sonrasında balkonda su birikintisi oluyor mu? (meyil sorunu)',
+              'Kapı eşiği çevresinde nem veya leke var mı? (eşik detayı)',
+              'Gider çevresi kirli, tıkalı veya açık mı?',
+              'Seramik derzlerinde renk değişimi, kabarma veya dökülme var mı?',
+              'Duvar-döşeme köşesindeki mastik/sıvada çatlak görünüyor mu?',
+              'Alt komşuda tavan lekesi şikayeti var mı?',
+            ]}
+          />
+        </section>
+
+        {/* Alt Komşuya Su Kaçması */}
+        <section id="alt-komsu">
+          <h2>Alt Komşuya Su Kaçması: Nasıl İlerler, Ne Gerektirir?</h2>
+          <p>
+            Balkon sızıntısının en ciddi sonucu, alt katta yaşayan komşuya ulaşmasıdır. Bu süreç
+            genellikle sinsi bir şekilde ilerler — fark edildiğinde hasar çoktan oluşmuştur.
+          </p>
+
+          <h3>Sızıntı Nasıl İlerler?</h3>
+          <p>
+            Balkon döşemesinden sızan su önce beton döşemenin içine işler. Betonun gözenekli yapısı
+            suyu emer ve yavaş yavaş altındaki taşıyıcı kirişlere, kolonlara ulaştırır. Bu aşamada
+            demir donatılar paslanmaya başlar — görünürde hiçbir belirti yoktur. Pas hacim genişlettiği
+            için beton içeriden çatlamaya, parçalanmaya başlar. Son aşamada alt komşunun tavanında
+            sarı-kahverengi lekeler, nem, sonunda sıva dökülmesi ortaya çıkar.
+          </p>
+          <p>
+            Bu süreç balkon sızıntısından alt kat tavan lekesine kadar <strong>1-3 yıl</strong>
+            {' '}sürebilir. Yani alt komşu şikâyet ettiğinde, sızıntı genellikle çok daha önceden başlamıştır.
+          </p>
+
+          <InfoBox type="warning" title="Yasal Sorumluluk: Üst Kat Yükümlüdür">
+            <p>
+              KKTC&apos;de kat mülkiyeti mevzuatına göre, kendi balkonundan alt komşuya zarar veren
+              üst kat maliki sorumluluk taşır. Alt komşunun tavanındaki tamir masrafları, boyama,
+              sıva ve olası eşya hasarları talep edilebilir. Uzun süren anlaşmazlıklarda hukuki
+              süreç başlatılabilir. Balkon yalıtımına yapılan yatırım, bu tür anlaşmazlıkları
+              başlamadan önler.
+            </p>
+          </InfoBox>
+        </section>
+
+        {/* Kalıcı Çözüm */}
+        <section id="kalici-cozum">
+          <h2>Kalıcı Çözüm: Adım Adım Balkon Su Yalıtımı</h2>
+          <p>
+            Kalıcı balkon su yalıtımı, mevcut kaplamanın kaldırılıp tüm sistemin sıfırdan
+            yapılmasını gerektirir. Geçici yamalar belirtileri giderse de kaynağı çözmez.
+            Doğru uygulama şu adımlardan oluşur:
+          </p>
+
+          <StepByStep
+            title="Balkon Su Yalıtımı Uygulama Adımları"
+            steps={[
+              {
+                title: 'Yüzey Hazırlığı ve Söküm',
+                description: 'Mevcut seramik kaplama tamamen kaldırılır. Altındaki şap ve eski yalıtım katmanı temizlenir. Beton yüzeydeki çatlaklar, boşluklar ve hasarlı bölgeler tespit edilir. Derinliği 5 mm\'i geçen çatlaklar onarım harcıyla doldurulur ve 24 saat kürlenmeye bırakılır. Yüzeyin tamamen kuru olması şarttır — KKTC\'de yağmur sonrası en az 48 saat beklenmeli, nem ölçeriyle kontrol yapılmalıdır.',
+              },
+              {
+                title: 'Eğim Şapı',
+                description: 'Mevcut eğim yetersizse, gidere doğru %1.5-2 eğim verecek şekilde yeni şap atılır. Bu adım kritiktir: eğim olmadan en iyi membran dahi suyun durmasını engelleyemez. Şap en az C20/25 sınıfında, kalınlığı ise en az 3 cm olmalıdır. Şap kürlenirken üzeri ıslak bez ile korunmalı; KKTC\'nin kuru havasında çok hızlı kuruma çatlağa neden olabilir.',
+              },
+              {
+                title: 'Bitumlu Astar',
+                description: 'Tüm yüzeye bitumlu astar (primer) uygulanır. Astar, beton yüzeyin gözeneklerini kapatır ve üzerine uygulanacak membranın yapışmasını sağlar. Köşe ve gider çevreleri bu aşamada özellikle dikkatli işlenmeli; fırça ile ek kat astar yapılmalıdır. Astar tamamen kurumadan bir sonraki adıma geçilmemelidir.',
+              },
+              {
+                title: 'Çimento Esaslı Su Yalıtımı — 2 Kat',
+                description: 'Fleksibil çimento esaslı 2K su yalıtım malzemesi, mala veya rulo ile 2 kat uygulanır (toplam 2.5-3 kg/m²). Birinci kat tamamen kurumadan ikinci kat sürülmez. Köşe ve eşik birleşimlerine elastik köşe bandı gömülür; bu noktalar 3. kat alır. Gider çevresi hazır gider manşonu ile kapatılır. Bu katman sisteminizin kalbidir — atlanamaz veya inceltilemez.',
+              },
+              {
+                title: 'Koruma Şapı',
+                description: 'Yalıtım katmanı üzerine C20/25 beton koruma şapı (3-4 cm) atılır. Bu şap, kaplama altında yalıtımı mekanik hasardan korur. Şap içine çelik tel hasır veya cam elyaf takviyesi eklenmesi uzun vadeli çatlama riskini azaltır.',
+              },
+              {
+                title: 'Dış Mekan Seramik ve Derz',
+                description: 'Son olarak kaymaz, dona dayanıklı dış mekan seramiği fleks yapıştırıcı ile uygulanır. Derz dolgusu su geçirmez, UV dayanımlı fuga ile yapılır. Duvar-döşeme köşe derzleri sert dolgu yerine elastik mastik ile kapatılır; bu noktalar 5-7 yılda bir yenilenmelidir.',
+              },
+            ]}
+          />
+
+          <InfoBox type="tip" title="KKTC\'de En İyi Uygulama Dönemleri">
+            <p>
+              Balkon izolasyonu için ideal dönemler <strong>Mart-Mayıs</strong> ve <strong>Eylül-Kasım</strong>
+              {' '}arası. Bu dönemlerde sıcaklık 15-28°C, nem dengeli, yağış riski düşük. Temmuz-Ağustos&apos;ta
+              yüzey sıcaklığı 60°C&apos;yi geçebilir; membran ve şap malzemeleri çok hızlı kuruyarak
+              çatlak oluşturur. Kış aylarında ise don ve ani yağış riski var. Şimdi Mart&apos;tayız
+              — zamanlama mükemmel.
+            </p>
+          </InfoBox>
+        </section>
+
+        {/* Geçici vs Kalıcı */}
+        <section id="gecici-vs-kalici">
+          <h2>Geçici Tamir mi, Kalıcı Çözüm mü?</h2>
+          <p>
+            Çoğu balkon sahibinin ilk tepkisi geçici tamir olur: mastiği yenile, seramik derzine
+            dolgu sür, gideri temizle. Bu yaklaşım kısa vadede işe yarayabilir, ancak kökteki
+            sorunu çözmez. İkisi arasındaki farkı net görmek, doğru kararı vermenizi sağlar.
+          </p>
+
+          <ComparisonTable
+            caption="Geçici Tamir vs Kalıcı Su Yalıtımı Sistemi"
+            headers={['Parametre', 'Geçici Tamir', 'Kalıcı Sistem']}
+            rows={[
+              { cells: ['Maliyet', 'Düşük (kısa vadede)', 'Orta-yüksek (uzun vadede ekonomik)'] },
+              { cells: ['Ömür', '1-3 yıl', '10-15 yıl'] },
+              { cells: ['Etkinlik', 'Kısmi — semptomu giderir', 'Tam — kaynağı çözer'], highlight: true },
+              { cells: ['Garanti', 'Yok', 'İşçilik + malzeme garantisi'] },
+              { cells: ['Alt komşu riski', 'Devam eder', 'Ortadan kalkar'], highlight: true },
+              { cells: ['Yapısal hasar önleme', 'Hayır', 'Evet — betonarme korunur'] },
+              { cells: ['Tekrar müdahale', 'Her 1-3 yılda bir', 'Bakım: 7-10 yılda derz yenileme'] },
+            ]}
+          />
+
+          <p>
+            Basit bir hesapla: 3 yılda bir geçici tamir yaptıran bir balkon sahibi, 15 yılda
+            5 kez müdahale ile kalıcı sistemin maliyetini geçmiş olur — üstelik her seferinde
+            alt komşu riski devam eder, yapısal hasar birikir.
+          </p>
+        </section>
+
+        {/* Sık Yapılan Hatalar */}
+        <section id="hatalar">
+          <h2>Sık Yapılan Hatalar</h2>
+          <p>
+            Balkon izolasyon uygulamalarında tekrar eden hatalar, genellikle maliyet kesme kaygısı
+            veya teknik bilgi eksikliğinden kaynaklanır. Bu hataların farkında olmak, doğru firmayı
+            seçmenizi kolaylaştırır.
+          </p>
+
+          <CheckList
+            title="Kaçınılması Gereken Hatalar"
+            variant="warning"
+            items={[
+              'Eski seramik sökmeden üstüne uygulama yapmak — eski kaplama altındaki sorun gizli kalır, membran beton yüzeyine değil seramiğe yapışır',
+              'Eğim şapını atlamak — doğru membran + yanlış eğim = su hâlâ birikir, sorun çözülmez',
+              'Tek kat membran uygulamak — tek kat mekanik hasara açık, çift kat (2.5-3 kg/m²) standarttır',
+              'Gider manşonunu atlamak — gider çevresi en kritik nokta; manşonsuz uygulama buradan sızdırır',
+              'Köşe bandını atlamak — duvar-döşeme köşesi ısıl hareket noktası; bant olmadan kaçınılmaz çatlak',
+              'Sert derz dolgusuyla köşeleri doldurmak — köşeler esnek mastik ister; sert dolgu çatlar ve açılır',
+              'Yazın öğle saatlerinde uygulama — yüzey 60°C\'de malzeme yanar gibi kurur, çatlak oluşur',
+              'UV dayanımsız iç mekan mastiki kullanmak — dış balkon için özellikle dış mekan/UV dayanımlı mastik şart',
+            ]}
+          />
+        </section>
+
+        {/* Sonuç */}
+        <section id="sonuc">
+          <h2>Sonuç</h2>
+          <p>
+            Balkon sızıntısı KKTC&apos;de sık karşılaşılan, ancak erken müdahaleyle kolayca önlenebilecek
+            bir sorundur. Bu rehberde ele aldıklarımızı özetlersek:
+          </p>
+          <ul>
+            <li>KKTC&apos;nin yoğun UV&apos;ü, aşırı sıcakları ve deniz tuzu etkisi balkon sistemlerini Avrupa&apos;ya kıyasla daha hızlı yorar — bu nedenle KKTC&apos;ye özgün malzeme seçimi ve bakım takvimi şarttır</li>
+            <li>Sızıntının 5 ana nedeni: yanlış meyil, eşik detay hatası, gider sorunu, membran yıpranması ve açık genleşme derzleri</li>
+            <li>Alt komşuya ulaşan sızıntı hem yapısal hasar hem yasal sorumluluk doğurur; erken müdahale her iki riski de ortadan kaldırır</li>
+            <li>Kalıcı çözüm 6 adımdan oluşur: söküm, eğim şapı, astar, 2K membran (2 kat), koruma şapı, kaplama</li>
+            <li>Geçici tamir kısa vadede ucuz görünse de tekrarlayan müdahalelerle uzun vadede daha pahalıya gelir</li>
+            <li>Uygulama için en uygun dönem Mart-Mayıs ve Eylül-Kasım aylarıdır</li>
+          </ul>
+          <p>
+            <strong>Düzkar Dizayn</strong> olarak Girne, Lefkoşa ve KKTC genelinde balkon su yalıtımı
+            uygulamaları gerçekleştiriyoruz. Teras, çatı ve bodrum yalıtımındaki 25 yılı aşkın deneyimimiz,
+            saha gerçeklerine dayalı çözümler sunmamızı sağlıyor.
+          </p>
+          <p>
+            Balkonunuzda sızıntı şüphesi var mı, yoksa koruyucu önlem almayı mı düşünüyorsunuz?{' '}
+            <Link href="/#iletisim">Ücretsiz keşif talebinde bulunun</Link>
+            {' '}— uzmanlarımız yerinde inceleme yaparak size en uygun çözümü önersin. Ayrıca{' '}
+            <Link href="/hizmetler/izolasyon-ve-su-yalitimi">su yalıtımı hizmetlerimiz</Link>
+            {' '}ve{' '}
+            <Link href="/blog/kuzey-kibrista-izolasyonun-onemi">Kuzey Kıbrıs&apos;ta izolasyon rehberimiz</Link>
+            {' '}hakkında daha fazla bilgi edinebilirsiniz.
+          </p>
+        </section>
+      </BlogContent>
+    );
+  }
+
   // Diğer blog yazıları için default content
   return (
     <BlogContent>

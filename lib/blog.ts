@@ -119,6 +119,29 @@ export const blogPosts: BlogPost[] = [
       { id: 'sonuc', title: 'Sonuç', level: 2 },
     ],
   },
+  {
+    slug: 'balkonda-su-sizintisi-kktc-rehberi',
+    title: 'Balkonda Su Sızıntısı: KKTC\'de Kalıcı Çözüm Rehberi',
+    excerpt: 'Alt komşuya su kaçıyor mu? Balkon sızıntısının 5 ana nedeni, KKTC iklimine özgün risk faktörleri ve kalıcı su yalıtımı çözümleri. Girne ve KKTC genelinde uzman rehberi.',
+    coverImage: '/images/blog/balkonda-su-sizintisi-kktc-rehberi-cover.jpg',
+    author: 'Düzkar Dizayn',
+    publishedAt: '2026-03-05',
+    category: 'İzolasyon',
+    tags: ['balkon izolasyonu', 'su sızıntısı', 'kktc', 'su yalıtımı', 'balkon tamiri'],
+    readingTime: 12,
+    metaTitle: 'Balkonda Su Sızıntısı Nasıl Önlenir? KKTC Rehberi | Düzkar Dizayn',
+    metaDescription: 'Balkon sızıntısının 5 ana nedeni ve KKTC iklimine özgün kalıcı çözümler. Alt komşuya su kaçmasını önleyin. Girne ve KKTC genelinde 25 yıllık deneyim.',
+    tableOfContents: [
+      { id: 'giris', title: 'Giriş', level: 2 },
+      { id: 'iklim-etkisi', title: 'KKTC İkliminin Balkona Etkisi', level: 2 },
+      { id: 'nedenler', title: 'Sızıntının 5 Ana Nedeni', level: 2 },
+      { id: 'alt-komsu', title: 'Alt Komşuya Su Kaçması', level: 2 },
+      { id: 'kalici-cozum', title: 'Kalıcı Çözüm: Adım Adım', level: 2 },
+      { id: 'gecici-vs-kalici', title: 'Geçici mi, Kalıcı mı?', level: 2 },
+      { id: 'hatalar', title: 'Sık Yapılan Hatalar', level: 2 },
+      { id: 'sonuc', title: 'Sonuç', level: 2 },
+    ],
+  },
 ];
 
 // Helper Fonksiyonlar
