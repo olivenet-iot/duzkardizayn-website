@@ -2172,13 +2172,15 @@ function BlogPostContent({ slug }: { slug: string }) {
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Link
               href="/#iletisim"
-              className="btn-primary text-center text-navy-dark no-underline"
+              className="btn-primary text-center"
+              style={{ color: '#1a2744', textDecoration: 'none' }}
             >
               Ücretsiz Keşif İsteyin
             </Link>
             <Link
               href="/hizmetler/izolasyon-ve-su-yalitimi"
-              className="btn-secondary text-center no-underline"
+              className="btn-secondary text-center"
+              style={{ textDecoration: 'none' }}
             >
               İzolasyon Hizmetlerimiz
             </Link>
