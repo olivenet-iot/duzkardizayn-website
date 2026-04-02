@@ -319,37 +319,6 @@ const structuredData = {
       },
     ],
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "87",
-    reviewCount: "52",
-  },
-  review: [
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Ahmet Y." },
-      datePublished: "2025-11-15",
-      reviewBody: "Villam\u0131z\u0131n \u00e7at\u0131 izolasyonunu yapt\u0131rd\u0131k. \u00c7ok profesyonel ve titiz bir ekip. 2 y\u0131ld\u0131r hi\u00e7 sorun ya\u015famad\u0131k.",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Mehmet K." },
-      datePublished: "2025-09-20",
-      reviewBody: "Apartman\u0131m\u0131z\u0131n d\u0131\u015f cephe boyama ve mantolama i\u015fini yapt\u0131lar. S\u00f6z verdikleri s\u00fcrede, kaliteli malzeme ile tamamlad\u0131lar. Tavsiye ederim.",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Ay\u015fe D." },
-      datePublished: "2026-01-10",
-      reviewBody: "Bodrum kat\u0131m\u0131zdaki nem sorunu i\u00e7in geldiler. Kayna\u011f\u0131 tespit edip temel izolasyonu yapt\u0131lar. Art\u0131k nem yok. Te\u015fekk\u00fcrler D\u00fczkar Dizayn!",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    },
-  ],
 };
 
 export default function RootLayout({

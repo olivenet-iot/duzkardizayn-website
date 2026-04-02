@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = [
   { href: "#anasayfa", label: "Anasayfa" },
@@ -36,9 +37,11 @@ export default function Footer() {
           {/* Logo & Description */}
           <div>
             <Link href="/" className="flex items-center mb-4">
-              <img
+              <Image
                 src="/logo-white.png"
                 alt="Düzkar Dizayn"
+                width={135}
+                height={48}
                 className="h-12 w-auto"
               />
             </Link>

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const serviceLinks = [
   {
@@ -98,10 +99,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/logo-white.png"
               alt="Düzkar Dizayn"
+              width={180}
+              height={64}
               className="h-16 w-auto"
+              priority
             />
           </Link>
 
