@@ -127,6 +127,21 @@ const howToSchemas: Record<string, object> = {
       { "@type": "HowToStep", "name": "Son Kat Boya", "text": "UV dayanımlı, elastik yapıda dış cephe boyası uygulanır." },
     ]
   },
+  'kktcde-cati-ve-teras-izolasyonu-rehberi': {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Çatı İzolasyonu Nasıl Yapılır?",
+    "description": "KKTC'de düz çatı su yalıtımı adım adım uygulama rehberi.",
+    "step": [
+      { "@type": "HowToStep", "name": "Mevcut Durum Tespiti ve Söküm", "text": "Eski membran değerlendirilir, yapışması bozulmuş membran sökülür ve yüzey temizlenir." },
+      { "@type": "HowToStep", "name": "Eğim Düzeltmesi", "text": "Gider noktalarına doğru minimum %1.5-2 eğim verecek şekilde şap betonu dökülür." },
+      { "@type": "HowToStep", "name": "Astar Uygulaması", "text": "Bitüm esaslı soğuk astar tüm yüzeye uygulanır. Kuruma süresi: 4-6 saat." },
+      { "@type": "HowToStep", "name": "Birinci Kat Membran", "text": "3 mm polimer modifiyeli bitüm membran şaloma ile yapıştırılır, 10 cm bindirme payı bırakılır." },
+      { "@type": "HowToStep", "name": "İkinci Kat Membran", "text": "4 mm membran kaydırmalı olarak uygulanır, parapet dönüşlerinde 20 cm yüksekliğe çıkılır." },
+      { "@type": "HowToStep", "name": "Detay Noktaları", "text": "Boru geçişleri, gider ağızları ve parapet köşelerine sıvı membran takviyesi yapılır." },
+      { "@type": "HowToStep", "name": "Su Testi ve Kontrol", "text": "Kaynak dikişleri kontrol edilir, çatı 24-48 saat su ile doldurularak sızdırmazlık doğrulanır." },
+    ]
+  },
 };
 
 export default async function BlogDetailPage({
