@@ -19,7 +19,6 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
           fill
           className="object-cover object-center"
           priority
-          unoptimized
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/70 to-navy-dark/30" />

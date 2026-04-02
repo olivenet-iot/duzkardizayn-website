@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Hero() {
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -14,11 +16,12 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/images/hero-bg.jpg')`,
-          }}
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="Düzkar Dizayn - Profesyonel İzolasyon ve Cephe Çözümleri, Girne KKTC"
+          fill
+          priority
+          className="object-cover object-center"
         />
 
         {/* Dark overlay for readability */}
@@ -36,7 +39,7 @@ export default function Hero() {
             Profesyonel İzolasyon ve Cephe Çözümleri
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            25 Yıllık Deneyimle Temelden Çatıya Tam Koruma
+            Girne, Lefkoşa, Gazimağusa ve KKTC Genelinde 25 Yıllık Deneyim
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <a

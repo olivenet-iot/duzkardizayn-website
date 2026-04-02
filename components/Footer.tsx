@@ -6,16 +6,17 @@ const quickLinks = [
   { href: "#anasayfa", label: "Anasayfa" },
   { href: "#hizmetler", label: "Hizmetler" },
   { href: "#projeler", label: "Projeler" },
-  { href: "#hakkimizda", label: "Hakkımızda" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/sss", label: "S.S.S." },
   { href: "#iletisim", label: "İletişim" },
 ];
 
 const services = [
-  "İzolasyon ve Su Yalıtımı",
-  "İç ve Dış Cephe Uygulamaları",
-  "Genel Yenileme ve Tadilat",
-  "Mantolama",
-  "Boya ve Sıva",
+  { label: "İzolasyon ve Su Yalıtımı", href: "/hizmetler/izolasyon-ve-su-yalitimi" },
+  { label: "İç ve Dış Cephe Uygulamaları", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
+  { label: "Genel Yenileme ve Tadilat", href: "/hizmetler/genel-yenileme-ve-tadilat" },
+  { label: "Mantolama", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
+  { label: "Boya ve Sıva", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
 ];
 
 export default function Footer() {
@@ -42,7 +43,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              1999&apos;dan bu yana Kuzey Kıbrıs&apos;ta profesyonel izolasyon ve cephe çözümleri
+              1999&apos;dan bu yana Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde profesyonel izolasyon ve cephe çözümleri
               sunuyoruz. 25 yıllık deneyimimizle güvenilir hizmet.
             </p>
             <div className="flex gap-4">
@@ -107,7 +108,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <span className="text-white/70 text-sm">{service}</span>
+                  <Link href={service.href} className="text-white/70 hover:text-gold-primary transition-colors text-sm">
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -156,7 +159,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Düzkar Dizayn. Tüm hakları saklıdır.
             </p>
             <p className="text-white/50 text-sm">
-              Kuzey Kıbrıs&apos;ın Güvenilir İzolasyon Uzmanı
+              Girne · Lefkoşa · Gazimağusa · Güzelyurt
             </p>
           </div>
         </div>

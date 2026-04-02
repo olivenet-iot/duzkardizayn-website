@@ -85,7 +85,6 @@ export default function ServiceHero({
                     fill
                     className="object-cover"
                     priority
-                    unoptimized
                   />
                 ) : (
                   <>

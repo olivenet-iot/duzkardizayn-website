@@ -113,7 +113,6 @@ function ServiceCard({ service, index }: ServiceCardProps) {
           alt={service.title}
           fill
           className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-          unoptimized
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/70 via-navy-dark/20 to-transparent" />

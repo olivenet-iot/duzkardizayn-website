@@ -43,7 +43,6 @@ export default function IzolasyonHero() {
               fill
               className="object-cover"
               priority
-              unoptimized
             />
             {/* Dark overlay for better contrast */}
             <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />

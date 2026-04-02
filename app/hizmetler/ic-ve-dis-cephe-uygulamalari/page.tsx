@@ -227,10 +227,24 @@ const cepheFAQ = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://duzkardizayn.com" },
+    { "@type": "ListItem", "position": 2, "name": "Hizmetler", "item": "https://duzkardizayn.com/hizmetler" },
+    { "@type": "ListItem", "position": 3, "name": "İç ve Dış Cephe Uygulamaları" }
+  ]
+};
+
 export default function CepheUygulamalariPage() {
   return (
     <>
       <Header />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <main>
         <ServiceHero
           title="İç ve Dış Cephe Uygulamaları"
@@ -715,7 +729,7 @@ export default function CepheUygulamalariPage() {
         <CTASection
           title="Tecrübe ve Kalite"
           highlightedText="Bir Arada"
-          description="Kıbrıs'ta su yalıtımı, izolasyon, cephe kaplamaları ve yenileme işlerinizde güvenilir çözüm ortağınız. Detaylı bilgi ve fiyat teklifi almak için bizimle iletişime geçin."
+          description="Girne, Lefkoşa, Gazimağusa ve Güzelyurt'ta su yalıtımı, izolasyon, cephe kaplamaları ve yenileme işlerinizde güvenilir çözüm ortağınız. Detaylı bilgi ve fiyat teklifi almak için bizimle iletişime geçin."
           primaryButtonText="Ücretsiz Teklif Al"
           primaryButtonHref="/#iletisim"
           secondaryButtonText="+90 548 888 85 03"

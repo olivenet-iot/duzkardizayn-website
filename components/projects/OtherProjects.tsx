@@ -55,7 +55,6 @@ export default function OtherProjects({ projects }: OtherProjectsProps) {
                   alt={project.title}
                   fill
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  unoptimized
                 />
 
                 {/* Hover overlay */}

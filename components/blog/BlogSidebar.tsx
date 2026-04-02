@@ -1,15 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { BlogPost, getRelatedPosts } from '@/lib/blog';
+import { BlogPost } from '@/lib/blog-types';
 import TableOfContents from './TableOfContents';
 
 interface BlogSidebarProps {
   post: BlogPost;
+  relatedPosts?: BlogPost[];
 }
 
-export default function BlogSidebar({ post }: BlogSidebarProps) {
-  const relatedPosts = getRelatedPosts(post.slug, 3);
-
+export default function BlogSidebar({ post, relatedPosts = [] }: BlogSidebarProps) {
   return (
     <aside className="space-y-8">
       {/* İçindekiler */}

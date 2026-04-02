@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogPost } from '@/lib/blog';
+import { BlogPost } from '@/lib/blog-types';
 import BlogCard from './BlogCard';
 
 interface RelatedPostsProps {

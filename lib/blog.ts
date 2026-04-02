@@ -1,196 +1,62 @@
-// Blog Post Interface ve Helper Fonksiyonlar
+// Blog Post Helper Fonksiyonlar - Server-side only (fs kullanır)
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-export interface TableOfContentsItem {
-  id: string;
-  title: string;
-  level: number;
+// Type'ları re-export et (client component'ler bu dosyayı import edemez, blog-types.ts kullanmalı)
+export type { TableOfContentsItem, FAQItem, BlogPost, BlogPostWithContent } from './blog-types';
+export { blogCategories } from './blog-categories';
+
+import type { BlogPost, BlogPostWithContent } from './blog-types';
+
+const BLOG_DIR = path.join(process.cwd(), 'content/blog');
+
+function parseFrontmatter(filePath: string): BlogPost {
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const { data } = matter(fileContent);
+  return data as BlogPost;
 }
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  coverImage: string;
-  author: string;
-  publishedAt: string;
-  updatedAt?: string;
-  category: 'İzolasyon' | 'Cephe' | 'Tadilat' | 'Haberler' | 'Rehber';
-  tags: string[];
-  readingTime: number;
-  metaTitle: string;
-  metaDescription: string;
-  tableOfContents: TableOfContentsItem[];
+function parseFullPost(filePath: string): BlogPostWithContent {
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const { data, content } = matter(fileContent);
+  return {
+    ...(data as BlogPost),
+    content,
+  };
 }
-
-// Blog yazıları
-export const blogPosts: BlogPost[] = [
-  {
-    slug: 'kuzey-kibrista-izolasyonun-onemi',
-    title: 'Kuzey Kıbrıs\'ta İzolasyonun Önemi: Kapsamlı Rehber',
-    excerpt: 'Akdeniz ikliminde binanızı nem, sıcak ve sudan koruma yöntemleri. Kıbrıs\'ta izolasyon türleri, malzemeler ve ev alırken dikkat edilecek noktalar hakkında kapsamlı rehber.',
-    coverImage: '/images/blog/izolasyon-rehberi/cover.jpg',
-    author: 'Düzkar Dizayn',
-    publishedAt: '2025-12-21',
-    category: 'İzolasyon',
-    tags: ['izolasyon', 'su yalıtımı', 'kıbrıs', 'nem sorunu', 'rehber', 'temel izolasyonu', 'çatı izolasyonu'],
-    readingTime: 12,
-    metaTitle: 'Kuzey Kıbrıs\'ta İzolasyonun Önemi | Kapsamlı Rehber - Düzkar Dizayn',
-    metaDescription: 'Kıbrıs ikliminde izolasyon neden önemli? Temel, çatı, balkon izolasyonu türleri, malzemeler ve ev alırken dikkat edilecekler. 25 yıllık deneyimle uzman rehberi.',
-    tableOfContents: [
-      { id: 'giris', title: 'Giriş', level: 2 },
-      { id: 'kibris-iklimi', title: 'Kıbrıs İkliminin Özellikleri', level: 2 },
-      { id: 'izolasyonsuz-sorunlar', title: 'İzolasyonsuz Binalarda Yaşanan Sorunlar', level: 2 },
-      { id: 'izolasyon-turleri', title: 'İzolasyon Türleri ve Uygulama Alanları', level: 2 },
-      { id: 'izolasyon-malzemeleri', title: 'İzolasyon Malzemeleri', level: 2 },
-      { id: 'ev-alirken-kontrol', title: 'Kıbrıs\'ta Ev Alırken İzolasyon Kontrolü', level: 2 },
-      { id: 'ne-zaman-yaptirmali', title: 'Ne Zaman İzolasyon Yaptırmalısınız?', level: 2 },
-      { id: 'sonuc', title: 'Sonuç ve Öneriler', level: 2 },
-    ],
-  },
-  {
-    slug: 'radya-temel-izolasyonu-kibrista-neden-onemli',
-    title: 'Radya Temel İzolasyonu: Kıbrıs\'ta Neden Vazgeçilmez?',
-    excerpt: 'Kuzey Kıbrıs\'ta radya temel izolasyonunun önemi, uygulama yöntemleri ve dikkat edilmesi gerekenler. Yapı uzmanından kapsamlı teknik rehber.',
-    coverImage: '/images/blog/radya-temel-izolasyonu-cover.jpg',
-    author: 'Düzkar Dizayn',
-    publishedAt: '2025-12-26',
-    category: 'İzolasyon',
-    tags: ['radya temel', 'temel izolasyonu', 'su yalıtımı', 'kıbrıs', 'bodrum izolasyonu', 'membran', 'yeraltı suyu'],
-    readingTime: 10,
-    metaTitle: 'Radya Temel İzolasyonu Kıbrıs | Neden Önemli? - Düzkar Dizayn',
-    metaDescription: 'Kıbrıs\'ta radya temel izolasyonu neden zorunlu? Yeraltı suyu, nem koruması, uygulama teknikleri. 25 yıl deneyimli uzman rehberi.',
-    tableOfContents: [
-      { id: 'giris', title: 'Giriş', level: 2 },
-      { id: 'radya-temel-nedir', title: 'Radya Temel Nedir?', level: 2 },
-      { id: 'neden-zorunlu', title: 'Kıbrıs\'ta Neden Zorunlu Hale Geldi?', level: 2 },
-      { id: 'tehdit-faktorleri', title: 'Radya Temeli Tehdit Eden Faktörler', level: 2 },
-      { id: 'kibris-toprak-iklim', title: 'Kıbrıs Toprak ve İklim Koşulları', level: 2 },
-      { id: 'uygulama-teknikleri', title: 'Uygulama Teknikleri', level: 2 },
-      { id: 'malzemeler', title: 'Kullanılan Malzemeler', level: 2 },
-      { id: 'izolasyonsuz-sonuclar', title: 'İzolasyonsuz Temelin Sonuçları', level: 2 },
-      { id: 'yeni-insaat', title: 'Yeni İnşaatta Dikkat Edilmesi Gerekenler', level: 2 },
-      { id: 'mevcut-binalar', title: 'Mevcut Binalarda Temel İzolasyonu', level: 2 },
-      { id: 'profesyonel-uygulama', title: 'Profesyonel Uygulama Neden Önemli?', level: 2 },
-      { id: 'sonuc', title: 'Sonuç', level: 2 },
-    ],
-  },
-  {
-    slug: 'kktcde-nem-sorunu-sebebi-ve-cozumu',
-    title: 'KKTC\'de Nem Sorunu: Evinizdeki Nemin Gerçek Sebebi ve Kalıcı Çözümleri',
-    excerpt: 'Kuzey Kıbrıs\'ta ev ve işyerlerinde sıkça karşılaşılan nem sorunlarının gerçek kaynakları, sağlığa etkileri ve profesyonel çözüm yöntemleri. Duvar nemi, tavan sızıntısı, bodrum rutubeti için kalıcı çözüm rehberi.',
-    coverImage: '/images/blog/nem-sorunu-cover.jpg',
-    author: 'Düzkar Dizayn',
-    publishedAt: '2026-01-15',
-    category: 'Rehber',
-    tags: ['nem sorunu', 'duvar nemi', 'rutubet', 'kıbrıs', 'küf', 'su sızıntısı', 'izolasyon', 'nem giderme', 'girne'],
-    readingTime: 15,
-    metaTitle: 'KKTC\'de Nem Sorunu: Sebepleri ve Kalıcı Çözümleri | Düzkar Dizayn',
-    metaDescription: 'Kuzey Kıbrıs\'ta evinizdeki nemin gerçek sebebi nedir? Duvar nemi, tavan sızıntısı, bodrum rutubeti. Uzman rehberiyle kalıcı çözümler ve profesyonel izolasyon.',
-    tableOfContents: [
-      { id: 'giris', title: 'Giriş', level: 2 },
-      { id: 'nem-kaynaklari', title: 'KKTC\'de Nem Sorunlarının Kaynakları', level: 2 },
-      { id: 'nem-cesitleri', title: 'Nem Çeşitleri ve Belirtileri', level: 2 },
-      { id: 'saglik-etkileri', title: 'Nemin Sağlığa ve Yapıya Etkileri', level: 2 },
-      { id: 'teshis', title: 'Nem Kaynağını Nasıl Teşhis Edersiniz?', level: 2 },
-      { id: 'cozum-yontemleri', title: 'Kalıcı Çözüm Yöntemleri', level: 2 },
-      { id: 'ne-zaman-uzman', title: 'Ne Zaman Uzman Çağırmalısınız?', level: 2 },
-      { id: 'sonuc', title: 'Sonuç', level: 2 },
-    ],
-  },
-  {
-    slug: 'kktcde-mantolama-nedir-ve-neden-onemli',
-    title: 'Mantolama Nedir? KKTC Evleri İçin Kapsamlı Rehber',
-    excerpt: 'Mantolama sisteminin ne olduğu, KKTC ikliminde neden gerekli olduğu ve doğru uygulama adımları hakkında kapsamlı rehber.',
-    coverImage: '/images/blog/mantolama-cover.jpg',
-    author: 'Düzkar Dizayn',
-    publishedAt: '2026-02-10',
-    category: 'Rehber',
-    tags: ['mantolama', 'ısı yalıtımı', 'dış cephe', 'kıbrıs', 'enerji tasarrufu', 'EPS', 'taş yünü', 'girne', 'kktc'],
-    readingTime: 14,
-    metaTitle: 'Mantolama Nedir? KKTC Evleri İçin Rehber | Düzkar Dizayn',
-    metaDescription: 'Kuzey Kıbrıs\'ta mantolama neden gerekli? EPS ve taş yünü sistemleri, uygulama adımları, sık yapılan hatalar ve dikkat edilmesi gerekenler.',
-    tableOfContents: [
-      { id: 'giris', title: 'Giriş', level: 2 },
-      { id: 'mantolama-nedir', title: 'Mantolama Nedir?', level: 2 },
-      { id: 'kktcde-mantolama', title: 'KKTC İkliminde Mantolama', level: 2 },
-      { id: 'sistem-secimi', title: 'Sistem Seçimi: EPS mi Taş Yünü mü?', level: 2 },
-      { id: 'uygulama-adimlari', title: 'Uygulama Adımları', level: 2 },
-      { id: 'hatalar', title: 'Sık Yapılan Hatalar', level: 2 },
-      { id: 'sonuc', title: 'Sonuç', level: 2 },
-    ],
-  },
-  {
-    slug: 'kktcde-havuz-izolasyonu-kapsamli-rehber',
-    title: 'KKTC\'de Havuz İzolasyonu: Sızıntı, Çatlak ve Kalıcı Çözüm Rehberi',
-    excerpt: 'Kıbrıs\'ın sert ikliminde villa havuzları neden sızar? Kristalize yalıtım, çift katmanlı membran sistemi ve 7 günlük su testi. KKTC\'de 25 yıllık deneyimle kapsamlı havuz izolasyonu rehberi.',
-    coverImage: '/images/blog/kktcde-havuz-izolasyonu-cover.jpg',
-    author: 'Düzkar Dizayn',
-    publishedAt: '2026-03-15',
-    category: 'İzolasyon',
-    tags: ['havuz izolasyonu', 'havuz sızıntısı', 'kktc', 'su yalıtımı', 'kristalize yalıtım', 'villa havuzu'],
-    readingTime: 12,
-    metaTitle: 'KKTC\'de Havuz İzolasyonu: Sızıntı Nedenleri ve Kalıcı Çözüm | Düzkar Dizayn',
-    metaDescription: 'Kıbrıs ikliminde villa havuzu neden sızar? Kristalize yalıtım, bitüm membran ve adım adım uygulama. Girne ve KKTC genelinde 25 yıllık havuz izolasyonu uzmanlığı.',
-    tableOfContents: [
-      { id: 'giris', title: 'Giriş', level: 2 },
-      { id: 'iklim-etkisi', title: 'KKTC İkliminin Havuza Etkisi', level: 2 },
-      { id: 'neden-sizlar', title: 'Havuz Neden Sızar? 5 Ana Neden', level: 2 },
-      { id: 'dogru-sistem', title: 'Doğru Sistem: İç + Dış Çift Katman', level: 2 },
-      { id: 'adim-adim', title: 'Adım Adım Uygulama', level: 2 },
-      { id: 'yeni-mi-yenileme', title: 'Yeni Havuz mu, Yenileme mi?', level: 2 },
-      { id: 'hatalar', title: 'Sık Yapılan Hatalar', level: 2 },
-      { id: 'bakim', title: 'İzolasyonu Uzun Tutmanın Yolu', level: 2 },
-      { id: 'sonuc', title: 'Sonuç', level: 2 },
-    ],
-  },
-  {
-    slug: 'balkonda-su-sizintisi-kktc-rehberi',
-    title: 'Balkonda Su Sızıntısı: KKTC\'de Kalıcı Çözüm Rehberi',
-    excerpt: 'Alt komşuya su kaçıyor mu? Balkon sızıntısının 5 ana nedeni, KKTC iklimine özgün risk faktörleri ve kalıcı su yalıtımı çözümleri. Girne ve KKTC genelinde uzman rehberi.',
-    coverImage: '/images/blog/balkonda-su-sizintisi-kktc-rehberi-cover.jpg',
-    author: 'Düzkar Dizayn',
-    publishedAt: '2026-03-05',
-    category: 'İzolasyon',
-    tags: ['balkon izolasyonu', 'su sızıntısı', 'kktc', 'su yalıtımı', 'balkon tamiri'],
-    readingTime: 12,
-    metaTitle: 'Balkonda Su Sızıntısı Nasıl Önlenir? KKTC Rehberi | Düzkar Dizayn',
-    metaDescription: 'Balkon sızıntısının 5 ana nedeni ve KKTC iklimine özgün kalıcı çözümler. Alt komşuya su kaçmasını önleyin. Girne ve KKTC genelinde 25 yıllık deneyim.',
-    tableOfContents: [
-      { id: 'giris', title: 'Giriş', level: 2 },
-      { id: 'iklim-etkisi', title: 'KKTC İkliminin Balkona Etkisi', level: 2 },
-      { id: 'nedenler', title: 'Sızıntının 5 Ana Nedeni', level: 2 },
-      { id: 'alt-komsu', title: 'Alt Komşuya Su Kaçması', level: 2 },
-      { id: 'kalici-cozum', title: 'Kalıcı Çözüm: Adım Adım', level: 2 },
-      { id: 'gecici-vs-kalici', title: 'Geçici mi, Kalıcı mı?', level: 2 },
-      { id: 'hatalar', title: 'Sık Yapılan Hatalar', level: 2 },
-      { id: 'sonuc', title: 'Sonuç', level: 2 },
-    ],
-  },
-];
-
-// Helper Fonksiyonlar
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug);
+  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) return undefined;
+  return parseFrontmatter(filePath);
+}
+
+export function getBlogPostWithContent(slug: string): BlogPostWithContent | undefined {
+  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) return undefined;
+  return parseFullPost(filePath);
 }
 
 export function getAllBlogPosts(): BlogPost[] {
-  return [...blogPosts].sort((a, b) =>
+  if (!fs.existsSync(BLOG_DIR)) return [];
+  const files = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.mdx'));
+  const posts = files.map(file => parseFrontmatter(path.join(BLOG_DIR, file)));
+  return posts.sort((a, b) =>
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 }
 
 export function getBlogsByCategory(category: string): BlogPost[] {
   if (category === 'Tümü') return getAllBlogPosts();
-  return blogPosts.filter(post => post.category === category);
+  return getAllBlogPosts().filter(post => post.category === category);
 }
 
 export function getRelatedPosts(currentSlug: string, limit: number = 3): BlogPost[] {
   const currentPost = getBlogBySlug(currentSlug);
   if (!currentPost) return [];
 
-  // Aynı kategorideki veya aynı tag'lere sahip yazıları bul
-  return blogPosts
+  return getAllBlogPosts()
     .filter(post => post.slug !== currentSlug)
     .filter(post =>
       post.category === currentPost.category ||
@@ -207,5 +73,3 @@ export function formatDate(dateString: string): string {
     day: 'numeric',
   });
 }
-
-export const blogCategories = ['Tümü', 'İzolasyon', 'Cephe', 'Tadilat', 'Rehber', 'Haberler'] as const;

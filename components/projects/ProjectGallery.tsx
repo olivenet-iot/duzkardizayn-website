@@ -92,7 +92,6 @@ export default function ProjectGallery({
                   alt={`${projectTitle} - Görsel ${index + 1}`}
                   fill
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  unoptimized
                 />
 
                 {/* Hover overlay */}
@@ -158,7 +157,6 @@ export default function ProjectGallery({
                 alt={`${projectTitle} - Görsel ${currentIndex + 1}`}
                 fill
                 className="object-contain"
-                unoptimized
               />
             </div>
 

@@ -24,7 +24,7 @@ const navLinks = [
   { href: "/#hizmetler", sectionId: "hizmetler", label: "HİZMETLER", isDropdown: true },
   { href: "/projeler", sectionId: "projeler", label: "PROJELER", isDropdown: false },
   { href: "/blog", sectionId: "blog", label: "BLOG", isDropdown: false },
-  { href: "/#hakkimizda", sectionId: "hakkimizda", label: "HAKKIMIZDA", isDropdown: false },
+  { href: "/hakkimizda", sectionId: "hakkimizda", label: "HAKKIMIZDA", isDropdown: false },
   { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false },
 ];
 

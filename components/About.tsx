@@ -87,7 +87,6 @@ export default function About() {
                 alt="Düzkar Dizayn Ekibi"
                 fill
                 className="object-cover object-center"
-                unoptimized
               />
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-transparent to-transparent" />

@@ -130,7 +130,6 @@ export default function Projects() {
                     alt={project.title}
                     fill
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                    unoptimized
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-navy-dark/30 to-transparent" />

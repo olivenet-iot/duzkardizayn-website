@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { TableOfContentsItem } from '@/lib/blog';
+import { TableOfContentsItem } from '@/lib/blog-types';
 
 interface TableOfContentsProps {
   items: TableOfContentsItem[];

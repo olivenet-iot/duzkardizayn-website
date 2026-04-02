@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BlogPost, formatDate } from '@/lib/blog';
+import { BlogPost, formatDate } from '@/lib/blog-types';
 
 interface BlogCardProps {
   post: BlogPost;
