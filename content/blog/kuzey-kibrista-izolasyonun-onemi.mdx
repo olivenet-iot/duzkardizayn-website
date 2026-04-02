@@ -49,6 +49,10 @@ faqs:
     answer: "Evet, mevcut binalara da izolasyon uygulanabilir. Dışarıdan mantolama, çatı üstü membran, iç duvar yalıtımı gibi yöntemlerle mevcut yapılara izolasyon yapılır."
   - question: "Ev alırken izolasyon kontrolü nasıl yapılır?"
     answer: "Duvarların nem durumu, çatı ve teras birleşim noktaları, bodrum katın su geçirgenliği, balkon ve teras eğimleri kontrol edilmelidir. Profesyonel keşif ile nem ölçümü yaptırmanız önerilir."
+  - question: "KKTC ikliminde EPS mi yoksa taş yünü mü tercih edilmelidir?"
+    answer: "Standart konutlarda EPS (λ: 0.035 W/mK) ekonomik ve etkili bir seçimdir. 5 kattan yüksek binalar, yangın riski olan yapılar ve ses yalıtımı gereken bölgelerde taş yünü (λ: 0.038-0.041 W/mK) tercih edilmelidir. Kıyı bölgelerinde tuz direnci de önemli bir faktördür."
+  - question: "İzolasyon yapılmamış binada sorunlar ne zaman başlar?"
+    answer: "KKTC ikliminde izolasyonsuz binalarda nem sorunları genellikle 3-5 yıl içinde görünür hale gelir. Temel izolasyonu olmayan yapılarda ise yeraltı suyu etkisi 2-3 yıl içinde bodrum katında belirginleşir. Erken müdahale maliyeti, geç müdahalenin 3-5 katı daha düşüktür."
 ---
 
 <section id="giris">
@@ -77,20 +81,20 @@ Kasım'dan Mart'a kadar süren dönemde, yağış miktarı artar ve nem oranı %
 
 <ComparisonTable
   caption="Kıbrıs İklim Verileri (Aylık Ortalamalar)"
-  headers={["Ay", "Sıcaklık (°C)", "Nem (%)", "Yağış (mm)"]}
+  headers={["Ay", "Sıcaklık (°C)", "Nem (%)", "Yağış (mm)", "UV İndeksi"]}
   rows={[
-    { cells: ["Ocak", "12", "75", "95"] },
-    { cells: ["Şubat", "12", "72", "65"] },
-    { cells: ["Mart", "14", "68", "45"] },
-    { cells: ["Nisan", "18", "62", "20"] },
-    { cells: ["Mayıs", "23", "58", "10"] },
-    { cells: ["Haziran", "28", "52", "2"], highlight: true },
-    { cells: ["Temmuz", "32", "48", "0"], highlight: true },
-    { cells: ["Ağustos", "33", "50", "0"], highlight: true },
-    { cells: ["Eylül", "29", "55", "5"] },
-    { cells: ["Ekim", "24", "62", "25"] },
-    { cells: ["Kasım", "18", "70", "55"] },
-    { cells: ["Aralık", "14", "75", "90"] },
+    { cells: ["Ocak", "12", "75", "95", "2"] },
+    { cells: ["Şubat", "12", "72", "65", "3"] },
+    { cells: ["Mart", "14", "68", "45", "4"] },
+    { cells: ["Nisan", "18", "62", "20", "6"] },
+    { cells: ["Mayıs", "23", "58", "10", "8"] },
+    { cells: ["Haziran", "28", "52", "2", "10"], highlight: true },
+    { cells: ["Temmuz", "32", "48", "0", "11"], highlight: true },
+    { cells: ["Ağustos", "33", "50", "0", "10"], highlight: true },
+    { cells: ["Eylül", "29", "55", "5", "8"] },
+    { cells: ["Ekim", "24", "62", "25", "5"] },
+    { cells: ["Kasım", "18", "70", "55", "3"] },
+    { cells: ["Aralık", "14", "75", "90", "2"] },
   ]}
 />
 
@@ -108,7 +112,9 @@ Girne sahil şeridi ve Gazimağusa kıyılarında, denizden gelen tuzlu hava yap
 
 ### Nem ve Küf Oluşumu
 
-Kış aylarında dış ortam ile iç ortam arasındaki sıcaklık farkı, yoğuşmaya neden olur. Duvar yüzeylerinde biriken nem, küf ve mantar oluşumuna zemin hazırlar. Bu durum özellikle yatak odaları ve banyolarda sık görülür.
+Girne kıyı şeridinde nem oranı %75-80'e ulaşırken, Lefkoşa iç bölgesinde yazın 37°C'yi aşan sıcaklıklar yapıları farklı şekillerde zorlar. Gazimağusa'da ise deniz etkisi ve yüksek nem kombinasyonu, izolasyonsuz binalarda hızlı bozulmaya yol açar. Dünya Sağlık Örgütü (WHO), iç mekan nemini ve küf oluşumunu ciddi bir halk sağlığı riski olarak sınıflandırmaktadır; Avrupa genelinde iç mekanların %10-50'si bu sorundan etkilenmektedir.
+
+Kış aylarında dış ortam ile iç ortam arasındaki sıcaklık farkı, yoğuşmaya neden olur. Duvar yüzeylerinde biriken nem, küf ve mantar oluşumuna zemin hazırlar. Bu durum özellikle yatak odaları ve banyolarda sık görülür. Detaylı bilgi için [nem sorunu rehberimiz](/blog/kktcde-nem-sorunu-sebebi-ve-cozumu)e göz atabilirsiniz.
 
 ### Su Sızıntıları
 
@@ -116,7 +122,7 @@ Kış aylarında dış ortam ile iç ortam arasındaki sıcaklık farkı, yoğu�
 
 ### Enerji Kaybı
 
-İzolasyonsuz binalarda yazın klima, kışın ısıtma maliyetleri yükselir. Yapılan araştırmalar, doğru izolasyon uygulamasının enerji maliyetlerini %30-50 oranında düşürdüğünü göstermektedir.
+İzolasyonsuz binalarda yazın klima, kışın ısıtma maliyetleri yükselir. Akdeniz ikliminde yapılan araştırmalar, doğru izolasyon uygulamasının ısıtma ve soğutma maliyetlerini %15-35 oranında düşürdüğünü göstermektedir. İyi yalıtılmış binalar, klima kapatıldıktan sonra 2-5 kat daha uzun süre serin kalır; bu da hem enerji tasarrufu hem de yaşam konforu anlamına gelir.
 
 ### Yapısal Hasarlar
 
@@ -147,7 +153,7 @@ Farklı yapı bölümleri, farklı izolasyon tekniklerini gerektirir. Kıbrıs i
 
 ### Temel İzolasyonu
 
-Binanın temelinden gelen yeraltı suyunun yapıya zarar vermesini önler. Özellikle Girne'nin belirli bölgelerinde yeraltı su seviyesi yüksektir ve temel izolasyonu kritik önem taşır.
+Binanın temelinden gelen yeraltı suyunun yapıya zarar vermesini önler. Özellikle Girne'nin belirli bölgelerinde yeraltı su seviyesi yüksektir ve temel izolasyonu kritik önem taşır. Radya temel sistemleri hakkında detaylı bilgi için [radya temel izolasyonu rehberimiz](/blog/radya-temel-izolasyonu-kibrista-neden-onemli)i inceleyebilirsiniz.
 
 ### Çatı ve Teras İzolasyonu
 
@@ -155,7 +161,7 @@ Kıbrıs'ta binaların büyük çoğunluğu düz çatılıdır. Bu çatılar hem
 
 ### Balkon İzolasyonu
 
-Balkonlar, su sızıntısı riskinin en yüksek olduğu bölümlerdir. Yanlış eğim, yetersiz drenaj veya izolasyon eksikliği, alt kattaki dairelerde ciddi hasarlara yol açar.
+Balkonlar, su sızıntısı riskinin en yüksek olduğu bölümlerdir. UV maruziyeti nedeniyle balkon membranlarının ömrü 10-15 yıl ile sınırlıdır; bu da düzenli bakım ve yenileme gerektirir. Yanlış eğim, yetersiz drenaj veya izolasyon eksikliği, alt kattaki dairelerde ciddi hasarlara yol açar. Bu konuda yaşanan sorunlar ve çözümleri için [balkon sızıntısı rehberimiz](/blog/balkonda-su-sizintisi-kktc-rehberi)i incelemenizi öneririz.
 
 ### Islak Hacim İzolasyonu
 
@@ -163,7 +169,7 @@ Banyo, mutfak ve tuvalet gibi su kullanılan mekanlar, özel izolasyon gerektire
 
 ### Mantolama (Dış Cephe Isı Yalıtımı)
 
-Binanın dış yüzeyine uygulanan ısı yalıtım sistemidir. Yazın serin, kışın sıcak tutarak hem konforu artırır hem de enerji tasarrufu sağlar. [Cephe uygulamaları](/hizmetler/ic-ve-dis-cephe-uygulamalari) hakkında daha fazla bilgi alabilirsiniz.
+Binanın dış yüzeyine uygulanan ısı yalıtım sistemidir. Yazın serin, kışın sıcak tutarak hem konforu artırır hem de enerji tasarrufu sağlar. [Mantolama rehberimiz](/blog/kktcde-mantolama-nedir-ve-neden-onemli)de malzeme seçimi ve uygulama detaylarını bulabilirsiniz. Ayrıca [cephe uygulamaları](/hizmetler/ic-ve-dis-cephe-uygulamalari) hakkında daha fazla bilgi alabilirsiniz.
 
 <ComparisonTable
   caption="İzolasyon Türleri Karşılaştırması"
@@ -174,9 +180,11 @@ Binanın dış yüzeyine uygulanan ısı yalıtım sistemidir. Yazın serin, kı
     { cells: ["Balkon İzolasyonu", "Balkonlar", "Yağmur suyu", "Yüksek"] },
     { cells: ["Islak Hacim", "Banyo, Mutfak", "Kullanım suyu", "Yüksek"] },
     { cells: ["Mantolama", "Dış Cephe", "Isı transferi", "Orta-Yüksek"] },
-    { cells: ["Havuz İzolasyonu", "Havuz", "Havuz suyu", "Çok Yüksek"] },
+    { cells: ["Havuz İzolasyonu", "Havuz", "Havuz suyu", "Çok Yüksek"], highlight: true },
   ]}
 />
+
+Havuz sahibi olanlar veya havuz yaptırmayı planlayanlar için [havuz izolasyonu rehberimiz](/blog/kktcde-havuz-izolasyonu-kapsamli-rehber)de detaylı bilgi bulabilirsiniz.
 
 </section>
 
@@ -207,6 +215,21 @@ Isı yalıtımı için kullanılan köpük plastik levhalardır. Mantolama siste
 Her uygulama alanı için farklı malzemeler idealdir. Örneğin, temel izolasyonunda su basıncına dayanıklı malzemeler şart iken, çatıda UV dayanımı önemlidir. Profesyonel bir keşif ve değerlendirme ile uygulamanız için en doğru malzeme belirlenmelidir.
 
 </InfoBox>
+
+### Malzeme Isıl İletkenlik Karşılaştırması
+
+Isı yalıtım malzemelerinin performansını belirleyen en önemli parametre, ısıl iletkenlik katsayısıdır (λ - lambda). Bu değer ne kadar düşükse, malzeme o kadar iyi yalıtım sağlar.
+
+<ComparisonTable
+  caption="İzolasyon Malzemeleri Isıl İletkenlik Karşılaştırması"
+  headers={["Malzeme", "Isıl İletkenlik (λ)", "Avantaj", "Kullanım Alanı"]}
+  rows={[
+    { cells: ["EPS (Genleştirilmiş Polistiren)", "0.035 W/mK", "Ekonomik, hafif, kolay uygulama", "Mantolama, çatı ısı yalıtımı"] },
+    { cells: ["Taş Yünü", "0.038-0.041 W/mK", "Yangına dayanıklı (A1), ses yalıtımı", "Yüksek binalar, yangın güvenliği gereken alanlar"] },
+    { cells: ["Poliüretan (PUR/PIR)", "0.022-0.035 W/mK", "En düşük λ değeri, ince uygulama", "Çatı, teras, soğuk hava depoları"], highlight: true },
+    { cells: ["Bitüm Membran", "—", "Su geçirmezlik, elastikiyet", "Temel, çatı, balkon su yalıtımı"] },
+  ]}
+/>
 
 </section>
 
