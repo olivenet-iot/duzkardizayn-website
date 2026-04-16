@@ -13,6 +13,7 @@ const quickLinks = [
 ];
 
 const services = [
+  { label: "Tüm Hizmetler", href: "/hizmetler" },
   { label: "İzolasyon ve Su Yalıtımı", href: "/hizmetler/izolasyon-ve-su-yalitimi" },
   { label: "İç ve Dış Cephe Uygulamaları", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
   { label: "Genel Yenileme ve Tadilat", href: "/hizmetler/genel-yenileme-ve-tadilat" },

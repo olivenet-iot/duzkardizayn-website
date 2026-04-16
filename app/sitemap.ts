@@ -31,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Hizmet Sayfaları
     {
+      url: `${baseUrl}/hizmetler`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/hizmetler/izolasyon-ve-su-yalitimi`,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -7,6 +7,10 @@ import Image from "next/image";
 
 const serviceLinks = [
   {
+    href: "/hizmetler",
+    label: "Tüm Hizmetler",
+  },
+  {
     href: "/hizmetler/izolasyon-ve-su-yalitimi",
     label: "İzolasyon ve Su Yalıtımı",
   },

@@ -1,8 +1,50 @@
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BlogListClient from '@/components/blog/BlogListClient';
 import { CTASection } from '@/components/services';
 import { getAllBlogPosts } from '@/lib/blog';
+
+export const metadata: Metadata = {
+  title: "Blog | Düzkar Dizayn — KKTC Yapı ve Yalıtım Rehberi",
+  description:
+    "Kuzey Kıbrıs'ta izolasyon, su yalıtımı, mantolama, nem sorunu, balkon sızıntısı ve yapı teknolojileri üzerine saha deneyimine dayalı rehber yazılar.",
+  keywords: [
+    "izolasyon rehberi kıbrıs",
+    "mantolama kktc",
+    "nem sorunu kuzey kıbrıs",
+    "balkon sızıntısı kıbrıs",
+    "su yalıtımı rehberi",
+    "kktc yapı blog",
+    "düzkar dizayn blog",
+  ],
+  openGraph: {
+    title: "Blog | Düzkar Dizayn",
+    description:
+      "KKTC'de izolasyon, su yalıtımı ve yapı uygulamaları üzerine saha deneyimine dayalı rehber yazılar.",
+    url: "https://duzkardizayn.com/blog",
+    type: "website",
+    locale: "tr_TR",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Düzkar Dizayn Blog — KKTC Yapı ve Yalıtım Rehberi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Düzkar Dizayn",
+    description:
+      "KKTC'de izolasyon, su yalıtımı ve yapı uygulamaları üzerine rehber yazılar.",
+    images: ["/images/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://duzkardizayn.com/blog",
+  },
+};
 
 export default function BlogPage() {
   const allPosts = getAllBlogPosts();
