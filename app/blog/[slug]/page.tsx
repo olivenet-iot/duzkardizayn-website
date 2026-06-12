@@ -183,7 +183,7 @@ export default async function BlogDetailPage({
       "name": "Düzkar Dizayn",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://duzkardizayn.com/logo.png"
+        "url": "https://duzkardizayn.com/images/logo.png"
       }
     },
     "mainEntityOfPage": {
@@ -192,7 +192,7 @@ export default async function BlogDetailPage({
     },
     "keywords": post.tags.join(", "),
     "articleSection": post.category,
-    "wordCount": post.readingTime * 200,
+    "wordCount": post.content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length,
     "inLanguage": "tr"
   };
 

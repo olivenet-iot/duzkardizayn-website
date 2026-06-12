@@ -161,6 +161,10 @@ const structuredData = {
       name: "Güzelyurt",
     },
     {
+      "@type": "City",
+      name: "İskele",
+    },
+    {
       "@type": "AdministrativeArea",
       name: "Kuzey Kıbrıs",
     },
