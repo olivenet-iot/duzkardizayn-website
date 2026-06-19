@@ -105,7 +105,7 @@ const structuredData = {
   description:
     "Kuzey Kıbrıs Girne'de profesyonel izolasyon, su yalıtımı ve cephe çözümleri. Temel izolasyonu, çatı su yalıtımı, teras izolasyonu, mantolama ve tadilat hizmetleri.",
   url: "https://duzkardizayn.com",
-  telephone: "+905488888503",
+  telephone: "+905338311432",
   email: "info@duzkardizayn.com",
   image: "https://duzkardizayn.com/images/og-image.jpg",
   logo: "https://duzkardizayn.com/images/logo.png",

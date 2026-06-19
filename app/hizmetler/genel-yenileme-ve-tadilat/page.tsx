@@ -546,8 +546,8 @@ export default function TadilatPage() {
           description="Girne, Lefkoşa, Gazimağusa ve Güzelyurt'ta su yalıtımı, izolasyon, cephe kaplamaları ve yenileme işlerinizde güvenilir çözüm ortağınız. Detaylı bilgi ve fiyat teklifi almak için bizimle iletişime geçin."
           primaryButtonText="Ücretsiz Teklif Al"
           primaryButtonHref="/#iletisim"
-          secondaryButtonText="+90 548 888 85 03"
-          secondaryButtonHref="tel:+905488888503"
+          secondaryButtonText="+90 533 831 14 32"
+          secondaryButtonHref="tel:+905338311432"
           trustBadges={trustBadges}
         />
       </main>

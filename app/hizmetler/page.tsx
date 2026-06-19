@@ -342,8 +342,8 @@ export default function HizmetlerPage() {
           description="Hangi hizmete ihtiyacınız olduğundan emin değilseniz, ücretsiz yerinde keşifle en uygun çözümü birlikte belirleyelim."
           primaryButtonText="Ücretsiz Keşif Talep Et"
           primaryButtonHref="/#iletisim"
-          secondaryButtonText="+90 548 888 85 03"
-          secondaryButtonHref="tel:+905488888503"
+          secondaryButtonText="+90 533 831 14 32"
+          secondaryButtonHref="tel:+905338311432"
           trustBadges={[
             { text: "25+ Yıl Deneyim" },
             { text: "5 Yıl Garanti" },

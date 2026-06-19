@@ -59,7 +59,7 @@ girne, kıbrıs, kuzey kıbrıs, kktc, lefkoşa, gazimağusa, güzelyurt, alsanc
   "name": "Düzkar Dizayn",
   "description": "Profesyonel izolasyon ve cephe kaplama hizmetleri",
   "url": "https://duzkardizayn.com",
-  "telephone": "+905488888503",
+  "telephone": "+905338311432",
   "email": "info@duzkardizayn.com",
   "address": {
     "@type": "PostalAddress",

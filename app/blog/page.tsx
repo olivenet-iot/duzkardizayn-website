@@ -78,7 +78,7 @@ export default function BlogPage() {
         primaryButtonText="Ücretsiz Keşif Talep Et"
         primaryButtonHref="/#iletisim"
         secondaryButtonText="Hemen Ara"
-        secondaryButtonHref="tel:+905488888503"
+        secondaryButtonHref="tel:+905338311432"
         trustBadges={[
           { text: "25+ Yıl Deneyim" },
           { text: "5 Yıl Garanti" },

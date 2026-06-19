@@ -56,7 +56,7 @@ export default function ServiceCTA() {
               Ücretsiz Teklif Al
             </a>
             <a
-              href="tel:+905488888503"
+              href="tel:+905338311432"
               className="border-2 border-gold-primary text-gold-primary font-semibold px-10 py-4 rounded-md hover:bg-gold-primary hover:text-navy-dark transition-all duration-300 text-center flex items-center justify-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ export default function ServiceCTA() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              +90 548 888 85 03
+              +90 533 831 14 32
             </a>
           </div>
 

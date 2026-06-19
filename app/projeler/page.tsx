@@ -128,8 +128,8 @@ export default function ProjelerPage() {
           description="25 yıllık tecrübemizle sizin projenizde de kaliteli ve güvenilir çözümler sunmak için hazırız."
           primaryButtonText="Ücretsiz Keşif İsteyin"
           primaryButtonHref="/#iletisim"
-          secondaryButtonText="+90 548 888 85 03"
-          secondaryButtonHref="tel:+905488888503"
+          secondaryButtonText="+90 533 831 14 32"
+          secondaryButtonHref="tel:+905338311432"
           trustBadges={[
             { text: "25+ Yıl Deneyim" },
             { text: "Ücretsiz Keşif" },

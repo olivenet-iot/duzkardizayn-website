@@ -11,7 +11,7 @@ Düzkar Dizayn, Kuzey Kıbrıs Girne merkezli bir inşaat ve tadilat şirketinin
 
 **Şirket Bilgileri:**
 - Adres: Ankara Caddesi No:111, Alsancak, Girne 99320
-- Telefon: +905488888503
+- Telefon: +905338311432
 - Email: info@duzkardizayn.com
 - Website: https://duzkardizayn.com
 

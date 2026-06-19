@@ -58,7 +58,7 @@ const cepheFaqs = [
 ];
 
 const genelFaqs = [
-  { question: "Ücretsiz keşif nasıl talep edebilirim?", answer: "Web sitemizdeki iletişim formunu doldurarak, +90 548 888 85 03 numarasını arayarak veya WhatsApp üzerinden bize ulaşarak ücretsiz keşif talep edebilirsiniz. Uzman ekibimiz en kısa sürede sizi ziyaret eder." },
+  { question: "Ücretsiz keşif nasıl talep edebilirim?", answer: "Web sitemizdeki iletişim formunu doldurarak, +90 533 831 14 32 numarasını arayarak veya WhatsApp üzerinden bize ulaşarak ücretsiz keşif talep edebilirsiniz. Uzman ekibimiz en kısa sürede sizi ziyaret eder." },
   { question: "Hangi bölgelere hizmet veriyorsunuz?", answer: "Girne merkezli olarak Lefkoşa, Gazimağusa, Güzelyurt ve tüm Kuzey Kıbrıs genelinde hizmet veriyoruz." },
   { question: "Ödeme seçenekleriniz nelerdir?", answer: "Nakit, kredi kartı ve banka havalesi ile ödeme kabul ediyoruz. TRY, EUR ve GBP ile işlem yapabilirsiniz. Büyük projelerde taksit imkanı da sunuyoruz." },
   { question: "Garanti kapsamınız nedir?", answer: "Tüm izolasyon ve su yalıtımı uygulamalarımızda 5 yıl garanti veriyoruz. Garanti süresince oluşabilecek sorunlarda ücretsiz onarım yapıyoruz." },
@@ -180,7 +180,7 @@ export default function SSSPage() {
           primaryButtonText="Ücretsiz Keşif Talep Et"
           primaryButtonHref="/#iletisim"
           secondaryButtonText="Hemen Ara"
-          secondaryButtonHref="tel:+905488888503"
+          secondaryButtonHref="tel:+905338311432"
           trustBadges={[
             { text: "25+ Yıl Deneyim" },
             { text: "5 Yıl Garanti" },

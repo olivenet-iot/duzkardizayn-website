@@ -174,7 +174,7 @@ export default function ServiceHero({
                 Ücretsiz Keşif Talep Et
               </a>
               <a
-                href="tel:+905488888503"
+                href="tel:+905338311432"
                 className="btn-secondary flex items-center justify-center gap-2"
               >
                 <svg
