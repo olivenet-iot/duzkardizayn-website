@@ -95,7 +95,7 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <p className="text-white text-sm">Ankara Caddesi No:111</p>
+                <p className="text-white text-sm">Ankara Caddesi No:109</p>
                 <p className="text-white/70 text-xs">Alsancak/Girne, KKTC</p>
               </div>
               <div className="bg-navy-dark p-4 rounded-lg text-center">

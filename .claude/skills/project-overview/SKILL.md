@@ -10,7 +10,7 @@ description: Düzkar Dizayn projesi hakkında genel bilgi sağlar. Proje yapıs�
 Düzkar Dizayn, Kuzey Kıbrıs Girne merkezli bir inşaat ve tadilat şirketinin portfolyo websitesidir. 1999'dan beri faaliyet gösteren şirket izolasyon, su yalıtımı, cephe kaplama ve genel tadilat hizmetleri sunmaktadır.
 
 **Şirket Bilgileri:**
-- Adres: Ankara Caddesi No:111, Alsancak, Girne 99320
+- Adres: Ankara Caddesi No:109, Alsancak, Girne 99320
 - Telefon: +905338311432
 - Email: info@duzkardizayn.com
 - Website: https://duzkardizayn.com

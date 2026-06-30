@@ -112,7 +112,7 @@ const structuredData = {
   foundingDate: "1999",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Ankara Caddesi No:111",
+    streetAddress: "Ankara Caddesi No:109",
     addressLocality: "Alsancak",
     addressRegion: "Girne",
     postalCode: "99320",

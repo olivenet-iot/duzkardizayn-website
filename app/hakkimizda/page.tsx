@@ -105,7 +105,7 @@ const organizationSchema = {
   "description": "1999'dan bu yana Kuzey Kıbrıs'ta profesyonel izolasyon, su yalıtımı ve cephe uygulamaları sunan lider firma.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Ankara Caddesi No:111",
+    "streetAddress": "Ankara Caddesi No:109",
     "addressLocality": "Alsancak, Girne",
     "addressRegion": "Girne",
     "postalCode": "99320",

@@ -63,7 +63,7 @@ girne, kıbrıs, kuzey kıbrıs, kktc, lefkoşa, gazimağusa, güzelyurt, alsanc
   "email": "info@duzkardizayn.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Ankara Caddesi No:111",
+    "streetAddress": "Ankara Caddesi No:109",
     "addressLocality": "Alsancak, Girne",
     "postalCode": "99320",
     "addressCountry": "CY"
