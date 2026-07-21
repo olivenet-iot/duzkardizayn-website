@@ -1,13 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BlogPost, formatDate } from '@/lib/blog-types';
+import { BlogPost } from '@/lib/blog-types';
+import { BlogLocale, blogUi, categoryLabel, formatBlogDate } from '@/lib/blog-locale';
 
 interface BlogHeroProps {
   post: BlogPost;
+  locale?: BlogLocale;
 }
 
-export default function BlogHero({ post }: BlogHeroProps) {
+export default function BlogHero({ post, locale = 'tr' }: BlogHeroProps) {
+  const t = blogUi[locale];
+
   return (
     <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-end">
       {/* Arkaplan Görsel */}
@@ -30,8 +34,8 @@ export default function BlogHero({ post }: BlogHeroProps) {
           <nav className="mb-6">
             <ol className="flex items-center gap-2 text-sm text-white/70">
               <li>
-                <Link href="/" className="hover:text-gold-primary transition-colors">
-                  Ana Sayfa
+                <Link href={t.homeHref} className="hover:text-gold-primary transition-colors">
+                  {t.home}
                 </Link>
               </li>
               <li>
@@ -40,8 +44,8 @@ export default function BlogHero({ post }: BlogHeroProps) {
                 </svg>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-gold-primary transition-colors">
-                  Blog
+                <Link href={t.blogHref} className="hover:text-gold-primary transition-colors">
+                  {t.blog}
                 </Link>
               </li>
               <li>
@@ -58,7 +62,7 @@ export default function BlogHero({ post }: BlogHeroProps) {
           {/* Kategori Badge */}
           <div className="mb-4">
             <span className="bg-gold-primary text-navy-dark text-xs font-bold px-4 py-2 rounded-full">
-              {post.category}
+              {categoryLabel(post.category, locale)}
             </span>
           </div>
 
@@ -84,7 +88,7 @@ export default function BlogHero({ post }: BlogHeroProps) {
               <svg className="w-5 h-5 text-gold-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <span>{formatDate(post.publishedAt)}</span>
+              <span>{formatBlogDate(post.publishedAt, locale)}</span>
             </div>
 
             {/* Güncelleme Tarihi */}
@@ -93,7 +97,7 @@ export default function BlogHero({ post }: BlogHeroProps) {
                 <svg className="w-5 h-5 text-gold-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                <span>Güncellendi: {formatDate(post.updatedAt)}</span>
+                <span>{t.updated}: {formatBlogDate(post.updatedAt, locale)}</span>
               </div>
             )}
 
@@ -102,7 +106,7 @@ export default function BlogHero({ post }: BlogHeroProps) {
               <svg className="w-5 h-5 text-gold-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span>{post.readingTime} dk okuma</span>
+              <span>{t.readingTime(post.readingTime)}</span>
             </div>
           </div>
         </div>

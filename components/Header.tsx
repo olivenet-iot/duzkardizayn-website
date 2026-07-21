@@ -4,30 +4,62 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { counterpartUrl, localeFromPathname, type Locale } from "@/lib/i18n";
 
-const serviceLinks = [
-  {
-    href: "/hizmetler/izolasyon-ve-su-yalitimi",
-    label: "İzolasyon ve Su Yalıtımı",
-  },
-  {
-    href: "/hizmetler/ic-ve-dis-cephe-uygulamalari",
-    label: "İç ve Dış Cephe Uygulamaları",
-  },
-  {
-    href: "/hizmetler/genel-yenileme-ve-tadilat",
-    label: "Genel Yenileme ve Tadilat",
-  },
-];
+type NavLink = {
+  href: string;
+  sectionId: string;
+  label: string;
+  isDropdown: boolean;
+};
 
-const navLinks = [
-  { href: "/", sectionId: "anasayfa", label: "ANASAYFA", isDropdown: false },
-  { href: "/#hizmetler", sectionId: "hizmetler", label: "HİZMETLER", isDropdown: true },
-  { href: "/projeler", sectionId: "projeler", label: "PROJELER", isDropdown: false },
-  { href: "/blog", sectionId: "blog", label: "BLOG", isDropdown: false },
-  { href: "/hakkimizda", sectionId: "hakkimizda", label: "HAKKIMIZDA", isDropdown: false },
-  { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false },
-];
+const nav: Record<
+  Locale,
+  {
+    home: string;
+    services: { href: string; label: string }[];
+    links: NavLink[];
+    cta: { href: string; sectionId: string; label: string };
+    menuLabel: string;
+  }
+> = {
+  tr: {
+    home: "/",
+    services: [
+      { href: "/hizmetler/izolasyon-ve-su-yalitimi", label: "İzolasyon ve Su Yalıtımı" },
+      { href: "/hizmetler/ic-ve-dis-cephe-uygulamalari", label: "İç ve Dış Cephe Uygulamaları" },
+      { href: "/hizmetler/genel-yenileme-ve-tadilat", label: "Genel Yenileme ve Tadilat" },
+    ],
+    links: [
+      { href: "/", sectionId: "anasayfa", label: "ANASAYFA", isDropdown: false },
+      { href: "/#hizmetler", sectionId: "hizmetler", label: "HİZMETLER", isDropdown: true },
+      { href: "/projeler", sectionId: "projeler", label: "PROJELER", isDropdown: false },
+      { href: "/blog", sectionId: "blog", label: "BLOG", isDropdown: false },
+      { href: "/hakkimizda", sectionId: "hakkimizda", label: "HAKKIMIZDA", isDropdown: false },
+      { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false },
+    ],
+    cta: { href: "/#iletisim", sectionId: "iletisim", label: "Ücretsiz Keşif" },
+    menuLabel: "Menüyü aç/kapat",
+  },
+  en: {
+    home: "/en",
+    services: [
+      { href: "/en/services/waterproofing", label: "Waterproofing & Damp Proofing" },
+      { href: "/en/services/facades-and-rendering", label: "Facades, Rendering & Insulation" },
+      { href: "/en/services/renovation", label: "Renovation & Refurbishment" },
+    ],
+    links: [
+      { href: "/en", sectionId: "home", label: "HOME", isDropdown: false },
+      { href: "/en#services", sectionId: "services", label: "SERVICES", isDropdown: true },
+      { href: "/en/projects", sectionId: "projects", label: "PROJECTS", isDropdown: false },
+      { href: "/en/blog", sectionId: "blog", label: "BLOG", isDropdown: false },
+      { href: "/en/about", sectionId: "about", label: "ABOUT", isDropdown: false },
+      { href: "/en#contact", sectionId: "contact", label: "CONTACT", isDropdown: false },
+    ],
+    cta: { href: "/en#contact", sectionId: "contact", label: "Free Survey" },
+    menuLabel: "Toggle menu",
+  },
+};
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +68,9 @@ export default function Header() {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  const locale = localeFromPathname(pathname);
+  const t = nav[locale];
+  const isHomePage = pathname === t.home;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,9 +93,9 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: NavLink) => {
     // Sayfa linkleri için (blog, projeler gibi) direkt navigate et
-    const isPageLink = !link.href.startsWith('/#') && link.href !== '/';
+    const isPageLink = !link.href.includes("#") && link.href !== t.home;
 
     if (isPageLink) {
       // Sayfa linklerinde preventDefault yapma, normal navigate olsun
@@ -72,7 +106,7 @@ export default function Header() {
     // Ana sayfa section linkleri için scroll davranışı
     if (isHomePage) {
       e.preventDefault();
-      if (link.sectionId === "anasayfa") {
+      if (link.sectionId === "anasayfa" || link.sectionId === "home") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         const element = document.getElementById(link.sectionId);
@@ -87,6 +121,27 @@ export default function Header() {
     setIsServicesDropdownOpen(false);
   };
 
+  // Dil değiştirici. İki root layout arasında geçiş olduğu için Link değil <a>
+  // kullanılıyor — tam sayfa yüklemesi gerekiyor, aksi halde yanlış <html lang> kalır.
+  const languageSwitcher = (className: string) => (
+    <a
+      href={counterpartUrl(pathname, locale === "tr" ? "en" : "tr")}
+      hrefLang={locale === "tr" ? "en" : "tr"}
+      className={className}
+      aria-label={locale === "tr" ? "Switch to English" : "Türkçe sayfaya geç"}
+    >
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z M3.6 9h16.8 M3.6 15h16.8 M12 3a15 15 0 010 18 M12 3a15 15 0 000 18"
+        />
+      </svg>
+      {locale === "tr" ? "EN" : "TR"}
+    </a>
+  );
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -98,7 +153,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href={t.home} className="flex items-center">
             <Image
               src="/logo-white.png"
               alt="Düzkar Dizayn"
@@ -111,7 +166,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {navLinks.map((link) =>
+            {t.links.map((link) =>
               link.isDropdown ? (
                 <div key={link.href} className="relative" ref={dropdownRef}>
                   <button
@@ -150,7 +205,7 @@ export default function Header() {
                     <div className="absolute -top-2 left-6 w-4 h-4 bg-navy-dark/95 rotate-45 border-l border-t border-white/10" />
 
                     <div className="relative py-2">
-                      {serviceLinks.map((service, index) => (
+                      {t.services.map((service, index) => (
                         <Link
                           key={service.href}
                           href={service.href}
@@ -161,7 +216,7 @@ export default function Header() {
                             <span className="w-2 h-2 bg-gold-primary/50 rounded-full group-hover:bg-gold-primary transition-colors" />
                             {service.label}
                           </div>
-                          {index < serviceLinks.length - 1 && (
+                          {index < t.services.length - 1 && (
                             <div className="absolute left-4 right-4 bottom-0 h-px bg-white/5" />
                           )}
                         </Link>
@@ -180,44 +235,54 @@ export default function Header() {
                 </Link>
               )
             )}
+            {languageSwitcher(
+              "flex items-center gap-1.5 text-white/70 hover:text-gold-primary transition-colors text-sm font-semibold tracking-wide"
+            )}
             <Link
-              href="/#iletisim"
-              onClick={(e) => handleNavClick(e, { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false })}
+              href={t.cta.href}
+              onClick={(e) =>
+                handleNavClick(e, { ...t.cta, isDropdown: false })
+              }
               className="btn-primary text-sm"
             >
-              Ücretsiz Keşif
+              {t.cta.label}
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Menüyü aç/kapat"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Mobile: dil değiştirici + menü butonu */}
+          <div className="lg:hidden flex items-center gap-2">
+            {languageSwitcher(
+              "flex items-center gap-1 text-white/70 hover:text-gold-primary transition-colors text-sm font-semibold px-2 py-1"
+            )}
+            <button
+              className="text-white p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={t.menuLabel}
             >
-              {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -227,7 +292,7 @@ export default function Header() {
           }`}
         >
           <nav className="flex flex-col space-y-2">
-            {navLinks.map((link) =>
+            {t.links.map((link) =>
               link.isDropdown ? (
                 <div key={link.href}>
                   <button
@@ -259,7 +324,7 @@ export default function Header() {
                     }`}
                   >
                     <div className="bg-white/5 rounded-lg mx-4 my-2">
-                      {serviceLinks.map((service) => (
+                      {t.services.map((service) => (
                         <Link
                           key={service.href}
                           href={service.href}
@@ -287,11 +352,11 @@ export default function Header() {
               )
             )}
             <Link
-              href="/#iletisim"
-              onClick={(e) => handleNavClick(e, { href: "/#iletisim", sectionId: "iletisim", label: "İLETİŞİM", isDropdown: false })}
+              href={t.cta.href}
+              onClick={(e) => handleNavClick(e, { ...t.cta, isDropdown: false })}
               className="btn-primary text-sm text-center mx-auto"
             >
-              Ücretsiz Keşif
+              {t.cta.label}
             </Link>
           </nav>
         </div>

@@ -3,14 +3,27 @@
 import React, { useState } from 'react';
 import { BlogCard } from '@/components/blog';
 import { blogCategories } from '@/lib/blog-categories';
+import { BlogLocale, blogUi, categoryLabel } from '@/lib/blog-locale';
 import type { BlogPost } from '@/lib/blog-types';
 
 interface BlogListClientProps {
   posts: BlogPost[];
+  locale?: BlogLocale;
 }
 
-export default function BlogListClient({ posts }: BlogListClientProps) {
+export default function BlogListClient({ posts, locale = 'tr' }: BlogListClientProps) {
   const [activeCategory, setActiveCategory] = useState<string>('Tümü');
+  const t = blogUi[locale];
+
+  // Kategori değerleri iki dilde de aynı (frontmatter Türkçe tutuluyor),
+  // sadece ekranda gösterilen etiket değişiyor. İngilizce blogda yazı sayısı
+  // az olduğu için boş kalacak kategoriler gizleniyor.
+  const visibleCategories =
+    locale === 'en'
+      ? blogCategories.filter(
+          (category) => category === 'Tümü' || posts.some((post) => post.category === category)
+        )
+      : blogCategories;
 
   const filteredPosts = activeCategory === 'Tümü'
     ? posts
@@ -22,7 +35,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
       <section className="bg-gray-50 py-6 sticky top-16 z-40 border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-2 md:gap-3">
-            {blogCategories.map((category) => (
+            {visibleCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
@@ -35,7 +48,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                   }
                 `}
               >
-                {category}
+                {categoryLabel(category, locale)}
               </button>
             ))}
           </div>
@@ -48,7 +61,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
           {filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <BlogCard key={post.slug} post={post} />
+                <BlogCard key={post.slug} post={post} locale={locale} />
               ))}
             </div>
           ) : (
@@ -67,10 +80,10 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                 />
               </svg>
               <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                Bu kategoride henüz yazı yok
+                {t.emptyTitle}
               </h3>
               <p className="text-gray-500">
-                Yakında yeni içerikler eklenecek.
+                {t.emptyText}
               </p>
             </div>
           )}

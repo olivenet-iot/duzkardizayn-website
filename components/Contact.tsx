@@ -1,8 +1,74 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { localeFromPathname, type Locale } from "@/lib/i18n";
+
+const content: Record<Locale, {
+  sectionId: string;
+  heading: string;
+  mapTitle: string;
+  addressLine2: string;
+  formTitle: string;
+  formIntro: string;
+  name: string; namePlaceholder: string;
+  email: string; emailPlaceholder: string;
+  phone: string; phonePlaceholder: string;
+  subject: string; subjectPlaceholder: string;
+  subjects: { value: string; label: string }[];
+  message: string; messagePlaceholder: string;
+  submit: string; submitting: string;
+  success: string; error: string;
+}> = {
+  tr: {
+    sectionId: "iletisim",
+    heading: "İletişim",
+    mapTitle: "Düzkar Dizayn Konum",
+    addressLine2: "Alsancak/Girne, KKTC",
+    formTitle: "Ücretsiz Keşif İsteyin",
+    formIntro: "Projeniz hakkında bilgi almak için formu doldurun, en kısa sürede size ulaşalım.",
+    name: "İsim Soyisim *", namePlaceholder: "Adınız Soyadınız",
+    email: "Email *", emailPlaceholder: "ornek@email.com",
+    phone: "Telefon *", phonePlaceholder: "+90 5XX XXX XX XX",
+    subject: "Konu", subjectPlaceholder: "Seçiniz",
+    subjects: [
+      { value: "izolasyon", label: "İzolasyon ve Su Yalıtımı" },
+      { value: "cephe", label: "İç/Dış Cephe Uygulamaları" },
+      { value: "tadilat", label: "Genel Yenileme ve Tadilat" },
+      { value: "diger", label: "Diğer" },
+    ],
+    message: "Mesajınız *", messagePlaceholder: "Projeniz hakkında detaylı bilgi verin...",
+    submit: "Gönder", submitting: "Gönderiliyor...",
+    success: "Mesajınız başarıyla gönderildi. En kısa sürede size ulaşacağız.",
+    error: "Bir hata oluştu. Lütfen tekrar deneyin.",
+  },
+  en: {
+    sectionId: "contact",
+    heading: "Contact Us",
+    mapTitle: "Düzkar Dizayn location",
+    addressLine2: "Alsancak, Kyrenia, North Cyprus",
+    formTitle: "Request a Free Survey",
+    formIntro: "Tell us about the property and the problem. We will come out, take a look and send you a written quotation — no charge, no obligation.",
+    name: "Full name *", namePlaceholder: "Your full name",
+    email: "Email *", emailPlaceholder: "you@example.com",
+    phone: "Phone *", phonePlaceholder: "+44 7700 900000 or +90 5XX XXX XX XX",
+    subject: "What do you need?", subjectPlaceholder: "Please choose",
+    subjects: [
+      { value: "waterproofing", label: "Waterproofing / leak / damp" },
+      { value: "facades", label: "Rendering, painting or wall insulation" },
+      { value: "renovation", label: "Renovation or refurbishment" },
+      { value: "other", label: "Something else" },
+    ],
+    message: "Your message *", messagePlaceholder: "Where is the property, what is happening, and how long has it been going on?",
+    submit: "Send enquiry", submitting: "Sending...",
+    success: "Thank you — your enquiry has been sent. We will get back to you shortly.",
+    error: "Something went wrong. Please try again, or call us on +90 533 831 14 32.",
+  },
+};
 
 export default function Contact() {
+  const pathname = usePathname();
+  const t = content[localeFromPathname(pathname)];
   const sectionRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -66,10 +132,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="iletisim" ref={sectionRef} className="py-20 bg-white">
+    <section id={t.sectionId} ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="section-title text-navy-dark mb-16 reveal">
-          İletişim
+          {t.heading}
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -84,7 +150,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Düzkar Dizayn Konum"
+                title={t.mapTitle}
               />
             </div>
 
@@ -96,7 +162,7 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <p className="text-white text-sm">Ankara Caddesi No:109</p>
-                <p className="text-white/70 text-xs">Alsancak/Girne, KKTC</p>
+                <p className="text-white/70 text-xs">{t.addressLine2}</p>
               </div>
               <div className="bg-navy-dark p-4 rounded-lg text-center">
                 <svg className="w-8 h-8 text-gold-primary mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,17 +187,17 @@ export default function Contact() {
           <div className="reveal" style={{ transitionDelay: "0.2s" }}>
             <div className="bg-gray-light p-8 rounded-lg">
               <h3 className="font-heading text-2xl font-bold text-navy-dark mb-6">
-                Ücretsiz Keşif İsteyin
+                {t.formTitle}
               </h3>
               <p className="text-gray-text mb-8">
-                Projeniz hakkında bilgi almak için formu doldurun, en kısa sürede size ulaşalım.
+                {t.formIntro}
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-navy-dark mb-2">
-                      İsim Soyisim *
+                      {t.name}
                     </label>
                     <input
                       type="text"
@@ -141,12 +207,12 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-gold-primary focus:ring-2 focus:ring-gold-primary/20 outline-none transition-all"
-                      placeholder="Adınız Soyadınız"
+                      placeholder={t.namePlaceholder}
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-navy-dark mb-2">
-                      Email *
+                      {t.email}
                     </label>
                     <input
                       type="email"
@@ -156,7 +222,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-gold-primary focus:ring-2 focus:ring-gold-primary/20 outline-none transition-all"
-                      placeholder="ornek@email.com"
+                      placeholder={t.emailPlaceholder}
                     />
                   </div>
                 </div>
@@ -164,7 +230,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-navy-dark mb-2">
-                      Telefon *
+                      {t.phone}
                     </label>
                     <input
                       type="tel"
@@ -174,12 +240,12 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-gold-primary focus:ring-2 focus:ring-gold-primary/20 outline-none transition-all"
-                      placeholder="+90 5XX XXX XX XX"
+                      placeholder={t.phonePlaceholder}
                     />
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-navy-dark mb-2">
-                      Konu
+                      {t.subject}
                     </label>
                     <select
                       id="subject"
@@ -188,18 +254,17 @@ export default function Contact() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-gold-primary focus:ring-2 focus:ring-gold-primary/20 outline-none transition-all bg-white"
                     >
-                      <option value="">Seçiniz</option>
-                      <option value="izolasyon">İzolasyon ve Su Yalıtımı</option>
-                      <option value="cephe">İç/Dış Cephe Uygulamaları</option>
-                      <option value="tadilat">Genel Yenileme ve Tadilat</option>
-                      <option value="diger">Diğer</option>
+                      <option value="">{t.subjectPlaceholder}</option>
+                      {t.subjects.map((s) => (
+                        <option key={s.value} value={s.value}>{s.label}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-navy-dark mb-2">
-                    Mesajınız *
+                    {t.message}
                   </label>
                   <textarea
                     id="message"
@@ -209,7 +274,7 @@ export default function Contact() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-gold-primary focus:ring-2 focus:ring-gold-primary/20 outline-none transition-all resize-none"
-                    placeholder="Projeniz hakkında detaylı bilgi verin..."
+                    placeholder={t.messagePlaceholder}
                   />
                 </div>
 
@@ -224,22 +289,22 @@ export default function Contact() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                       </svg>
-                      Gönderiliyor...
+                      {t.submitting}
                     </span>
                   ) : (
-                    "Gönder"
+                    t.submit
                   )}
                 </button>
 
                 {submitStatus === "success" && (
                   <div className="bg-green-100 text-green-800 px-4 py-3 rounded-md text-center">
-                    Mesajınız başarıyla gönderildi. En kısa sürede size ulaşacağız.
+                    {t.success}
                   </div>
                 )}
 
                 {submitStatus === "error" && (
                   <div className="bg-red-100 text-red-800 px-4 py-3 rounded-md text-center">
-                    Bir hata oluştu. Lütfen tekrar deneyin.
+                    {t.error}
                   </div>
                 )}
               </form>

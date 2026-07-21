@@ -3,10 +3,35 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { localeFromPathname } from "@/lib/i18n";
 
 interface Badge {
   text: string;
 }
+
+// Hero'nun breadcrumb ve buton metinleri sayfadan değil dilden geliyor:
+// /en altındaki sayfalar aynı component'i İngilizce etiketlerle kullanabilsin diye.
+const heroCopy = {
+  tr: {
+    home: "Anasayfa",
+    homeHref: "/",
+    services: "Hizmetler",
+    servicesHref: "/#hizmetler",
+    cta: "Ücretsiz Keşif Talep Et",
+    ctaHref: "/#iletisim",
+    call: "Hemen Ara",
+  },
+  en: {
+    home: "Home",
+    homeHref: "/en",
+    services: "Services",
+    servicesHref: "/en/services",
+    cta: "Request a Free Survey",
+    ctaHref: "/en#contact",
+    call: "Call Now",
+  },
+} as const;
 
 interface ServiceHeroProps {
   title: string;
@@ -28,6 +53,7 @@ export default function ServiceHero({
   imageAlt = "Service Image",
 }: ServiceHeroProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const t = heroCopy[localeFromPathname(usePathname() ?? "/")];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -57,14 +83,14 @@ export default function ServiceHero({
         <nav className="mb-8 reveal">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
-              <Link href="/" className="text-gray-500 hover:text-gold-primary transition-colors">
-                Anasayfa
+              <Link href={t.homeHref} className="text-gray-500 hover:text-gold-primary transition-colors">
+                {t.home}
               </Link>
             </li>
             <li className="text-gray-400">/</li>
             <li>
-              <Link href="/#hizmetler" className="text-gray-500 hover:text-gold-primary transition-colors">
-                Hizmetler
+              <Link href={t.servicesHref} className="text-gray-500 hover:text-gold-primary transition-colors">
+                {t.services}
               </Link>
             </li>
             <li className="text-gray-400">/</li>
@@ -170,8 +196,8 @@ export default function ServiceHero({
               className="flex flex-col sm:flex-row gap-4 reveal"
               style={{ transitionDelay: "0.3s" }}
             >
-              <a href="/#iletisim" className="btn-primary">
-                Ücretsiz Keşif Talep Et
+              <a href={t.ctaHref} className="btn-primary">
+                {t.cta}
               </a>
               <a
                 href="tel:+905338311432"
@@ -190,7 +216,7 @@ export default function ServiceHero({
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                Hemen Ara
+                {t.call}
               </a>
             </div>
           </div>

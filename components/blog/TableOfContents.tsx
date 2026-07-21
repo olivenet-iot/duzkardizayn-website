@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { TableOfContentsItem } from '@/lib/blog-types';
+import { BlogLocale, blogUi } from '@/lib/blog-locale';
 
 interface TableOfContentsProps {
   items: TableOfContentsItem[];
+  locale?: BlogLocale;
 }
 
-export default function TableOfContents({ items }: TableOfContentsProps) {
+export default function TableOfContents({ items, locale = 'tr' }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -55,7 +57,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
           <svg className="w-5 h-5 text-gold-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
           </svg>
-          İçindekiler
+          {blogUi[locale].contents}
         </h4>
         <svg
           className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}

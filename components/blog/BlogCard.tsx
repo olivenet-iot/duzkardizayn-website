@@ -1,15 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BlogPost, formatDate } from '@/lib/blog-types';
+import { BlogPost } from '@/lib/blog-types';
+import { BlogLocale, blogPostHref, blogUi, categoryLabel, formatBlogDate } from '@/lib/blog-locale';
 
 interface BlogCardProps {
   post: BlogPost;
+  locale?: BlogLocale;
 }
 
-export default function BlogCard({ post }: BlogCardProps) {
+export default function BlogCard({ post, locale = 'tr' }: BlogCardProps) {
+  const t = blogUi[locale];
+
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
+    <Link href={blogPostHref(post.slug, locale)} className="group block">
       <article className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
         {/* Kapak Görseli */}
         <div className="relative aspect-[16/9] overflow-hidden">
@@ -25,7 +29,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           {/* Kategori Badge */}
           <div className="absolute top-4 left-4">
             <span className="bg-gold-primary text-navy-dark text-xs font-bold px-3 py-1.5 rounded-full">
-              {post.category}
+              {categoryLabel(post.category, locale)}
             </span>
           </div>
         </div>
@@ -44,12 +48,12 @@ export default function BlogCard({ post }: BlogCardProps) {
 
           {/* Meta Bilgiler */}
           <div className="flex items-center justify-between text-sm text-gray-500">
-            <span>{formatDate(post.publishedAt)}</span>
+            <span>{formatBlogDate(post.publishedAt, locale)}</span>
             <span className="flex items-center gap-1">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              {post.readingTime} dk okuma
+              {t.readingTime(post.readingTime)}
             </span>
           </div>
 

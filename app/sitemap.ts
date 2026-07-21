@@ -1,105 +1,81 @@
 import { MetadataRoute } from "next";
 import { getAllBlogPosts } from "@/lib/blog";
+import { getAllEnBlogPosts } from "@/lib/blog-en";
+import { projects } from "@/lib/projects-data";
+import { SITE_URL, routePairs, projectPair } from "@/lib/i18n";
+
+/**
+ * Karşılığı olan sayfalar için tek girdi yerine iki girdi üretir ve her ikisine de
+ * xhtml:link hreflang anotasyonu ekler. Google çok dilli siteler için sitemap
+ * üzerinden verilen bu anotasyonu head'deki link etiketlerine tercih ediyor.
+ */
+function bilingualEntries(
+  pair: { tr: string; en: string },
+  options: {
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+    priority: number;
+    lastModified?: Date;
+  }
+): MetadataRoute.Sitemap {
+  const languages = {
+    tr: `${SITE_URL}${pair.tr}`,
+    en: `${SITE_URL}${pair.en}`,
+    "x-default": `${SITE_URL}${pair.tr}`,
+  };
+  const lastModified = options.lastModified ?? new Date();
+
+  return [pair.tr, pair.en].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency: options.changeFrequency,
+    priority: options.priority,
+    alternates: { languages },
+  }));
+}
+
+// Sayfa türüne göre öncelik. routePairs tek kaynak olduğu için yeni bir
+// sayfa çifti eklendiğinde sitemap kendiliğinden güncelleniyor.
+const priorities: Record<string, { priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }> = {
+  "/": { priority: 1, changeFrequency: "weekly" },
+  "/hizmetler": { priority: 0.9, changeFrequency: "monthly" },
+  "/hizmetler/izolasyon-ve-su-yalitimi": { priority: 0.9, changeFrequency: "monthly" },
+  "/hizmetler/ic-ve-dis-cephe-uygulamalari": { priority: 0.9, changeFrequency: "monthly" },
+  "/hizmetler/genel-yenileme-ve-tadilat": { priority: 0.9, changeFrequency: "monthly" },
+  "/projeler": { priority: 0.8, changeFrequency: "weekly" },
+  "/blog": { priority: 0.8, changeFrequency: "weekly" },
+  "/sss": { priority: 0.7, changeFrequency: "monthly" },
+  "/hakkimizda": { priority: 0.6, changeFrequency: "monthly" },
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://duzkardizayn.com";
-  const blogPosts = getAllBlogPosts();
+  // Karşılığı olan tüm sayfalar (TR + EN, hreflang anotasyonlu)
+  const pairedUrls = routePairs.flatMap((pair) =>
+    bilingualEntries(pair, priorities[pair.tr] ?? { priority: 0.7, changeFrequency: "monthly" })
+  );
 
-  // Blog sayfaları
-  const blogUrls: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    ...blogPosts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updatedAt || post.publishedAt),
-      changeFrequency: "monthly" as const,
+  // Proje detayları — iki dilde aynı slug
+  const projectUrls = projects.flatMap((project) =>
+    bilingualEntries(projectPair(project.slug), {
       priority: 0.7,
-    })),
-  ];
+      changeFrequency: "monthly",
+    })
+  );
 
-  return [
-    // Ana Sayfa
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    // Hizmet Sayfaları
-    {
-      url: `${baseUrl}/hizmetler`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hizmetler/izolasyon-ve-su-yalitimi`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hizmetler/ic-ve-dis-cephe-uygulamalari`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hizmetler/genel-yenileme-ve-tadilat`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    // Proje Sayfaları
-    {
-      url: `${baseUrl}/projeler`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projeler/emtan-west-park`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/projeler/merit-park-hotel`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/projeler/emtan-quattro`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/projeler/merit-royal-premium`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    // Blog Sayfaları
-    ...blogUrls,
-    // Hakkımızda
-    {
-      url: `${baseUrl}/hakkimizda`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    // SSS
-    {
-      url: `${baseUrl}/sss`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-  ];
+  // Blog yazıları çeviri değil, her dilde özgün içerik. Bu yüzden hreflang
+  // eşleştirmesi yapılmıyor — yanlış eşleştirme Google'a hatalı sinyal olurdu.
+  const trBlogUrls: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt || post.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  const enBlogUrls: MetadataRoute.Sitemap = getAllEnBlogPosts().map((post) => ({
+    url: `${SITE_URL}/en/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt || post.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...pairedUrls, ...projectUrls, ...trBlogUrls, ...enBlogUrls];
 }

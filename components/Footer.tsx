@@ -2,31 +2,101 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { localeFromPathname, type Locale } from "@/lib/i18n";
 
-const quickLinks = [
-  { href: "#anasayfa", label: "Anasayfa" },
-  { href: "#hizmetler", label: "Hizmetler" },
-  { href: "#projeler", label: "Projeler" },
-  { href: "/hakkimizda", label: "Hakkımızda" },
-  { href: "/sss", label: "S.S.S." },
-  { href: "#iletisim", label: "İletişim" },
-];
-
-const services = [
-  { label: "Tüm Hizmetler", href: "/hizmetler" },
-  { label: "İzolasyon ve Su Yalıtımı", href: "/hizmetler/izolasyon-ve-su-yalitimi" },
-  { label: "İç ve Dış Cephe Uygulamaları", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
-  { label: "Genel Yenileme ve Tadilat", href: "/hizmetler/genel-yenileme-ve-tadilat" },
-  { label: "Mantolama", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
-  { label: "Boya ve Sıva", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
-];
+const content: Record<
+  Locale,
+  {
+    home: string;
+    about: string;
+    quickLinksTitle: string;
+    quickLinks: { href: string; label: string }[];
+    servicesTitle: string;
+    services: { href: string; label: string }[];
+    contactTitle: string;
+    address: string[];
+    rights: string;
+    areas: string;
+    whatsappLabel: string;
+  }
+> = {
+  tr: {
+    home: "/",
+    about:
+      "1999'dan bu yana Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde profesyonel izolasyon ve cephe çözümleri sunuyoruz. 25 yıllık deneyimimizle güvenilir hizmet.",
+    quickLinksTitle: "Hızlı Bağlantılar",
+    quickLinks: [
+      { href: "/#anasayfa", label: "Anasayfa" },
+      { href: "/#hizmetler", label: "Hizmetler" },
+      { href: "/projeler", label: "Projeler" },
+      { href: "/blog", label: "Blog" },
+      { href: "/hakkimizda", label: "Hakkımızda" },
+      { href: "/sss", label: "S.S.S." },
+      { href: "/#iletisim", label: "İletişim" },
+    ],
+    servicesTitle: "Hizmetlerimiz",
+    services: [
+      { label: "Tüm Hizmetler", href: "/hizmetler" },
+      { label: "İzolasyon ve Su Yalıtımı", href: "/hizmetler/izolasyon-ve-su-yalitimi" },
+      { label: "İç ve Dış Cephe Uygulamaları", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
+      { label: "Genel Yenileme ve Tadilat", href: "/hizmetler/genel-yenileme-ve-tadilat" },
+      { label: "Mantolama", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
+      { label: "Boya ve Sıva", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
+    ],
+    contactTitle: "İletişim Bilgileri",
+    address: ["Ankara Caddesi No:109", "Alsancak/Girne, Kuzey Kıbrıs"],
+    rights: "Tüm hakları saklıdır.",
+    areas: "Girne · Lefkoşa · Gazimağusa · Güzelyurt",
+    whatsappLabel: "WhatsApp ile iletişime geç",
+  },
+  en: {
+    home: "/en",
+    about:
+      "Waterproofing, rendering and renovation contractor based in Kyrenia since 1999. We work across Kyrenia, Nicosia, Famagusta and Guzelyurt, with an English-speaking team and written quotations.",
+    quickLinksTitle: "Quick Links",
+    quickLinks: [
+      { href: "/en#home", label: "Home" },
+      { href: "/en#services", label: "Services" },
+      { href: "/en/projects", label: "Projects" },
+      { href: "/en/blog", label: "Blog" },
+      { href: "/en/about", label: "About Us" },
+      { href: "/en/faq", label: "FAQ" },
+      { href: "/en#contact", label: "Contact" },
+    ],
+    servicesTitle: "Our Services",
+    services: [
+      { label: "All Services", href: "/en/services" },
+      { label: "Waterproofing & Damp Proofing", href: "/en/services/waterproofing" },
+      { label: "Facades, Rendering & Insulation", href: "/en/services/facades-and-rendering" },
+      { label: "Renovation & Refurbishment", href: "/en/services/renovation" },
+      { label: "External Wall Insulation", href: "/en/services/facades-and-rendering" },
+      { label: "Swimming Pool Leak Repair", href: "/en/services/waterproofing" },
+    ],
+    contactTitle: "Contact Details",
+    address: ["Ankara Caddesi No:109", "Alsancak, Kyrenia, North Cyprus"],
+    rights: "All rights reserved.",
+    areas: "Kyrenia · Nicosia · Famagusta · Guzelyurt",
+    whatsappLabel: "Contact us on WhatsApp",
+  },
+};
 
 export default function Footer() {
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
+  const t = content[locale];
+
+  // Ana sayfadaki bölümlere yumuşak kaydırma; başka bir sayfadaysak
+  // normal navigasyona bırak (eskiden preventDefault edip hiçbir şey yapmıyordu).
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (!href.includes("#")) return;
+    const targetId = href.split("#")[1];
     const element = document.getElementById(targetId);
     if (element) {
+      e.preventDefault();
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -37,7 +107,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & Description */}
           <div>
-            <Link href="/" className="flex items-center mb-4">
+            <Link href={t.home} className="flex items-center mb-4">
               <Image
                 src="/logo-white.png"
                 alt="Düzkar Dizayn"
@@ -47,13 +117,13 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              1999&apos;dan bu yana Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde profesyonel izolasyon ve cephe çözümleri
-              sunuyoruz. 25 yıllık deneyimimizle güvenilir hizmet.
+              {t.about}
             </p>
             <div className="flex gap-4">
-              {/* Social Media Icons (placeholder) */}
               <a
-                href="#"
+                href="https://www.facebook.com/duzkardizayn"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-gold-primary hover:text-navy-dark transition-all"
                 aria-label="Facebook"
               >
@@ -62,7 +132,9 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/duzkardizayn"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-gold-primary hover:text-navy-dark transition-all"
                 aria-label="Instagram"
               >
@@ -87,18 +159,18 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-heading text-lg font-bold text-white mb-6">
-              Hızlı Bağlantılar
+              {t.quickLinksTitle}
             </h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
+              {t.quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
+                    onClick={(e) => handleAnchorClick(e, link.href)}
                     className="text-white/70 hover:text-gold-primary transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -107,10 +179,10 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4 className="font-heading text-lg font-bold text-white mb-6">
-              Hizmetlerimiz
+              {t.servicesTitle}
             </h4>
             <ul className="space-y-3">
-              {services.map((service, index) => (
+              {t.services.map((service, index) => (
                 <li key={index}>
                   <Link href={service.href} className="text-white/70 hover:text-gold-primary transition-colors text-sm">
                     {service.label}
@@ -123,7 +195,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="font-heading text-lg font-bold text-white mb-6">
-              İletişim Bilgileri
+              {t.contactTitle}
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
@@ -132,8 +204,8 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span className="text-white/70 text-sm">
-                  Ankara Caddesi No:109<br />
-                  Alsancak/Girne, Kuzey Kıbrıs
+                  {t.address[0]}<br />
+                  {t.address[1]}
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -160,11 +232,9 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/50 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Düzkar Dizayn. Tüm hakları saklıdır.
+              © {new Date().getFullYear()} Düzkar Dizayn. {t.rights}
             </p>
-            <p className="text-white/50 text-sm">
-              Girne · Lefkoşa · Gazimağusa · Güzelyurt
-            </p>
+            <p className="text-white/50 text-sm">{t.areas}</p>
           </div>
         </div>
       </div>
@@ -175,7 +245,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-all hover:scale-110"
-        aria-label="WhatsApp ile iletişime geç"
+        aria-label={t.whatsappLabel}
       >
         <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
