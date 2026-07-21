@@ -21,11 +21,64 @@ npm start
 npm run lint
 ```
 
+## Deploy (GERÇEK SÜREÇ)
+
+Site bir **Hetzner VPS**'te, PM2 altında, Cloudflare arkasında çalışıyor.
+Vercel/Docker KULLANILMIYOR — aşağıdaki "Deployment Seçenekleri" bölümü
+sadece genel bilgi, gerçek süreç budur.
+
+| | |
+|---|---|
+| VPS | `77.42.65.158` (Hetzner), kullanıcı `ubuntu` |
+| SSH anahtarı | `/root/duzkar.pem` (chmod 600 olmalı) |
+| Deploy dizini | `/var/www/duzkardizayn` |
+| PM2 process | `duzkardizayn` |
+| Repo | `github.com/olivenet-iot/duzkardizayn-website` |
+| Domain | duzkardizayn.com (Cloudflare arkasında) |
+
+### Adımlar
+
+**`~/deploy.sh` sunucuda `git reset --hard origin/main` yapar.**
+Yani yalnızca **main** deploy olur — feature dalı deploy edilmez, önce merge şart.
+
+```bash
+# 1) main'e al ve push et
+git checkout main && git merge --ff-only <dal>
+git push https://x-access-token:<TOKEN>@github.com/olivenet-iot/duzkardizayn-website main
+
+# 2) deploy'u tetikle
+ssh -i /root/duzkar.pem -o StrictHostKeyChecking=no ubuntu@77.42.65.158 "bash ~/deploy.sh"
+```
+
+`deploy.sh` sırası: `git fetch --all` → `git reset --hard origin/main` →
+`npm install` → `npm run build` → `pm2 restart duzkardizayn`
+
+### Deploy sonrası doğrulama
+
+Cloudflare önbelleğe alabildiği için önce sunucunun kendisinden kontrol et:
+
+```bash
+ssh -i /root/duzkar.pem ubuntu@77.42.65.158 \
+  'for p in / /en /blog /sitemap.xml; do
+     echo -n "$p "; curl -s -o /dev/null -w "%{http_code}\n" http://localhost:3000$p; done'
+```
+
+### Notlar
+
+- GitHub token'ı `git remote set-url` ile kalıcı yazma — düz metin olarak
+  `.git/config`'e gömülür. Tek seferlik inline URL ile push et.
+- Token süresi dolduğunda push `Invalid username or token` verir; Kemal'dan yeni
+  token iste.
+- `.hermes/skills/duzkar-knowledge/duzkar-website-deployment` dosyası anahtarı
+  `/root/key.pem` diye gösteriyor — yanlış, doğrusu `/root/duzkar.pem`. Ayrıca
+  orada blog'un `lib/blog.ts` dizisi + `[slug]` if/else ile yönetildiği yazıyor;
+  bu sistem MDX'e taşındı (`content/blog/*.mdx`, `content/blog-en/*.mdx`).
+
 ## Next.js Konfigürasyonu
 
-### next.config.ts (Ana Config)
-```typescript
-const nextConfig: NextConfig = {
+### next.config.mjs (Ana Config — projede next.config.ts YOK)
+```javascript
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -44,7 +97,7 @@ const nextConfig: NextConfig = {
 - Node.js server dahil
 - Docker deployment için ideal
 
-### next.config.mjs (Alternatif)
+### Ayrıca içerdiği 301 yönlendirmeler
 ```javascript
 const nextConfig = {
   images: {
@@ -122,9 +175,9 @@ export async function generateStaticParams() {
 }
 ```
 
-## Deployment Seçenekleri
+## Deployment Seçenekleri (KULLANILMIYOR — referans amaçlı)
 
-### Vercel (Önerilen)
+### Vercel
 ```bash
 # Vercel CLI ile deploy
 npx vercel
