@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Open_Sans, Oswald } from "next/font/google";
 import Script from "next/script";
 import { alternatesFor, SITE_URL } from "@/lib/i18n";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
 import "../globals.css";
 
 const montserrat = Montserrat({
@@ -317,6 +318,7 @@ export default function EnRootLayout({
         className={`${montserrat.variable} ${openSans.variable} ${oswald.variable} font-body antialiased`}
       >
         {children}
+        <AnalyticsEvents />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4JTZQCR1SW"
           strategy="afterInteractive"

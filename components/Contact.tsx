@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { localeFromPathname, type Locale } from "@/lib/i18n";
+import { trackEvent } from "@/lib/gtag";
 
 const content: Record<Locale, {
   sectionId: string;
@@ -119,6 +120,7 @@ export default function Contact() {
 
       if (response.ok) {
         setSubmitStatus("success");
+        trackEvent("form_submit", { form: "contact" });
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
       } else {
         setSubmitStatus("error");
