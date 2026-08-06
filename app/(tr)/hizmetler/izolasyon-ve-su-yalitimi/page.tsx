@@ -7,6 +7,7 @@ import {
   FeatureCards,
   CTASection,
   FAQSection,
+  CrossSellSection,
 } from "@/components/services";
 import IzolasyonHero from "./components/IzolasyonHero";
 import IzolasyonTypes from "./components/IzolasyonTypes";
@@ -454,36 +455,31 @@ export default function IzolasyonPage() {
           schemaId="https://duzkardizayn.com/hizmetler/izolasyon-ve-su-yalitimi#faq"
         />
 
-        {/* Internal Linking Section */}
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-xl font-heading font-bold text-navy-dark mb-6">
-                Diğer Hizmetlerimiz
-              </h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/hizmetler/ic-ve-dis-cephe-uygulamalari"
-                  className="px-6 py-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow text-navy-dark hover:text-gold-primary"
-                >
-                  İç ve Dış Cephe Uygulamaları
-                </Link>
-                <Link
-                  href="/hizmetler/genel-yenileme-ve-tadilat"
-                  className="px-6 py-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow text-navy-dark hover:text-gold-primary"
-                >
-                  Tadilat ve Yenileme
-                </Link>
-                <Link
-                  href="/projeler"
-                  className="px-6 py-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow text-navy-dark hover:text-gold-primary"
-                >
-                  Tamamlanan Projeler
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Çapraz satış: izolasyon sonrası devam işleri */}
+        <CrossSellSection
+          title="Su Sorunu Çözüldü — Sırada Ne Var?"
+          description="İzolasyon işi bittiğinde iş çoğu zaman bitmez: nem izi kalan duvarlar boyanacak, yıpranan cephe yenilenecek. Keşif sırasında dilerseniz bu kalemler için de yazılı teklif veriyoruz — tüm işçilikler tek elden."
+          items={[
+            {
+              href: "/hizmetler/ic-ve-dis-cephe-uygulamalari",
+              title: "İç ve Dış Cephe Boya",
+              description:
+                "Nem izi kalan tavan ve duvarların onarımı, iç-dış cephe boya ve dekoratif kaplama — sızıntı sonrası son dokunuş.",
+            },
+            {
+              href: "/hizmetler/mantolama",
+              title: "Mantolama ve Isı Yalıtımı",
+              description:
+                "Cephe zaten elden geçiyorken ısı yalıtımıyla klima giderinizi kalıcı olarak düşürün.",
+            },
+            {
+              href: "/hizmetler/genel-yenileme-ve-tadilat",
+              title: "Genel Yenileme ve Tadilat",
+              description:
+                "Alçı, asma tavan, zemin kaplama ve komple yenileme — mekânı baştan sona tek elden tamamlayalım.",
+            },
+          ]}
+        />
 
         <CTASection
           title="Tecrübe ve Kalite"

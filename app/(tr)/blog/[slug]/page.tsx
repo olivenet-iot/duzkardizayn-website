@@ -16,7 +16,7 @@ import {
   CheckList,
   StepByStep,
 } from '@/components/blog';
-import { CTASection, FAQSection } from '@/components/services';
+import { CTASection, CrossSellSection, FAQSection } from '@/components/services';
 import { getBlogPostWithContent, getAllBlogPosts, getRelatedPosts } from '@/lib/blog';
 
 // MDX'te kullanılacak custom component'ler
@@ -144,6 +144,63 @@ const howToSchemas: Record<string, object> = {
   },
 };
 
+// Kategoriye göre yazı altı CTA metni — her yazı kendi hizmetine çağırsın.
+const blogCta: Record<string, { title: string; highlightedText: string; description: string }> = {
+  'İzolasyon': {
+    title: 'Profesyonel İzolasyon Hizmeti',
+    highlightedText: 'Almak İster Misiniz?',
+    description:
+      '25 yılı aşkın deneyimimizle Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde izolasyon, su yalıtımı ve cephe uygulamaları sunuyoruz. Ücretsiz keşif için hemen iletişime geçin.',
+  },
+  'Cephe': {
+    title: 'Boya ve Mantolama İşleriniz İçin',
+    highlightedText: 'Ücretsiz Keşif İsteyin',
+    description:
+      '25 yılı aşkın deneyimimizle Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde iç-dış cephe boya, mantolama ve dekoratif kaplama uygulamaları yapıyoruz. Ücretsiz keşif için hemen iletişime geçin.',
+  },
+  'Tadilat': {
+    title: 'Tadilat ve Yenileme Projeniz İçin',
+    highlightedText: 'Ücretsiz Keşif İsteyin',
+    description:
+      '25 yılı aşkın deneyimimizle komple daire tadilatından mutfak-banyo yenilemeye tüm işçilikleri tek elden yönetiyoruz. Ücretsiz keşif için hemen iletişime geçin.',
+  },
+  'Rehber': {
+    title: 'Projeniz İçin',
+    highlightedText: 'Ücretsiz Keşif İsteyin',
+    description:
+      '25 yılı aşkın deneyimimizle Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde izolasyon, mantolama, cephe ve tadilat işlerinizde yanınızdayız. Ücretsiz keşif için hemen iletişime geçin.',
+  },
+  'Haberler': {
+    title: 'Projeniz İçin',
+    highlightedText: 'Ücretsiz Keşif İsteyin',
+    description:
+      '25 yılı aşkın deneyimimizle Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde izolasyon, mantolama, cephe ve tadilat işlerinizde yanınızdayız. Ücretsiz keşif için hemen iletişime geçin.',
+  },
+};
+
+// İzolasyon konulu yazıların altındaki çapraz satış bloğu: sızıntı tamiri
+// sonrası devam işleri (boya, mantolama, tadilat) tek elden.
+const crossSellItems = [
+  {
+    href: '/hizmetler/ic-ve-dis-cephe-uygulamalari',
+    title: 'İç ve Dış Cephe Boya',
+    description:
+      'Nem izi kalan tavan ve duvarların onarımı, iç-dış cephe boya ve dekoratif kaplama — sızıntı sonrası son dokunuş.',
+  },
+  {
+    href: '/hizmetler/mantolama',
+    title: 'Mantolama ve Isı Yalıtımı',
+    description:
+      'Cephe zaten elden geçiyorken ısı yalıtımıyla klima giderinizi kalıcı olarak düşürün.',
+  },
+  {
+    href: '/hizmetler/genel-yenileme-ve-tadilat',
+    title: 'Genel Yenileme ve Tadilat',
+    description:
+      'Alçı, asma tavan, zemin kaplama ve komple yenileme — mekânı baştan sona tek elden tamamlayalım.',
+  },
+];
+
 export default async function BlogDetailPage({
   params,
 }: {
@@ -157,6 +214,11 @@ export default async function BlogDetailPage({
   }
 
   const relatedPosts = getRelatedPosts(slug, 3);
+
+  // Nem yazısı Rehber kategorisinde ama konusu izolasyon — çapraz satışa dahil.
+  const showCrossSell =
+    post.category === 'İzolasyon' || post.slug === 'kktcde-nem-sorunu-sebebi-ve-cozumu';
+  const cta = blogCta[post.category] ?? blogCta['Rehber'];
 
   // MDX'i compile et
   const { default: MDXContent } = await evaluate(post.content, {
@@ -277,11 +339,20 @@ export default async function BlogDetailPage({
       {/* İlgili Yazılar */}
       {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} />}
 
-      {/* CTA */}
+      {/* Çapraz satış: izolasyon konulu yazılarda tamir sonrası devam işleri */}
+      {showCrossSell && (
+        <CrossSellSection
+          title="Sızıntı Tamir Edildi — Sırada Ne Var?"
+          description="Su kaçağı tamiri çoğu zaman boya, cephe ve yenileme işleriyle tamamlanır. Ücretsiz keşif sırasında bu kalemler için de teklif alabilirsiniz — tüm işçilikleri tek elden yönetiyoruz."
+          items={crossSellItems}
+        />
+      )}
+
+      {/* CTA — kategoriye göre */}
       <CTASection
-        title="Profesyonel İzolasyon Hizmeti"
-        highlightedText="Almak İster Misiniz?"
-        description="25 yılı aşkın deneyimimizle Girne, Lefkoşa, Gazimağusa ve Güzelyurt genelinde izolasyon, su yalıtımı ve cephe uygulamaları sunuyoruz. Ücretsiz keşif için hemen iletişime geçin."
+        title={cta.title}
+        highlightedText={cta.highlightedText}
+        description={cta.description}
         primaryButtonText="Ücretsiz Keşif Talep Et"
         primaryButtonHref="/#iletisim"
         secondaryButtonText="Hemen Ara"

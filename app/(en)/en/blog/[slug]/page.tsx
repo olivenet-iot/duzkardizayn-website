@@ -16,7 +16,7 @@ import {
   CheckList,
   StepByStep,
 } from '@/components/blog';
-import { CTASection, FAQSection } from '@/components/services';
+import { CTASection, CrossSellSection, FAQSection } from '@/components/services';
 import {
   getAllEnBlogPosts,
   getEnBlogPostWithContent,
@@ -194,6 +194,10 @@ export default async function EnBlogDetailPage({
 
   const relatedPosts = getRelatedEnPosts(slug, 3);
 
+  // Damp/mould yazısı Rehber kategorisinde ama konusu su — çapraz satışa dahil.
+  const showCrossSell =
+    post.category === 'İzolasyon' || post.slug === 'damp-and-mould-in-north-cyprus-homes';
+
   const { default: MDXContent } = await evaluate(post.content, {
     ...runtime,
     development: false,
@@ -303,6 +307,29 @@ export default async function EnBlogDetailPage({
       )}
 
       {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} locale="en" />}
+
+      {/* Cross-sell: follow-on work after waterproofing repairs */}
+      {showCrossSell && (
+        <CrossSellSection
+          title="Once the Leak Is Fixed — What Comes Next?"
+          description="Waterproofing repairs usually end with redecoration: stained ceilings repainted, tired render made good. We can quote for the follow-on work in the same free survey, so one team handles the whole job."
+          linkLabel="Find out more"
+          items={[
+            {
+              href: '/en/services/facades-and-rendering',
+              title: 'Facades, Rendering & Insulation',
+              description:
+                'Repainting stained ceilings and walls, render repairs and external wall insulation once the damp is resolved.',
+            },
+            {
+              href: '/en/services/renovation',
+              title: 'Renovation & Refurbishment',
+              description:
+                'Plastering, ceilings, flooring and full refurbishment — the whole property brought up to standard together.',
+            },
+          ]}
+        />
+      )}
 
       <CTASection
         title="Want someone to look at it"

@@ -5,3 +5,4 @@ export { default as CTASection } from "./CTASection";
 export { default as ContactFormSection } from "./ContactFormSection";
 export { default as FAQSection } from "./FAQSection";
 export { default as SEOContentSection, InternalLink } from "./SEOContentSection";
+export { default as CrossSellSection } from "./CrossSellSection";
