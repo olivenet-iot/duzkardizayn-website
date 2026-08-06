@@ -41,7 +41,7 @@ const content: Record<
       { label: "İzolasyon ve Su Yalıtımı", href: "/hizmetler/izolasyon-ve-su-yalitimi" },
       { label: "İç ve Dış Cephe Uygulamaları", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
       { label: "Genel Yenileme ve Tadilat", href: "/hizmetler/genel-yenileme-ve-tadilat" },
-      { label: "Mantolama", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
+      { label: "Mantolama ve Isı Yalıtımı", href: "/hizmetler/mantolama" },
       { label: "Boya ve Sıva", href: "/hizmetler/ic-ve-dis-cephe-uygulamalari" },
     ],
     contactTitle: "İletişim Bilgileri",

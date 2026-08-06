@@ -9,7 +9,7 @@ import { alternatesFor } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Hizmetlerimiz | Düzkar Dizayn — KKTC İzolasyon, Cephe ve Tadilat",
   description:
-    "Düzkar Dizayn hizmetleri: izolasyon ve su yalıtımı, iç/dış cephe uygulamaları (mantolama dahil), genel yenileme ve tadilat. Kuzey Kıbrıs genelinde 25+ yıl saha deneyimi, 5 yıl garanti.",
+    "Düzkar Dizayn hizmetleri: izolasyon ve su yalıtımı, mantolama ve ısı yalıtımı, iç/dış cephe boya, genel yenileme ve tadilat. Kuzey Kıbrıs genelinde 25+ yıl saha deneyimi, 5 yıl garanti.",
   keywords: [
     "izolasyon kıbrıs",
     "su yalıtımı kktc",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hizmetlerimiz | Düzkar Dizayn",
     description:
-      "İzolasyon, su yalıtımı, iç/dış cephe uygulamaları ve genel tadilat. KKTC genelinde 25+ yıl deneyimle profesyonel çözümler.",
+      "İzolasyon, su yalıtımı, mantolama, iç/dış cephe boya ve genel tadilat. KKTC genelinde 25+ yıl deneyimle profesyonel çözümler.",
     url: "https://duzkardizayn.com/hizmetler",
     type: "website",
     locale: "tr_TR",
@@ -65,19 +65,35 @@ const services = [
     ],
   },
   {
+    slug: "mantolama",
+    title: "Mantolama ve Isı Yalıtımı",
+    shortTitle: "Mantolama",
+    description:
+      "EPS ve taş yünü sistemleriyle dış cephe ısı yalıtımı. Klima giderlerinde %30-45'e varan tasarruf, kışın yoğuşma ve küfe karşı koruma, 5-8 yılda geri ödeme.",
+    image: "/images/services/cephe/mantolama.jpg",
+    imageAlt:
+      "Düzkar Dizayn — KKTC'de mantolama ve dış cephe ısı yalıtımı uygulaması",
+    features: [
+      "EPS (Strafor) Sistemi",
+      "Taş Yünü Sistemi",
+      "Dekoratif Son Kat",
+      "Enerji Tasarrufu",
+    ],
+  },
+  {
     slug: "ic-ve-dis-cephe-uygulamalari",
     title: "İç ve Dış Cephe Uygulamaları",
     shortTitle: "Cephe",
     description:
-      "Mantolama sistemleri, dış cephe boya, iç cephe boya, sıva-alçı ve dekoratif kaplamalar. Akdeniz ikliminin tuzlu havasına ve UV'ye dayanıklı uygulamalar.",
+      "Dış cephe boya, iç cephe boya, sıva-alçı, saten alçı ve dekoratif kaplamalar. Akdeniz ikliminin tuzlu havasına ve UV'ye dayanıklı uygulamalar.",
     image: "/images/services/cephe.jpg",
     imageAlt:
       "Düzkar Dizayn — KKTC'de iç ve dış cephe boya, mantolama uygulaması",
     features: [
-      "Mantolama",
       "Dış Cephe Boya",
       "İç Cephe Boya",
       "Sıva ve Alçı",
+      "Saten Alçı",
       "Dekoratif Kaplamalar",
     ],
   },
@@ -181,6 +197,7 @@ export default function HizmetlerPage() {
               <p className="text-white/70 text-lg md:text-xl leading-relaxed">
                 Kuzey Kıbrıs&apos;ta 25 yılı aşkın deneyimle{" "}
                 <span className="text-gold-primary">izolasyon</span>,{" "}
+                <span className="text-gold-primary">mantolama</span>,{" "}
                 <span className="text-gold-primary">cephe uygulamaları</span> ve{" "}
                 <span className="text-gold-primary">genel tadilat</span>.
                 Akdeniz ikliminin tuzlu havası, yoğun UV ve ani yağışlarına
@@ -195,7 +212,7 @@ export default function HizmetlerPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-navy-dark mb-4">
-                Üç Ana Hizmet Alanımız
+                Dört Ana Hizmet Alanımız
               </h2>
               <p className="text-gray-text">
                 Her proje ücretsiz keşifle başlar. Uygulamalarımızın tamamı 5
@@ -203,7 +220,7 @@ export default function HizmetlerPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {services.map((service) => (
                 <Link
                   key={service.slug}

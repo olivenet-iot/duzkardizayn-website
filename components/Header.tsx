@@ -27,6 +27,7 @@ const nav: Record<
     home: "/",
     services: [
       { href: "/hizmetler/izolasyon-ve-su-yalitimi", label: "İzolasyon ve Su Yalıtımı" },
+      { href: "/hizmetler/mantolama", label: "Mantolama ve Isı Yalıtımı" },
       { href: "/hizmetler/ic-ve-dis-cephe-uygulamalari", label: "İç ve Dış Cephe Uygulamaları" },
       { href: "/hizmetler/genel-yenileme-ve-tadilat", label: "Genel Yenileme ve Tadilat" },
     ],

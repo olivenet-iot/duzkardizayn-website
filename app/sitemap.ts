@@ -53,6 +53,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     bilingualEntries(pair, priorities[pair.tr] ?? { priority: 0.7, changeFrequency: "monthly" })
   );
 
+  // EN karşılığı olmayan TR sayfalar — çeviri ilişkisi olmadığı için hreflang bilerek yok.
+  const trOnlyUrls: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/hizmetler/mantolama`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  ];
+
   // Proje detayları — iki dilde aynı slug
   const projectUrls = projects.flatMap((project) =>
     bilingualEntries(projectPair(project.slug), {
@@ -77,5 +87,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...pairedUrls, ...projectUrls, ...trBlogUrls, ...enBlogUrls];
+  return [...pairedUrls, ...trOnlyUrls, ...projectUrls, ...trBlogUrls, ...enBlogUrls];
 }
