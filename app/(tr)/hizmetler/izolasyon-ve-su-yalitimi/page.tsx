@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProjectExample from "@/components/services/ProjectExample";
 import {
   TimelineSection,
   FeatureCards,
@@ -447,6 +448,8 @@ export default function IzolasyonPage() {
             </div>
           </div>
         </section>
+
+        <ProjectExample slug="merit-park-teras-kusluk-su-yalitimi" locale="tr" />
 
         <FAQSection
           title="İzolasyon Hakkında Sıkça Sorulan Sorular"

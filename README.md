@@ -74,6 +74,19 @@ Eski dört projenin adresleri ve içerikleri korunur; yeni liste altındaki
 “Önceki proje arşivi”nden erişilir. Yeni iş için eski slug tekrar kullanılmaz.
 URL değişmesi gerekirse karşılığına kalıcı yönlendirme planlanır.
 
+Mevcut bloga saha örneği eklerken fotoğrafları yeniden kopyalamadan
+`<ProjectPhotoPair slug="proje-slug" first="foto-anahtarı" second="foto-anahtarı" />`
+kullanılabilir. İngilizce yazıda `locale="en"` eklenir; fotoğraf açıklamaları
+ve boyutları ilgili proje dosyasından okunur. Hizmet sayfasındaki
+`ProjectExample` bileşeni de aynı projenin kapak fotoğrafını, özetini ve
+`relatedBlogs` bağlantılarını kullanır. Rehber → proje → hizmet bağlantılarını
+iki dilde kontrol et; esaslı blog güncellemesinde `updatedAt` yaz, ilk
+`publishedAt` tarihini koru.
+
+Üretim görsel optimizasyonu için `sharp` çalışma zamanı bağımlılığıdır.
+Fotoğraf kontrolünde yalnız önbellekteki boyutları değil, yeni bir boyut/kalite
+isteğinin de başarıyla üretildiğini doğrula.
+
 Yerel hazırlık yayın değildir. Canlı yayın `/root/.hermes/codex/references/website.md`
 akışına göre, mevcut yayın yetkisiyle main üzerinden yapılır. Yeni düzenli içerik
 için takvim veya otomatik yayın görevi açılmaz.

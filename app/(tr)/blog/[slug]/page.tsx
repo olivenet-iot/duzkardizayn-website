@@ -6,6 +6,7 @@ import { evaluate } from '@mdx-js/mdx';
 import * as runtime from 'react/jsx-runtime';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ProjectPhotoPair from '@/components/blog/ProjectPhotoPair';
 import {
   BlogHero,
   BlogContent,
@@ -21,6 +22,7 @@ import { getBlogPostWithContent, getAllBlogPosts, getRelatedPosts } from '@/lib/
 
 // MDX'te kullanılacak custom component'ler
 const mdxComponents = {
+  ProjectPhotoPair,
   InfoBox,
   ComparisonTable,
   CheckList,

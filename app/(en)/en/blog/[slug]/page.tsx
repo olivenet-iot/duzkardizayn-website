@@ -6,6 +6,7 @@ import { evaluate } from '@mdx-js/mdx';
 import * as runtime from 'react/jsx-runtime';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ProjectPhotoPair from '@/components/blog/ProjectPhotoPair';
 import {
   BlogHero,
   BlogContent,
@@ -26,6 +27,7 @@ import { SITE_URL } from '@/lib/i18n';
 
 // MDX içinde kullanılabilen component'ler — Türkçe blogla aynı set.
 const mdxComponents = {
+  ProjectPhotoPair,
   InfoBox,
   ComparisonTable,
   CheckList,
