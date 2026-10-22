@@ -6,7 +6,7 @@ import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { FAQSection } from "@/components/services";
-import { projects } from "@/lib/projects-data";
+import Projects from "@/components/Projects";
 import { alternatesFor, SITE_URL } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -330,49 +330,7 @@ export default function EnHome() {
           </div>
         </section>
 
-        {/* Projeler */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="section-title text-navy-dark mb-4">Recent Projects</h2>
-            <p className="text-gray-text text-lg max-w-3xl mb-12">
-              Alongside private villas and apartments, we carry out
-              waterproofing and facade work on hotels and residential
-              developments across the Kyrenia region.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {projects.map((project) => (
-                <Link
-                  key={project.slug}
-                  href={`/en/projects/${project.slug}`}
-                  className="group block rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all"
-                >
-                  <div className="relative h-48">
-                    <Image
-                      src={project.coverImage}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                    />
-                  </div>
-                  <div className="p-4 bg-gray-50">
-                    <h3 className="font-heading font-bold text-navy-dark group-hover:text-gold-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-text text-sm mt-1">
-                      {project.location.replace("Girne", "Kyrenia")}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <div className="text-center mt-10">
-              <Link href="/en/projects" className="btn-primary">
-                View all projects
-              </Link>
-            </div>
-          </div>
-        </section>
+        <Projects locale="en" />
 
         <FAQSection
           title="Frequently Asked Questions"

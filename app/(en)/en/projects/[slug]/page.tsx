@@ -12,19 +12,23 @@ import {
 } from "@/lib/projects-data-en";
 import { getGalleryImages } from "@/lib/projects";
 import { alternatesFor, projectPair, SITE_URL } from "@/lib/i18n";
+import { getProjectStories, getProjectStory, storyHref, storyMetadata } from "@/lib/project-stories";
+import StoryDetail from "@/components/projects/StoryDetail";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return getAllProjectEnSlugs().map((slug) => ({ slug }));
+  return Array.from(new Set([...getAllProjectEnSlugs(), ...getProjectStories("en").map(story => story.slug)])).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  const story = getProjectStory(slug, "en");
+  if (story) return storyMetadata(story, "en");
   const project = getProjectEnBySlug(slug);
 
   if (!project) {
@@ -55,6 +59,8 @@ export async function generateMetadata({
 
 export default async function EnProjectDetailPage({ params }: PageProps) {
   const { slug } = await params;
+  const story = getProjectStory(slug, "en");
+  if (story) return <StoryDetail story={story} locale="en" />;
   const project = getProjectEnBySlug(slug);
 
   if (!project) {
@@ -64,6 +70,7 @@ export default async function EnProjectDetailPage({ params }: PageProps) {
   // Görseller Türkçe tarafla ortak klasörden okunuyor, yollar burada tekrarlanmıyor.
   const gallery = getGalleryImages(slug);
   const otherProjects = getOtherProjectsEn(slug);
+  const recentStories = getProjectStories("en").filter(item => item.legacyProject === slug);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -136,6 +143,8 @@ export default async function EnProjectDetailPage({ params }: PageProps) {
             </h1>
           </div>
         </section>
+
+        {recentStories.length > 0 && <div className="bg-gold-primary/10 py-6"><div className="container mx-auto px-4"><p className="mb-2 text-sm font-semibold text-navy-dark">Recent work at this property</p>{recentStories.map(item => <Link key={item.slug} href={storyHref(item.slug, "en")} className="block font-medium text-gold-dark hover:underline">{item.title} ↗</Link>)}</div></div>}
 
         {/* Açıklama + bilgi kutusu */}
         <section className="py-16 bg-white">

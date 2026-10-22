@@ -3,6 +3,7 @@ import { getAllBlogPosts } from "@/lib/blog";
 import { getAllEnBlogPosts } from "@/lib/blog-en";
 import { projects } from "@/lib/projects-data";
 import { SITE_URL, routePairs, projectPair } from "@/lib/i18n";
+import { getProjectStories, getProjectStory, storyHref } from "@/lib/project-stories";
 
 /**
  * Karşılığı olan sayfalar için tek girdi yerine iki girdi üretir ve her ikisine de
@@ -71,6 +72,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
+  // Saha yazıları MDX klasörlerinden gelir; tarih gerçek içerik güncellemesidir.
+  const storyUrls: MetadataRoute.Sitemap = (["tr", "en"] as const).flatMap(locale =>
+    getProjectStories(locale).map(story => {
+      const pair = projectPair(story.slug);
+      const translated = getProjectStory(story.slug, locale === "tr" ? "en" : "tr");
+      return {
+        url: `${SITE_URL}${storyHref(story.slug, locale)}`,
+        lastModified: new Date(story.updatedAt),
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        ...(translated ? { alternates: { languages: { tr: `${SITE_URL}${pair.tr}`, en: `${SITE_URL}${pair.en}`, "x-default": `${SITE_URL}${pair.tr}` } } } : {}),
+      };
+    })
+  );
+
   // Blog yazıları çeviri değil, her dilde özgün içerik. Bu yüzden hreflang
   // eşleştirmesi yapılmıyor — yanlış eşleştirme Google'a hatalı sinyal olurdu.
   const trBlogUrls: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => ({
@@ -87,5 +103,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...pairedUrls, ...trOnlyUrls, ...projectUrls, ...trBlogUrls, ...enBlogUrls];
+  return [...pairedUrls, ...trOnlyUrls, ...projectUrls, ...storyUrls, ...trBlogUrls, ...enBlogUrls];
 }

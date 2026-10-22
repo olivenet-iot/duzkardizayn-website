@@ -18,19 +18,23 @@ import {
 import { getProjectBySlug } from "@/lib/projects-data";
 import Link from "next/link";
 import { alternatesFor, projectPair } from "@/lib/i18n";
+import { getProjectStories, getProjectStory, storyHref, storyMetadata } from "@/lib/project-stories";
+import StoryDetail from "@/components/projects/StoryDetail";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return getAllProjectSlugs().map((slug) => ({
+  return Array.from(new Set([...getAllProjectSlugs(), ...getProjectStories("tr").map(story => story.slug)])).map((slug) => ({
     slug,
   }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  const story = getProjectStory(slug, "tr");
+  if (story) return storyMetadata(story, "tr");
   const project = getProjectBySlug(slug);
 
   if (!project) {
@@ -55,6 +59,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProjectDetailPage({ params }: PageProps) {
   const { slug } = await params;
+  const story = getProjectStory(slug, "tr");
+  if (story) return <StoryDetail story={story} locale="tr" />;
   const project = getProjectWithGallery(slug);
 
   if (!project) {
@@ -62,12 +68,15 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   const otherProjects = getOtherProjects(slug);
+  const recentStories = getProjectStories("tr").filter(item => item.legacyProject === slug);
 
   return (
     <>
       <Header />
       <main>
         <ProjectHero project={project} />
+
+        {recentStories.length > 0 && <div className="bg-gold-primary/10 py-6"><div className="container mx-auto px-4"><p className="mb-2 text-sm font-semibold text-navy-dark">Bu tesisteki yeni çalışmalarımız</p>{recentStories.map(item => <Link key={item.slug} href={storyHref(item.slug, "tr")} className="block font-medium text-gold-dark hover:underline">{item.title} ↗</Link>)}</div></div>}
 
         {/* Project Content Section */}
         <section className="py-16 bg-white">
